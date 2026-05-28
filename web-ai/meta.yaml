@@ -1,0 +1,15 @@
+page:
+  type: list
+  title: "Web AI"
+assets:
+  root: ".."
+links:
+  - url: "https://chat.deepseek.com/"
+    title: "Deepseek"
+    description: "Into the unknown"
+  - url: "https://yandex.ru/alice/"
+    title: "Alice AI"
+    description: "Чем помочь сегодня?"
+  - url: "https://www.kimi.com/chat/"
+    title: "KIMI"
+    description: "Kimi chat"

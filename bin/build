@@ -26,7 +26,7 @@ process_citation() {
   ROOT=$(yq ".assets.root" $meta -r)
   NAVBAR=$(print_navbar $meta | tr "\n" " ")
 
-  echo " * [copy] $DIR/index.html.."
+  echo " * [clip] $DIR/index.html.."
 
   cat "templates/citation.html" | \
     sed "s|%navbar%|$NAVBAR|" | \
