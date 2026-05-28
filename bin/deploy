@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+BIN0=$(readlink -f $0)
+DIR0=$(dirname $BIN0)
+ROOT_DIR=$(dirname $DIR0)
+
+cd $ROOT_DIR
+
 list_files() {
   fd --no-ignore -e html -e css -e js . | grep -v templates
 }

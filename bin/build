@@ -1,7 +1,21 @@
 #!/usr/bin/env bash
 
+BIN0=$(readlink -f $0)
+DIR0=$(dirname $BIN0)
+ROOT_DIR=$(dirname $DIR0)
+
+cd $ROOT_DIR
+
 list_meta() {
   fd -e yaml | grep meta
+}
+
+print_navbar() {
+  meta=$1
+  ROOT=$(yq ".assets.root" $meta -r)
+
+  cat ./templates/navbar.html | \
+    sed "s|%root%|$ROOT|"
 }
 
 process_citation() {
@@ -10,10 +24,12 @@ process_citation() {
   CONTENT=$(yq ".page.content" $meta -r | tr "\n" " ")
   DIR=$(dirname $meta)
   ROOT=$(yq ".assets.root" $meta -r)
+  NAVBAR=$(print_navbar $meta | tr "\n" " ")
 
   echo " * [copy] $DIR/index.html.."
 
   cat "templates/citation.html" | \
+    sed "s|%navbar%|$NAVBAR|" | \
     sed "s|%root%|$ROOT|g" | \
     sed "s|%title%|$TITLE|g" | \
     sed "s|%content%|$CONTENT|g" >"$DIR/index.html"
@@ -40,10 +56,12 @@ process_list() {
   ROOT=$(yq -r '.assets.root' $meta)
   LIST=$(print_list_item $meta | tr '\n' ' ')
   DIR=$(dirname $meta)
+  NAVBAR=$(print_navbar $meta | tr "\n" " ")
 
   echo " * [list] $DIR/index.html.."
 
   cat templates/list.html | \
+    sed "s|%navbar%|$NAVBAR|" | \
     sed "s|%title%|$TITLE|" | \
     sed "s|%root%|$ROOT|" | \
     sed "s|%items%|${LIST}|" >$DIR/index.html
