@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+list_meta() {
+  fd -e yaml | grep meta
+}
+
+process_citation() {
+  meta=$1
+  TITLE=$(yq ".page.title" $meta -r)
+  CONTENT=$(yq ".page.content" $meta -r | tr "\n" " ")
+  DIR=$(dirname $meta)
+  ROOT=$(yq ".assets.root" $meta -r)
+
+  echo " * [copy] $DIR/index.html.."
+
+  cat "templates/citation.html" | \
+    sed "s|%root%|$ROOT|g" | \
+    sed "s|%title%|$TITLE|g" | \
+    sed "s|%content%|$CONTENT|g" >"$DIR/index.html"
+}
+
+print_list_item() {
+  meta=$1
+  yq -c '.links[]' $meta | while read -r item; do
+    url=$(echo $item | jq -r '.url')
+    title=$(echo $item | jq -r '.title')
+    description=$(echo $item | jq -r '.description')
+
+    echo "
+    <a class='prompt-item' href='$url'>
+      <div class='prompt-title'>$title</div>
+      <div class='prompt-description'>$description</div>
+    </a>"
+  done
+}
+
+process_list() {
+  meta=$1
+  TITLE=$(yq -r '.page.title' $meta)
+  ROOT=$(yq -r '.assets.root' $meta)
+  LIST=$(print_list_item $meta | tr '\n' ' ')
+  DIR=$(dirname $meta)
+
+  echo " * [list] $DIR/index.html.."
+
+  cat templates/list.html | \
+    sed "s|%title%|$TITLE|" | \
+    sed "s|%root%|$ROOT|" | \
+    sed "s|%items%|${LIST}|" >$DIR/index.html
+}
+
+for meta in $(list_meta); do
+  TYPE=$(yq ".page.type" $meta -r)
+
+  case "$TYPE" in
+    "citation")
+      process_citation $meta
+      ;;
+    "list")
+      process_list $meta
+      ;;
+  esac
+done
