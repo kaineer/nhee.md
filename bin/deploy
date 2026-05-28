@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+list_files() {
+  fd -e html -e css -e js . | grep -v templates
+}
+
+for FILE in $(list_files); do
+  scp "$FILE" "jino:~/hosts/html/$FILE"
+done
