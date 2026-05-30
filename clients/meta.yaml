@@ -1,0 +1,15 @@
+page:
+  type: list
+  title: "Clients"
+assets:
+  root: ".."
+links:
+  - url: "https://ollama.com/"
+    title: "Ollama"
+    description: "The easiest way to build with open models"
+  - url: "https://llama.app/"
+    title: "LLama.c++"
+    description: "AI that lives on your computer. Open-source, private, always local."
+  - url: "https://pi.dev/"
+    title: "Pi"
+    description: "A terminal-based coding agent"
