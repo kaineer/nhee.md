@@ -2,7 +2,7 @@ page:
   type: list
   title: "Clients"
 assets:
-  root: ".."
+  root: "../.."
 links:
   - url: "https://ollama.com/"
     title: "Ollama"

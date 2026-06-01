@@ -2,9 +2,9 @@ page:
   type: list
   title: "Prompts"
 assets:
-  root: ".."
+  root: "../.."
 links:
-  - url: "./caveman/index.html"
+  - url: "./caveman/%index%"
     title: "Caveman header"
     description: "Keep to essentials, no fluff"
   - url: "https://chat.deepseek.com/a/chat/s/45e3212d-5a74-4f5b-a45f-1d13c01530d4"

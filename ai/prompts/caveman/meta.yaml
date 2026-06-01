@@ -9,4 +9,4 @@ page:
     answering immediately after my prompt. Stop writing when answer is
     done. No follow-ups unless asked.
 assets:
-  root: "../.."
+  root: "../../.."

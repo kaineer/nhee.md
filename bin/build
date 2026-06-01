@@ -4,6 +4,11 @@ BIN0=$(readlink -f $0)
 DIR0=$(dirname $BIN0)
 ROOT_DIR=$(dirname $DIR0)
 
+INDEX="index.html"
+if [[ "$WEB" != "" ]]; then
+  INDEX=""
+fi
+
 cd $ROOT_DIR
 
 list_meta() {
@@ -15,7 +20,8 @@ print_navbar() {
   ROOT=$(yq ".assets.root" $meta -r)
 
   cat ./templates/navbar.html | \
-    sed "s|%root%|$ROOT|"
+    sed "s|%root%|$ROOT|" | \
+    sed "s|%index%|$INDEX|"
 }
 
 process_citation() {
@@ -32,7 +38,8 @@ process_citation() {
     sed "s|%navbar%|$NAVBAR|" | \
     sed "s|%root%|$ROOT|g" | \
     sed "s|%title%|$TITLE|g" | \
-    sed "s|%content%|$CONTENT|g" >"$DIR/index.html"
+    sed "s|%content%|$CONTENT|g" | \
+    sed "s|%index%|$INDEX|g" >"$DIR/index.html"
 }
 
 print_list_item() {
@@ -64,7 +71,8 @@ process_list() {
     sed "s|%navbar%|$NAVBAR|" | \
     sed "s|%title%|$TITLE|" | \
     sed "s|%root%|$ROOT|" | \
-    sed "s|%items%|${LIST}|" >$DIR/index.html
+    sed "s|%items%|${LIST}|" | \
+    sed "s|%index%|$INDEX|" >$DIR/index.html
 }
 
 for meta in $(list_meta); do

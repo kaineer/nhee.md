@@ -2,7 +2,7 @@ page:
   type: list
   title: "Web AI"
 assets:
-  root: ".."
+  root: "../.."
 links:
   - url: "https://chat.deepseek.com/"
     title: "Deepseek"
