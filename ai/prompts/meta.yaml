@@ -3,6 +3,7 @@ page:
   title: "Prompts"
 assets:
   root: "../.."
+  subdir: "ai"
 links:
   - url: "./caveman/%index%"
     title: "Caveman header"

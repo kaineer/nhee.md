@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-rm **/index.html
+rm ai/**/index.html
+rm ai/**/**/index.html

@@ -3,6 +3,7 @@ page:
   title: "Web AI"
 assets:
   root: "../.."
+  subdir: "ai"
 links:
   - url: "https://chat.deepseek.com/"
     title: "Deepseek"

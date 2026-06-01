@@ -3,6 +3,7 @@ page:
   title: "Clients"
 assets:
   root: "../.."
+  subdir: "ai"
 links:
   - url: "https://ollama.com/"
     title: "Ollama"
