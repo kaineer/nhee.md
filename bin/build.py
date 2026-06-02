@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 from pathlib import Path
+import sys
+
+script_dir = Path(__file__).parent
+sys.path.insert(0, str(script_dir))
 
 from primitives.navbar_data import build_navbar_data
 from primitives.page_context import create_page_context

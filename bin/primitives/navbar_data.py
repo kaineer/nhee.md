@@ -1,5 +1,6 @@
 from pathlib import Path
 
+from primitives.page_context import create_page_context
 
 def split_relative_path(path):
     dirname = str(Path(path).parent)
@@ -29,6 +30,7 @@ class NavbarItem:
         if lower is not None:
             self.filepath = str(Path(upper) / lower)
 
+
 class NavbarData:
     def __init__(self, root):
         self.root = root
@@ -44,7 +46,7 @@ class NavbarData:
 
         return ni
 
-    def title(self, upper, lower = None):
+    def title(self, upper, lower=None):
         if lower is None:
             return self.find(upper)[0].title
         found = self.find(upper)
@@ -58,7 +60,9 @@ class NavbarData:
 def build_navbar_data(meta_files, root):
     navbar_data = NavbarData(root)
     for meta_file in meta_files:
-        navbar_data.add(meta_file)
+        ni = navbar_data.add(meta_file)
+        ct = create_page_context(root, meta_file)
+        ni.title = ct.title
     return navbar_data
 
 
