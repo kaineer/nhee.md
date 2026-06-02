@@ -33,6 +33,7 @@ def path_from_root(root_path: str, path: str) -> str:
 
 @dataclass
 class PageContext:
+    metafile: str
     root: str  # project root
     subdir: str  # current page subdir
     type: str  # page type
@@ -71,6 +72,7 @@ def create_page_context(root_path: str, path: str) -> PageContext:
         subdir = ""
 
     return PageContext(
+        metafile=str(meta_file), 
         root=path_to_root(str(root), str(meta_file)),
         subdir=subdir,
         type=page_type,

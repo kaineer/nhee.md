@@ -19,12 +19,15 @@ def split_relative_path(path):
 class NavbarItem:
     def __init__(self, relative_path):
         upper, lower = split_relative_path(relative_path)
+        self.path = relative_path
         self.upper = upper
         self.lower = lower
 
-    def __str__(self):
-        return f'{{"upper": "{self.upper}", "lower": "{self.lower}"}}'
+        self.title = None
 
+        self.filepath = upper
+        if lower is not None:
+            self.filepath = str(Path(upper) / lower)
 
 class NavbarData:
     def __init__(self, root):
@@ -39,11 +42,17 @@ class NavbarData:
         if ni.upper not in self.upper:
             self.upper.append(ni.upper)
 
+        return ni
+
+    def title(self, upper, lower = None):
+        if lower is None:
+            return self.find(upper)[0].title
+        found = self.find(upper)
+        item = [f for f in found if f.lower == lower][0]
+        return item.title
+
     def find(self, upper_level):
         return [file for file in self.meta_files if file.upper == upper_level]
-
-    def __str__(self) -> str:
-        return "[" + ", ".join([str(data) for data in self.meta_files]) + "]"
 
 
 def build_navbar_data(meta_files, root):
