@@ -9,10 +9,11 @@ root = str((Path(".") / "src").absolute())
 meta_files = find_meta_files("src")
 
 # Some hierarchy
-# >> navbar_data = build_navbar_data(meta_files)
+# >> navbar_data = build_navbar_data(meta_files, root)
 
 for file in meta_files:
-    context = create_page_context(root, str(file))
+    context = create_page_context(root, file)
+    print(context)
     # build navbar
     #   >> navbar = build_navbar(context, navbar_data)
     # build page by page type
