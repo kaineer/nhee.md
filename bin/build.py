@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 
+from primitives.navbar_data import build_navbar_data
 from primitives.page_context import create_page_context
 from primitives.page_enumerate import find_meta_files
 
@@ -10,6 +11,8 @@ meta_files = find_meta_files("src")
 
 # Some hierarchy
 # >> navbar_data = build_navbar_data(meta_files, root)
+navbar_data = build_navbar_data(meta_files, root)
+print(navbar_data)
 
 for file in meta_files:
     context = create_page_context(root, file)
