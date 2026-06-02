@@ -16,7 +16,7 @@ def test_adding_two_files():
     nd.add("/tmp/root/abc/item/meta.yaml")
 
     assert nd.upper == ["abc", "def"]
-    assert [x.filepath for x in nd.find("abc")] == ["abc", "abc/item"]
+    assert [x.menu_path for x in nd.find("abc")] == ["abc", "abc/item"]
 
 def test_set_title_after_add():
     nd = NavbarData("/tmp/root")
@@ -28,3 +28,26 @@ def test_set_title_after_add():
     assert nd.title("hello") == "Hello"
 
     assert nd.title("hello", "hero") == "Hero"
+
+def test_choose_upper_level():
+    nd = NavbarData("/a")
+
+    a1 = nd.add("/a/abc/meta.yaml")
+    a2 = nd.add("/a/abc/def/meta.yaml")
+    a3 = nd.add("/a/abc/ghi/meta.yaml")
+
+    chosen = nd.choose("abc")
+
+    assert a1 == chosen
+
+def test_choose_lower_level():
+    nd = NavbarData("/a")
+
+    a1 = nd.add("/a/abc/meta.yaml")
+    a2 = nd.add("/a/abc/def/meta.yaml")
+    a3 = nd.add("/a/abc/ghi/meta.yaml")
+
+    chosen = nd.choose("abc/def")
+
+    assert a2 == chosen
+

@@ -26,9 +26,9 @@ class NavbarItem:
 
         self.title = None
 
-        self.filepath = upper
+        self.menu_path = upper
         if lower is not None:
-            self.filepath = str(Path(upper) / lower)
+            self.menu_path = str(Path(upper) / lower)
 
 
 class NavbarData:
@@ -55,6 +55,9 @@ class NavbarData:
 
     def find(self, upper_level):
         return [file for file in self.meta_files if file.upper == upper_level]
+
+    def choose(self, path):
+        return next((x for x in self.meta_files if x.menu_path == path), None)
 
 
 def build_navbar_data(meta_files, root):
