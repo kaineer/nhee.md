@@ -51,3 +51,17 @@ def test_choose_lower_level():
 
     assert a2 == chosen
 
+# TODO: choose current menu item by full path
+# TODO: choose current upper menu item
+# TODO: choose current lower menu item
+def test_choose_by_full_path():
+    nd = NavbarData("/a")
+
+    a1 = nd.add("/a/abc/meta.yaml")
+    a2 = nd.add("/a/abc/def/meta.yaml")
+    a3 = nd.add("/a/abc/ghi/meta.yaml")
+
+    chosen = nd.choose("abc/def/ghi/meta.yaml")
+
+    assert a2 == chosen
+
