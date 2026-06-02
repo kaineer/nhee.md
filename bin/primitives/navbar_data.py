@@ -1,34 +1,49 @@
 from pathlib import Path
 
 
+def split_relative_path(path):
+    dirname = str(Path(path).parent)
+    if dirname == ".":
+        dirname = ""
+    parts = dirname.split("/")
+    upper = None
+    if len(parts) > 0:
+        upper = parts[0]
+    lower = None
+    if len(parts) > 1:
+        lower = parts[1]
+
+    return upper, lower
+
+
 class NavbarItem:
     def __init__(self, relative_path):
-        dirname = str(Path(relative_path).parent)
-        if dirname == ".":
-            dirname = ""
-        parts = dirname.split("/")
-        self.upper = None
-        if len(parts) > 0:
-            self.upper = parts[0]
-        self.lower = None
-        if len(parts) > 1:
-            self.lower = parts[1]
+        upper, lower = split_relative_path(relative_path)
+        self.upper = upper
+        self.lower = lower
 
     def __str__(self):
-        return f"[upper={self.upper}, lower={self.lower}]"
+        return f'{{"upper": "{self.upper}", "lower": "{self.lower}"}}'
 
 
 class NavbarData:
     def __init__(self, root):
         self.root = root
         self.meta_files = []
+        self.upper = []
 
     def add(self, meta_file):
         relative_path = str(Path(meta_file).relative_to(self.root))
-        self.meta_files.append(NavbarItem(relative_path))
+        ni = NavbarItem(relative_path)
+        self.meta_files.append(ni)
+        if ni.upper not in self.upper:
+            self.upper.append(ni.upper)
+
+    def find(self, upper_level):
+        return [file for file in self.meta_files if file.upper == upper_level]
 
     def __str__(self) -> str:
-        return ", ".join([str(data) for data in self.meta_files])
+        return "[" + ", ".join([str(data) for data in self.meta_files]) + "]"
 
 
 def build_navbar_data(meta_files, root):
@@ -36,3 +51,6 @@ def build_navbar_data(meta_files, root):
     for meta_file in meta_files:
         navbar_data.add(meta_file)
     return navbar_data
+
+
+__all__ = ["build_navbar_data"]

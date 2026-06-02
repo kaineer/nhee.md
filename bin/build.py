@@ -12,7 +12,6 @@ meta_files = find_meta_files("src")
 # Some hierarchy
 # >> navbar_data = build_navbar_data(meta_files, root)
 navbar_data = build_navbar_data(meta_files, root)
-print(navbar_data)
 
 for file in meta_files:
     context = create_page_context(root, file)
