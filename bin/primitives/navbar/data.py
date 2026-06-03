@@ -117,3 +117,20 @@ class NavbarData:
                 return found
 
         return None
+
+    def find_all_lower(self, path):
+        parts = path.split("/")
+        upper_item = parts[0]
+
+        navbar_items = [
+            item
+            for item in self.items
+            if item.upper == upper_item and item.lower is not None
+        ]
+
+        for item in navbar_items:
+            if self.titles is not None:
+                if item.path in self.titles:
+                    item.title = self.titles[item.path]
+
+        return navbar_items

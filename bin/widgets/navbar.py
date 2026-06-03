@@ -21,16 +21,31 @@ def upper_navbar_link(ni, ctx):
     return navbar_item(url, title, current)
 
 
+def lower_navbar_link(ni, ctx):
+    url = ni.path
+    title = ni.title or ni.lower
+    current = subdir(ctx.subdir, 2) == ni.path
+    return navbar_item(url, title, current)
+
+
 def upper_navbar(context, navbar_data):
     upper = navbar_data.upper
     children = [
         upper_navbar_link(navbar_data.find_upper(item), context) for item in upper
     ]
-    return tag("div", classname="nav-primary", children=children)
+    return tag("ul", classname="nav-primary", children=children)
 
 
 def lower_navbar(context, navbar_data):
-    pass
+    print("subdir =", context.subdir)
+    all_lower = navbar_data.find_all_lower(context.subdir)
+    print("all_lower =", all_lower)
+
+    children = [
+        lower_navbar_link(item, context)
+        for item in navbar_data.find_all_lower(context.subdir)
+    ]
+    return tag("ul", classname="nav-secondary", children=children)
 
 
 def build_navbar(context, navbar_data):

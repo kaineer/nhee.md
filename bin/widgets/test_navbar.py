@@ -1,5 +1,5 @@
 from primitives.navbar.data import NavbarData
-from widgets.navbar import navbar_item, upper_navbar
+from widgets.navbar import build_navbar, lower_navbar, navbar_item, upper_navbar
 
 
 def get_navbar_data():
@@ -37,10 +37,10 @@ def test_upper_navbar():
 
     assert upper_navbar(ctx, nb) == lines(
         [
-            '<div class="nav-primary">',
+            '<ul class="nav-primary">',
             '<li><a class="current" href="/">󰍜</a></li>',
             '<li><a href="/b/">About</a></li>',
-            "</div>",
+            "</ul>",
         ]
     )
 
@@ -52,13 +52,43 @@ def test_upper_navbar_about():
 
     assert upper_navbar(ctx, nb) == lines(
         [
-            '<div class="nav-primary">',
+            '<ul class="nav-primary">',
             '<li><a href="/">󰍜</a></li>',
             '<li><a class="current" href="/b/">About</a></li>',
-            "</div>",
+            "</ul>",
         ]
     )
 
 
-# TODO: test_lower_navbar
-# TODO: test_navbar
+def test_lower_bar():
+    nb = get_navbar_data()
+    nb.set_titles({"/b/c/": "First", "/b/d/": "Second"})
+    ctx = MockCtx("First", "b/c")
+    assert lower_navbar(ctx, nb) == lines(
+        [
+            '<ul class="nav-secondary">',
+            '<li><a class="current" href="/b/c/">First</a></li>',
+            '<li><a href="/b/d/">Second</a></li>',
+            "</ul>",
+        ]
+    )
+
+
+def test_navbar():
+    nb = get_navbar_data()
+    nb.set_titles({"/b/": "About", "/b/c/": "First", "/b/d/": "Second"})
+    ctx = MockCtx("First", "b/c")
+    assert build_navbar(ctx, nb) == lines(
+        [
+            '<div class="navbar">',
+            '<ul class="nav-primary">',
+            '<li><a href="/">󰍜</a></li>',
+            '<li><a class="current" href="/b/">About</a></li>',
+            "</ul>",
+            '<ul class="nav-secondary">',
+            '<li><a class="current" href="/b/c/">First</a></li>',
+            '<li><a href="/b/d/">Second</a></li>',
+            "</ul>",
+            "</div>",
+        ]
+    )
