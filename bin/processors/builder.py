@@ -1,10 +1,15 @@
 from pathlib import Path
 
+from page.types.clip import Clip
+from page.types.list import List
+from page.types.markdown import Markdown
 from primitives.context.data import ContextLoader
 from primitives.navbar.data import NavbarData
 from primitives.page_enumerate import find_meta_files
 from primitives.template.template_container import TemplateContainer
 from widgets.navbar import build_navbar
+
+page_types = {"list": List, "markdown": Markdown, "clip": Clip}
 
 
 class Builder:
@@ -24,4 +29,12 @@ class Builder:
             navbar = build_navbar(context, self.navbar_data)
             type = context.type
             template = self.templates.get(type)
-            # What to replace and with what?
+            page_class = page_types[type]
+            parameters = page_class(context)
+            page = str(
+                template.apply({"navbar": navbar, "root": self.root, **parameters})
+            )
+
+            print(page)
+            # Write to Path(self.root) / context.subdir / "index.html"
+            # content of page
