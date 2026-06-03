@@ -33,7 +33,3 @@ class ContextLoader:
         subdir = Path(path).parent.relative_to(self.root)
 
         return PageContext(title=title, subdir=str(subdir), type=type, data=data)
-
-
-def create_context():
-    pass
