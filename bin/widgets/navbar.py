@@ -37,10 +37,6 @@ def upper_navbar(context, navbar_data):
 
 
 def lower_navbar(context, navbar_data):
-    print("subdir =", context.subdir)
-    all_lower = navbar_data.find_all_lower(context.subdir)
-    print("all_lower =", all_lower)
-
     children = [
         lower_navbar_link(item, context)
         for item in navbar_data.find_all_lower(context.subdir)
