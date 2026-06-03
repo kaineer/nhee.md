@@ -2,6 +2,8 @@
 
 from pathlib import Path
 
+from primitives.subdir import subdir
+
 
 def split_subdir(subdir):
     parts = subdir.split("/")
@@ -33,6 +35,7 @@ class NavbarItem:
         self.upper = upper
         self.lower = lower
         self.path = build_path(upper, lower)
+        self.title = None
 
     def __repr__(self):
         return f"NavbarItem: {self.path}"
@@ -43,6 +46,10 @@ class NavbarData:
         self.root = root
         self.items = []
         self.upper = []
+        self.titles = None
+
+    def set_titles(self, titles):
+        self.titles = titles
 
     def _add_upper_label(self, item):
         upper = item.upper
@@ -53,6 +60,7 @@ class NavbarData:
     def _find_by_path(self, path):
         if path == ".":
             path = root_path
+
         found = next((it for it in self.items if path == it.path), None)
         return found
 
@@ -64,21 +72,48 @@ class NavbarData:
             return item
         return found
 
+    def _is_metapath(self, path):
+        return path.endswith("meta.yaml")
+
+    def _get_relative_path(self, path):
+        path = path or ""
+        if self._is_metapath(path):
+            return str(Path(path).parent.relative_to(self.root))
+        return path
+
     def add_meta(self, meta_path):
-        path = str(Path(meta_path).parent.relative_to(self.root))
+        path = self._get_relative_path(meta_path)
         item = self._add_meta_item(NavbarItem(path))
 
         return item
 
     def find_current(self, meta_path):
-        path = str(Path(meta_path).parent.relative_to(self.root))
-        if path == ".":
-            path = root_path
-        else:
-            parts = path.split("/")
-            path = "/".join(parts[0:2])
-            path = f"/{path}/"
+        path = self._get_relative_path(meta_path)
+        path = subdir(path, 2)
 
         found = self._find_by_path(path)
 
         return found
+
+    def find_upper(self, meta_path):
+        path = self._get_relative_path(meta_path)
+        path = subdir(path, 1)
+
+        found = self._find_by_path(path)
+
+        if self.titles is not None and found is not None:
+            if found.path in self.titles:
+                found.title = self.titles[found.path]
+
+        return found
+
+    def find_lower(self, meta_path):
+        path = str(Path(meta_path).parent.relative_to(self.root))
+        path = subdir(path, 2)
+
+        found = self._find_by_path(path)
+        if found is not None:
+            if type(found.lower) is str:
+                return found
+
+        return None

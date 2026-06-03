@@ -1,26 +1,32 @@
-from ..kit.tag import tag
+from kit.tag import tag
+from primitives.subdir import subdir
 
 hamburger = "󰍜"
 
-# def upper_item(item, current):
-#     link = tag("a", attr={"href": item}, children=item)
-#     cn = ""
-#     if current:
-#         cn = "current"
-#     return tag("li", classname=cn, children=(link or hamburger))
-#
-#
-# def upper_navbar(items, current=None):
-#     return "".join([upper_item(item, current) for item in items])
+
+def navbar_item(url, title, current=False):
+    _classname = None
+    if current:
+        _classname = "current"
+    return tag(
+        "li",
+        children=[tag("a", classname=_classname, attr={"href": url}, children=title)],
+    )
 
 
-def navbar_item(url, title):
-    return tag("li", children=[tag("a", {"href": url}, children=title)])
+def upper_navbar_link(ni, ctx):
+    url = ni.path
+    title = ni.title or ni.upper or hamburger
+    current = subdir(ctx.subdir, 1) == ni.path
+    return navbar_item(url, title, current)
 
 
 def upper_navbar(context, navbar_data):
     upper = navbar_data.upper
-    return tag("div", classname="nav-primary", children=[])
+    children = [
+        upper_navbar_link(navbar_data.find_upper(item), context) for item in upper
+    ]
+    return tag("div", classname="nav-primary", children=children)
 
 
 def lower_navbar(context, navbar_data):

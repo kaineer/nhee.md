@@ -118,3 +118,51 @@ def test_find_current_lower():
     assert fn == n3
     assert n4 == n3
     assert fn != n1
+
+
+def test_find_upper_for_root():
+    nb = NavbarData("/a")
+    nroot = nb.add_meta("/a/meta.yaml")
+    n2 = nb.add_meta("/a/b/meta.yaml")
+
+    fn = nb.find_upper("/a/meta.yaml")
+
+    assert fn == nroot
+    assert fn != n2
+
+
+def test_find_upper_for_upper():
+    nb = NavbarData("/a")
+    n1 = nb.add_meta("/a/meta.yaml")
+    n2 = nb.add_meta("/a/b/meta.yaml")
+    n3 = nb.add_meta("/a/b/c/meta.yaml")
+
+    fn = nb.find_upper("/a/b/meta.yaml")
+
+    assert fn == n2
+    assert fn != n1
+    assert fn != n3
+
+
+def test_find_upper_for_lower():
+    nb = NavbarData("/a")
+    n1 = nb.add_meta("/a/meta.yaml")
+    n2 = nb.add_meta("/a/b/meta.yaml")
+    n3 = nb.add_meta("/a/b/c/meta.yaml")
+
+    fn = nb.find_upper("/a/b/c/meta.yaml")
+
+    assert fn == n2
+    assert fn != n1
+    assert fn != n3
+
+
+def test_find_lower_for_root():
+    nb = NavbarData("/a")
+    nroot = nb.add_meta("/a/meta.yaml")
+    nb.add_meta("/a/b/meta.yaml")
+    nb.add_meta("/a/b/c/meta.yaml")
+
+    fn = nb.find_lower("/a/meta.yaml")
+
+    assert fn == None

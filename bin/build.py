@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-from pathlib import Path
 import sys
+from pathlib import Path
 
 script_dir = Path(__file__).parent
 sys.path.insert(0, str(script_dir))
@@ -18,7 +18,6 @@ navbar_data = build_navbar_data(meta_files, root)
 
 for file in meta_files:
     context = create_page_context(root, file)
-    print(context)
     # build navbar
     #   >> navbar = build_navbar(context, navbar_data)
     # build page by page type
