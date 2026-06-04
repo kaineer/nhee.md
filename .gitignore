@@ -1,4 +1,2 @@
-*.html
-!templates/*.html
 __pycache__/
 tmp/
