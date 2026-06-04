@@ -14,6 +14,7 @@ def yaml_reader(path):
 class PageContext:
     title: str
     type: str
+    root: str
     subdir: str
     data: dict
 
@@ -30,6 +31,13 @@ class ContextLoader:
         title = page_data.get("title", None)
         type = page_data.get("type", None)
 
-        subdir = Path(path).parent.relative_to(self.root)
+        subdir = str(Path(path).parent.relative_to(self.root))
 
-        return PageContext(title=title, subdir=str(subdir), type=type, data=data)
+        if subdir is None or subdir == "" or subdir == ".":
+            root = "."
+        else:
+            root = "/".join([".."] * len(subdir.split("/")))
+
+        return PageContext(
+            title=title, subdir=str(subdir), type=type, data=data, root=root
+        )

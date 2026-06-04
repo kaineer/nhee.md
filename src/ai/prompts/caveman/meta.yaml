@@ -1,5 +1,5 @@
 page:
-  type: "citation"
+  type: "cite"
   title: "Caveman prompt"
   content: |
     No greetings. No explanations. No extra words. Answer ONLY what I ask.

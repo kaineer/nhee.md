@@ -1,5 +1,4 @@
 page:
-  type: markdown
+  type: cite
   title: AI
-content: |
-  This is a sample content
+  content: This is a sample content

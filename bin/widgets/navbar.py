@@ -1,16 +1,20 @@
 from kit.tag import tag
 from primitives.subdir import subdir
 
-hamburger = "󰍜"
+hamburger = "Home"
 
 
 def navbar_item(url, title, current=False):
     _classname = None
     if current:
-        _classname = "current"
+        _classname = "active"
     return tag(
         "li",
-        children=[tag("a", classname=_classname, attr={"href": url}, children=title)],
+        children=[
+            tag(
+                "a", classname=_classname, attr={"href": "%root%" + url}, children=title
+            )
+        ],
     )
 
 
