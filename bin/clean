@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-rm ai/**/index.html
-rm ai/**/**/index.html
+for f in $(fd -e html --no-ignore . src | grep -v templates); do
+  rm $f
+done

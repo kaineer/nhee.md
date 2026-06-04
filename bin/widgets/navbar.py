@@ -49,11 +49,9 @@ def lower_navbar(context, navbar_data):
 
 
 def build_navbar(context, navbar_data):
-    return tag(
-        "div",
-        classname="navbar",
-        children=[
-            upper_navbar(context, navbar_data),
-            lower_navbar(context, navbar_data),
-        ],
-    )
+    navbars = [
+        upper_navbar(context, navbar_data),
+    ]
+    if len(navbar_data.find_all_lower(context.subdir)) > 0:
+        navbars.append(lower_navbar(context, navbar_data))
+    return tag("div", classname="navbar", children=navbars)

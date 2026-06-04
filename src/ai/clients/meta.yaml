@@ -1,16 +1,22 @@
 page:
   type: list
-  title: "Clients"
+  title: "Engines"
 assets:
   root: "../.."
   subdir: "ai"
 links:
+  - url: "https://serverflow.ru/blog/stati/ollama-lm-studio-llama-cpp-vllm-i-triton-obzor-dvizhkov-inferensa-llm/"
+    title: "Обзор"
+    description: "Ollama, LM Studio, llama.cpp, vLLM и Triton: обзор движков инференса LLM"
   - url: "https://ollama.com/"
     title: "Ollama"
     description: "The easiest way to build with open models"
   - url: "https://llama.app/"
     title: "LLama.c++"
     description: "AI that lives on your computer. Open-source, private, always local."
+  - url: "https://vllm.ai/"
+    title: "vLLM"
+    description: "For multy-GPU servers"
   - url: "https://pi.dev/"
     title: "Pi"
     description: "A terminal-based coding agent"
