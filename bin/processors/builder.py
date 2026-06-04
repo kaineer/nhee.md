@@ -20,14 +20,10 @@ class Builder:
         templates_root = str(Path(root) / "templates")
         self.templates = TemplateContainer(templates_root)
         self.context_loader = ContextLoader(root)
-        self.navbar_data = NavbarData(self.root)
-        titles = yaml.safe_load((Path(root) / "titles.yaml").open().read())
-        self.navbar_data.set_titles(titles)
+        self.navbar_data = NavbarData(str(Path(root) / "navbar.yaml"))
 
     def build(self):
         meta_files = find_meta_files(self.root)
-        for file in meta_files:
-            self.navbar_data.add_meta(file)
         for file in meta_files:
             print(" * Building ", file)
             context = self.context_loader.load(file)

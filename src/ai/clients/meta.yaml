@@ -12,7 +12,7 @@ links:
     title: "Ollama"
     description: "The easiest way to build with open models"
   - url: "https://llama.app/"
-    title: "LLama.c++"
+    title: "LLama.cpp"
     description: "AI that lives on your computer. Open-source, private, always local."
   - url: "https://vllm.ai/"
     title: "vLLM"

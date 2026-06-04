@@ -1,0 +1,13 @@
+- title: "Home"
+  url: ""
+- title: "AI"
+  url: "ai"
+  children:
+    - title: Engines
+      url: "clients"
+    - title: Prompts
+      url: "prompts"
+    - title: "Web AI"
+      url: "web"
+- title: "Blog"
+  url: "blog"
