@@ -1,4 +1,4 @@
-from bin.primitives.navbar.data import NavbarItem
+from primitives.navbar.data import NavbarItem
 
 
 def test_navbar_item_root():

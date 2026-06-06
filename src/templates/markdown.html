@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>%title%</title>
+    <link rel="stylesheet" href="%root%/assets/markdown.css" />
+    <link rel="stylesheet" href="%root%/assets/navbar.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/nord.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  </head>
+  <body>
+    %navbar%
+    <div class="card">
+      <div class="title" id="titlePlaceholder">%title%</div>
+      <div class="text-container">
+        <div class="copyable-text">%content%</div>
+      </div>
+    </div>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
