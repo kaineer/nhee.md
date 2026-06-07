@@ -54,19 +54,3 @@ body {
 .copyable-text a {
   color: #81a1c1;
 }
-
-.copy-feedback {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: #a3be8c;
-  text-align: right;
-  font-weight: 500;
-  opacity: 0;
-  transition: opacity 0.2s;
-  letter-spacing: 0.3px;
-}
-
-.copy-feedback.show {
-  opacity: 1;
-}
-
