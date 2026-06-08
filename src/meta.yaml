@@ -2,9 +2,9 @@ page:
   type: "list"
   title: "nhee"
 links:
-  - title: "Yume.zoom"
-    url: "https://us02web.zoom.us/j/85667645171?pwd=9V9lALZmoG0z0qIeQmK48XQRcl9hWe.1"
-    description: "Тут раньше проходили занятия"
+  - title: "Yume.ktalk"
+    url: "https://yumecenter.ktalk.ru/jck4jp0hoh3l"
+    description: "Занятия проходят теперь здесь"
   - title: "OTUS DevOps"
     url: "https://otus.ru/learning/173394/"
     description: "DevOps@OTUS"
