@@ -22,6 +22,8 @@ def upper_navbar_link(ni, ctx):
     url = ni.url
     title = ni.title or ni.upper or hamburger
     current = subdir(ctx.subdir, 1) == ni.url
+    if not ctx.web:
+        url += "index.html"
     return navbar_item(url, title, current)
 
 
@@ -29,6 +31,8 @@ def lower_navbar_link(ni, ctx):
     url = ni.url
     title = ni.title or ni.lower
     current = subdir(ctx.subdir, 2) == ni.url
+    if not ctx.web:
+        url += "index.html"
     return navbar_item(url, title, current)
 
 

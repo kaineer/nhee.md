@@ -2,11 +2,15 @@
 from primitives.context.data import ContextLoader
 
 mock_files = {}
-
+mock_content = {}
 
 def mock_reader(path):
     if path in mock_files:
         return mock_files[path]
+
+def mock_content_reader(path):
+    if path in mock_content:
+        return mock_content[path]
 
 
 mock_files["/a/b/c/meta.yaml"] = {
@@ -14,7 +18,9 @@ mock_files["/a/b/c/meta.yaml"] = {
     "links": [1, 2, 3],
 }
 
-context_loader = ContextLoader(root="/a", reader=mock_reader)
+mock_content["/a/b/c/meta.md"] = "# Header\ncontent"
+
+context_loader = ContextLoader(root="/a", reader=mock_reader, fs_reader=mock_content_reader)
 
 
 def test_load_context():
@@ -24,3 +30,4 @@ def test_load_context():
     assert ctx.type == "test"
     assert ctx.subdir == "b/c"
     assert ctx.data["links"] == [1, 2, 3]
+    assert ctx.body_content == "# Header\ncontent"

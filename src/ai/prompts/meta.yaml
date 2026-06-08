@@ -1,9 +1,6 @@
 page:
   type: list
   title: "Prompts"
-assets:
-  root: "../.."
-  subdir: "ai"
 links:
   - url: "./caveman/"
     title: "Caveman header"

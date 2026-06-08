@@ -1,0 +1,293 @@
+/* Основные стили для контейнера с markdown-контентом */
+.markdown-body {
+  /* Цветовая схема Nord */
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--nord0);
+  color: var(--nord4);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica",
+    "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* override */
+.text-container {
+  padding: 0.5em;
+}
+
+/* ========== ЗАГОЛОВКИ ========== */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--nord6);
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  border-bottom: 1px solid var(--nord3);
+  padding-bottom: 0.3em;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid var(--nord3);
+  padding-bottom: 0.3em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+/* ========== ССЫЛКИ ========== */
+.markdown-body a {
+  color: var(--nord8);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.markdown-body a:hover {
+  color: var(--nord7);
+  border-bottom-color: var(--nord7);
+  text-decoration: none;
+}
+
+/* ========== СПИСКИ ========== */
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.markdown-body li {
+  margin-bottom: 0.25em;
+}
+
+.markdown-body li + li {
+  margin-top: 0.25em;
+}
+
+/* Вложенные списки */
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ul,
+.markdown-body ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Чеклисты (task lists) из GFM */
+.markdown-body input[type="checkbox"] {
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item-checkbox {
+  margin-right: 0.5em;
+}
+
+/* ========== БЛОКИ КОДА ========== */
+/* Инлайн-код */
+.markdown-body code:not(pre code) {
+  background: var(--nord1);
+  color: var(--nord14);
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  border-radius: 4px;
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace;
+}
+
+/* Блочный код (рендерится через highlight.js) */
+.markdown-body pre {
+  background: var(--nord1);
+  border-radius: 4px;
+  padding: 0;
+  margin: 0;
+  overflow-x: auto;
+  border: 1px solid var(--nord2);
+}
+
+.markdown-body pre code {
+  background: none;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--nord4);
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace;
+}
+
+/* Дополнительные улучшения для highlight.js */
+.markdown-body .hljs {
+  background: transparent;
+}
+
+pre code.hljs {
+  padding: 0.5em;
+}
+
+/* ========== ТАБЛИЦЫ ========== */
+.markdown-body table {
+  width: 100%;
+  margin: 1em 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  overflow-x: auto;
+}
+
+.markdown-body thead {
+  background: var(--nord1);
+}
+
+.markdown-body th,
+.markdown-body td {
+  padding: 0.5em 1em;
+  border: 1px solid var(--nord2);
+  text-align: left;
+}
+
+.markdown-body th {
+  font-weight: 600;
+  color: var(--nord6);
+  background: var(--nord2);
+}
+
+.markdown-body tr:nth-child(even) {
+  background: var(--nord1);
+}
+
+.markdown-body tr:hover {
+  background: var(--nord2);
+}
+
+/* ========== ЦИТАТЫ ========== */
+.markdown-body blockquote {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid var(--nord8);
+  background: var(--nord1);
+  color: var(--nord4);
+}
+
+.markdown-body blockquote p {
+  margin: 0.5em 0;
+}
+
+/* ========== ГОРИЗОНТАЛЬНАЯ ЛИНИЯ ========== */
+.markdown-body hr {
+  height: 2px;
+  background: var(--nord3);
+  border: none;
+  margin: 2em 0;
+}
+
+/* ========= ИЗОБРАЖЕНИЯ ========== */
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* ========== ПАРАГРАФЫ ========== */
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/* ========== ЖИРНЫЙ / КУРСИВ ========== */
+.markdown-body strong {
+  color: var(--nord6);
+  font-weight: 600;
+}
+
+.markdown-body em {
+  color: var(--nord13);
+}
+
+/* ========== АЛЕРТЫ (GFM alerts / заметки) ========== */
+.markdown-body .markdown-alert {
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  border-left-width: 0.25em;
+  border-left-style: solid;
+  border-radius: 4px;
+}
+
+.markdown-body .markdown-alert-note {
+  border-left-color: var(--nord8);
+  background: rgba(136, 192, 208, 0.1);
+}
+
+.markdown-body .markdown-alert-tip {
+  border-left-color: var(--nord14);
+  background: rgba(163, 190, 140, 0.1);
+}
+
+.markdown-body .markdown-alert-important {
+  border-left-color: var(--nord9);
+  background: rgba(129, 161, 193, 0.1);
+}
+
+.markdown-body .markdown-alert-warning {
+  border-left-color: var(--nord12);
+  background: rgba(208, 135, 112, 0.1);
+}
+
+.markdown-body .markdown-alert-caution {
+  border-left-color: var(--nord11);
+  background: rgba(191, 97, 106, 0.1);
+}
+
+/* ========== АДАПТИВНОСТЬ (мобильные устройства) ========== */
+@media (max-width: 768px) {
+  .markdown-body {
+    padding: 1rem;
+    font-size: 14px;
+  }
+
+  .markdown-body pre {
+    font-size: 12px;
+  }
+
+  .markdown-body th,
+  .markdown-body td {
+    padding: 0.3em 0.6em;
+  }
+}
