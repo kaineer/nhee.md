@@ -11,5 +11,8 @@
       url: "web"
 - title: "Dev"
   url: "dev"
+  children:
+    - title: "Repositories"
+      url: "repo"
 - title: "Blog"
   url: "blog"
