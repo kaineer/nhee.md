@@ -11,5 +11,7 @@ list_files() {
 }
 
 for FILE in $(list_files); do
+  BASE=$(dirname $FILE)
+  ssh jino "mkdir -p ~/hosts/html/$BASE"
   scp "$FILE" "jino:~/hosts/html/$FILE"
 done

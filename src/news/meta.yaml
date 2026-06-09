@@ -1,7 +1,0 @@
-page:
-  type: list
-  title: "New techs"
-links:
-  - url: "https://fate.technology"
-    title: "8Fate"
-    description: "Modern data client for React"

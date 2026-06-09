@@ -1,0 +1,19 @@
+page:
+  type: list
+  title: "Usual techs"
+links:
+  - url: https://github.com/Schniz/fnm
+    title: Fast node manager
+    description: Fast and simple Node.js version manager, built in Rust
+  - url: https://zed.dev/
+    title: Zed
+    description: "Your last next editor"
+  - url: https://neovim.io/
+    title: NVim
+    description: "hyperextensible Vim-based text editor"
+  - url: https://getnora.dev/
+    title: "NORA"
+    description: "The artifact registry that grows with you"
+  - url: https://rustup.rs/
+    title: Rustup
+    description: "An installer for the systems programming language Rust"

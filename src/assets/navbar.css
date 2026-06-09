@@ -90,8 +90,7 @@
 }
 
 /* Active state for second level */
-.nav-secondary li a.active-secondary {
+.nav-secondary li a.active {
   color: #88c0d0;
-  background-color: #4c566a;
-  border-radius: 4px;
+  border-bottom: 2px solid #88c0d0;
 }
