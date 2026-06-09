@@ -9,5 +9,7 @@
       url: "prompts"
     - title: "Web AI"
       url: "web"
+- title: "New tech"
+  url: "news"
 - title: "Blog"
   url: "blog"
