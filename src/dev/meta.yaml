@@ -5,6 +5,9 @@ links:
   - url: https://github.com/Schniz/fnm
     title: Fast node manager
     description: Fast and simple Node.js version manager, built in Rust
+  - url: https://react-icons.github.io/react-icons/
+    title: React icons
+    description: Include popular icons in your React projects easily with react-icons
   - url: https://zed.dev/
     title: Zed
     description: "Your last next editor"
