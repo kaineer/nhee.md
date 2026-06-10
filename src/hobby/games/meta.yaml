@@ -1,0 +1,7 @@
+page:
+  title: Games
+  type: list
+links:
+  - title: POE2 planner
+    url: https://poeplanner.com/poe2
+    description: "Passive tree editor and more"

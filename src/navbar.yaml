@@ -14,5 +14,12 @@
   children:
     - title: "Repositories"
       url: "repo"
+- title: "Hobbies"
+  url: "hobby"
+  children:
+    - title: Manga
+      url: manga
+    - title: Games
+      url: games
 - title: "Blog"
   url: "blog"
