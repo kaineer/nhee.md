@@ -1,9 +1,6 @@
 page:
   type: list
   title: "Engines"
-assets:
-  root: "../.."
-  subdir: "ai"
 links:
   - url: "https://serverflow.ru/blog/stati/ollama-lm-studio-llama-cpp-vllm-i-triton-obzor-dvizhkov-inferensa-llm/"
     title: "Обзор"
