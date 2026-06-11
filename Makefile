@@ -11,5 +11,5 @@ clean:
 
 gh:
 	git add .
-	git commit -m "State at $(date +%Y.%m.%d -- %H:%M)"
+	git commit -m "Dump current state"
 	git push origin master
