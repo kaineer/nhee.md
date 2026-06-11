@@ -1,5 +1,5 @@
 page:
-  title: Last N updated repositories
+  title: Last 4 updated repositories
   type: list
 links:
   - url: https://github.com/kaineer/dotfiles

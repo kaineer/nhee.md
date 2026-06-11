@@ -28,14 +28,3 @@ def test_navbar_item_with_parent():
     assert ni.url == "/ai/clients/"
     assert ni.upper == "ai"
     assert ni.lower == "clients"
-
-
-# def test_navbar_item_with_grandparent():
-#     gi = NavbarItem({"title": "AI", "url": "ai"})
-#     pi = NavbarItem({"title": "Prompts", "url": "prompts"}, gi)
-#     ni = NavbarItem({"title": "Caveman", "url": "caveman"}, pi)
-#
-#     assert ni.title == "Caveman"
-#     assert ni.upper == "ai"
-#     assert ni.lower == "prompts"
-#     assert ni.url == "/ai/prompts/caveman/"
