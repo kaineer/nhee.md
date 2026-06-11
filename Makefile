@@ -1,4 +1,4 @@
-all: build deploy clean
+all: build deploy clean gh
 
 test:
 	watch -c "pytest --color=yes --last-failed --no-header"
