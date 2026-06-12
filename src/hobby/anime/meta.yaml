@@ -1,0 +1,7 @@
+page:
+  title: Anime
+  type: list
+links:
+  - url: https://kage-watch.vercel.app/
+    title: KageWatch
+    description: Anime available on android through vpn
