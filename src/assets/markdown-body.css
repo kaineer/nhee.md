@@ -83,45 +83,45 @@
       text-decoration: none;
     }
   }
-}
 
-/* ========== СПИСКИ ========== */
-.markdown-body ul,
-.markdown-body ol {
-  padding-left: 2em;
-  margin-top: 0;
-  margin-bottom: 1em;
-}
+  /* ========== СПИСКИ ========== */
+  ul,
+  ol {
+    padding-left: 2em;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
 
-.markdown-body li {
-  margin-bottom: 0.25em;
-}
+  li {
+    margin-bottom: 0.25em;
+  }
 
-.markdown-body li + li {
-  margin-top: 0.25em;
-}
+  li + li {
+    margin-top: 0.25em;
+  }
 
-/* Вложенные списки */
-.markdown-body ul ul,
-.markdown-body ul ol,
-.markdown-body ol ul,
-.markdown-body ol ol {
-  margin-top: 0;
-  margin-bottom: 0;
-}
+  /* Вложенные списки */
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
-/* Чеклисты (task lists) из GFM */
-.markdown-body input[type="checkbox"] {
-  margin-right: 0.5em;
-  vertical-align: middle;
-}
+  /* Чеклисты (task lists) из GFM */
+  input[type="checkbox"] {
+    margin-right: 0.5em;
+    vertical-align: middle;
+  }
 
-.markdown-body .task-list-item {
-  list-style-type: none;
-}
+  .task-list-item {
+    list-style-type: none;
+  }
 
-.markdown-body .task-list-item-checkbox {
-  margin-right: 0.5em;
+  .task-list-item-checkbox {
+    margin-right: 0.5em;
+  }
 }
 
 /* ========== БЛОКИ КОДА ========== */
