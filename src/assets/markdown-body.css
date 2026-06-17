@@ -36,90 +36,92 @@
 }
 
 /* ========== ЗАГОЛОВКИ ========== */
-.markdown-body h1,
-.markdown-body h2,
-.markdown-body h3,
-.markdown-body h4,
-.markdown-body h5,
-.markdown-body h6 {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  font-weight: 600;
-  line-height: 1.25;
-  color: var(--nord6);
-}
+.markdown-body {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--nord6);
+  }
 
-.markdown-body h1 {
-  font-size: 2em;
-  border-bottom: 1px solid var(--nord3);
-  padding-bottom: 0.3em;
-}
+  h1 {
+    font-size: 2em;
+    border-bottom: 1px solid var(--nord3);
+    padding-bottom: 0.3em;
+  }
 
-.markdown-body h2 {
-  font-size: 1.5em;
-  border-bottom: 1px solid var(--nord3);
-  padding-bottom: 0.3em;
-}
+  h2 {
+    font-size: 1.5em;
+    border-bottom: 1px solid var(--nord3);
+    padding-bottom: 0.3em;
+  }
 
-.markdown-body h3 {
-  font-size: 1.25em;
-}
+  h3 {
+    font-size: 1.25em;
+  }
 
-.markdown-body h4 {
-  font-size: 1em;
-}
+  h4 {
+    font-size: 1em;
+  }
 
-/* ========== ССЫЛКИ ========== */
-.markdown-body a {
-  color: var(--nord8);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: all 0.2s ease;
-}
+  /* ========== ССЫЛКИ ========== */
+  a {
+    color: var(--nord8);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
 
-.markdown-body a:hover {
-  color: var(--nord7);
-  border-bottom-color: var(--nord7);
-  text-decoration: none;
-}
+    &:hover {
+      color: var(--nord7);
+      border-bottom-color: var(--nord7);
+      text-decoration: none;
+    }
+  }
 
-/* ========== СПИСКИ ========== */
-.markdown-body ul,
-.markdown-body ol {
-  padding-left: 2em;
-  margin-top: 0;
-  margin-bottom: 1em;
-}
+  /* ========== СПИСКИ ========== */
+  ul,
+  ol {
+    padding-left: 2em;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
 
-.markdown-body li {
-  margin-bottom: 0.25em;
-}
+  li {
+    margin-bottom: 0.25em;
+  }
 
-.markdown-body li + li {
-  margin-top: 0.25em;
-}
+  li + li {
+    margin-top: 0.25em;
+  }
 
-/* Вложенные списки */
-.markdown-body ul ul,
-.markdown-body ul ol,
-.markdown-body ol ul,
-.markdown-body ol ol {
-  margin-top: 0;
-  margin-bottom: 0;
-}
+  /* Вложенные списки */
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
-/* Чеклисты (task lists) из GFM */
-.markdown-body input[type="checkbox"] {
-  margin-right: 0.5em;
-  vertical-align: middle;
-}
+  /* Чеклисты (task lists) из GFM */
+  input[type="checkbox"] {
+    margin-right: 0.5em;
+    vertical-align: middle;
+  }
 
-.markdown-body .task-list-item {
-  list-style-type: none;
-}
+  .task-list-item {
+    list-style-type: none;
+  }
 
-.markdown-body .task-list-item-checkbox {
-  margin-right: 0.5em;
+  .task-list-item-checkbox {
+    margin-right: 0.5em;
+  }
 }
 
 /* ========== БЛОКИ КОДА ========== */
@@ -156,10 +158,6 @@
 /* Дополнительные улучшения для highlight.js */
 .markdown-body .hljs {
   background: transparent;
-}
-
-pre code.hljs {
-  padding: 0.5em;
 }
 
 /* ========== ТАБЛИЦЫ ========== */

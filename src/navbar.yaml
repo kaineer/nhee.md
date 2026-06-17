@@ -19,6 +19,8 @@
   children:
     - title: Manga
       url: manga
+    - title: Anime
+      url: anime
     - title: Games
       url: games
     - title: 日本語
