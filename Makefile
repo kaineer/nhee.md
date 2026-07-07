@@ -5,7 +5,7 @@ test:
 build:
 	build.py
 deploy:
-	deploy
+	rsync-deploy
 clean:
 	clean
 

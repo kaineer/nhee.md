@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+BIN0=$(readlink -f $0)
+DIR0=$(dirname $BIN0)
+ROOT_DIR="$(dirname $DIR0)/src"
+
+cd $ROOT_DIR
+
+rsync -avP \
+  --exclude='templates' \
+  --include='*/' \
+  --include='*.html' \
+  --include='*.css' \
+  --include='*.js' \
+  --exclude='*' \
+  . jino:/home/kaineer/hosts/html
+
