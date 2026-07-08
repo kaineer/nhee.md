@@ -1,0 +1,188 @@
+/* assets/kanji.css */
+
+/* Контейнер для списка иероглифов (именно он будет с закруглениями и фоном) */
+.kanji-container {
+  background-color: #2e3440; /* Темный фон */
+  border-radius: 1.5rem;
+  border: 1px solid #4c566a;
+  overflow: hidden;
+  width: 100%;
+  margin-top: 1.75rem; /* Отступ от заголовка */
+}
+
+/* Каждый отдельный блок иероглифа */
+.kanji-item {
+  background-color: #2e3440;
+  border-bottom: 1px solid #434c5e; /* Разделитель между строками */
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 160px;
+  position: relative;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.kanji-item:last-child {
+  border-bottom: none; /* Убираем линию у последнего элемента */
+}
+
+/* ЛЕВАЯ ЧАСТЬ (Видна всегда) */
+.kanji-front {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  width: 45%; /* Изначальная ширина */
+}
+
+.kanji-char {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #88c0d0;
+  line-height: 1.2;
+  transition: font-size 0.3s ease;
+}
+
+.kanji-reading {
+  font-size: 1.1rem;
+  color: #a3be8c;
+  margin-top: 0.2rem;
+}
+
+.kanji-translation {
+  font-size: 1rem;
+  color: #81a1c1;
+}
+
+/* ПРАВАЯ ЧАСТЬ (Примеры, скрыта по умолчанию на десктопе) */
+.kanji-back {
+  background-color: #3b4252;
+  border-radius: 1rem;
+  padding: 1.2rem 1.5rem;
+  margin-left: 1.5rem;
+  border: 1px solid #4c566a;
+  color: #d8dee9;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  
+  /* Скрываем для десктопа */
+  opacity: 0;
+  transform: translateX(-20px);
+  pointer-events: none;
+  flex-grow: 1;
+}
+
+.kanji-back ul {
+  margin: 0;
+  padding-left: 18px;
+  list-style-type: disc;
+}
+
+.kanji-back li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+/* --- ДЕСКТОПНАЯ ВЕРСИЯ (Hover) --- */
+@media (hover: hover) and (pointer: fine) {
+  .kanji-item:hover {
+    background-color: #3b4252;
+  }
+
+  .kanji-item:hover .kanji-front {
+    width: 25%; /* Уменьшаем левую часть при наведении */
+  }
+
+  .kanji-item:hover .kanji-char {
+    font-size: 3.5rem; /* Уменьшаем иероглиф */
+  }
+
+  .kanji-item:hover .kanji-back {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+}
+
+/* --- МОБИЛЬНАЯ ВЕРСИЯ (Тап) --- */
+@media (hover: none) and (pointer: coarse) {
+  .kanji-container {
+    border-radius: 0; /* На мобилке скругления не нужны */
+    border-left: none;
+    border-right: none;
+    margin-top: 1rem;
+  }
+
+  .kanji-item {
+    height: 100vh; /* Карточка на весь экран */
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: none;
+    cursor: pointer;
+    position: relative;
+    min-height: unset; /* Сбрасываем min-height */
+  }
+
+  /* На мобилке фронт занимает всю ширину */
+  .kanji-front {
+    width: 100%;
+    align-items: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .kanji-char {
+    font-size: 6rem; /* На телефоне иероглиф больше */
+  }
+
+  .kanji-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #2e3440; /* Чтобы перекрыть фон */
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border: none;
+    text-align: left; /* Примеры читать лучше слева */
+  }
+
+  .kanji-back ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  /* Класс .active добавляется через JS при тапе */
+  .kanji-item.active .kanji-front {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+  }
+
+  .kanji-item.active .kanji-back {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+}
+
+.card {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
