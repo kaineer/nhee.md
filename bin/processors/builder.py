@@ -4,6 +4,7 @@ import yaml
 from page.types.cite import Cite
 from page.types.list import List
 from page.types.markdown import Markdown
+from page.types.kanji import Kanji
 
 from primitives.context.data import ContextLoader
 from primitives.navbar.data import NavbarData
@@ -14,7 +15,8 @@ from widgets.navbar import build_navbar
 page_types = {
     "list": List, 
     "cite": Cite, 
-    "markdown": Markdown
+    "markdown": Markdown,
+    "kanji": Kanji
 }
 
 
