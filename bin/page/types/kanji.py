@@ -16,7 +16,7 @@ class Kanji(Params):
 
     def build_item(self, item):
         char = item.get("char", "")
-        reading = item.get("reading", "")
+        reading = item.get("readings", "")
         meaning = item.get("meaning", "")
         examples = item.get("examples", [])
 
