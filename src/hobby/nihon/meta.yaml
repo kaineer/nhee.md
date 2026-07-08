@@ -6,8 +6,8 @@ links:
     title: LearnjapaneseAZ
     description: Some learning materials
   - url: https://jisho.org/
-    title: Vocabulary (for kanji and words)
-    description: ""
+    title: jisho
+    description: Vocabulary (for kanji and words)
   - url: ./kanji/01
     title: Learning kanji
     description: Address
