@@ -6,7 +6,7 @@ ROOT_DIR="$(dirname $DIR0)/src"
 
 cd $ROOT_DIR
 
-rsync -avP \
+rsync -av \
   --exclude='templates' \
   --include='*/' \
   --include='*.html' \
