@@ -11,7 +11,7 @@ class Kanji(Params):
 
         return tag("li", children=[
             combined_example, 
-            tag("span", children=[f"{meaning}"])
+            tag("span", children=[f" ({meaning})"])
         ])
 
     def build_item(self, item):
