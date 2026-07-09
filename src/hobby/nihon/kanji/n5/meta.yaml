@@ -11,3 +11,6 @@ links:
   - url: ./03
     title: "Погода и небо"
     description: ""
+  - url: ./04
+    title: "Направления"
+    description: ""
