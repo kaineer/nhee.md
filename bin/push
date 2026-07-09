@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 git add .
 MESSAGE="Save on $(date +%'Y.%m.%d -- %H:%M:%S')" 
-echo " commit and push > $MESSAGE"
+echo " * Commit and push > $MESSAGE"
 git commit -m "$MESSAGE" &>/dev/null
 git push origin master &>/dev/null
