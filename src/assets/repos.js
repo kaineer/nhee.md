@@ -4,8 +4,10 @@ const attrfn = (name) => (el, value) => {
   if (isVoid(value)) return el[name];
   return (el[name] = value, void 0);
 }
-const html = attrfn("innerHTML");
-const text = attrfn("textContent");
+// const html = attrfn("innerHTML");
+// const text = attrfn("textContent");
+
+const [html, text] = ["innerHTML", "textContent"].map(attrfn);
 
 const onloaded = (fn) => document.addEventListener('DOMContentLoaded', fn);
 
