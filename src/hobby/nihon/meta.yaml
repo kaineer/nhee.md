@@ -8,7 +8,7 @@ links:
   - url: https://jisho.org/
     title: jisho
     description: Vocabulary (for kanji and words)
-  - url: ./kanji/n4/01
-    title: Learning kanji n4
-    description: Address
+  - url: ./kanji/n4
+    title: "漢字 N4"
+    description: "漢字 N4"
 
