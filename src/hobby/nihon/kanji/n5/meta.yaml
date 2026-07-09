@@ -5,4 +5,6 @@ links:
   - url: ./01
     title: "Числа от 1 до 10"
     description: ""
-
+  - url: ./02
+    title: "Природа"
+    description: ""
