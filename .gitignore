@@ -2,5 +2,3 @@ __pycache__/
 tmp/
 .pytest_cache/
 .py/
-src/**/*.html
-!src/template/*.html
