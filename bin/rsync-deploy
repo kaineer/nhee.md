@@ -6,6 +6,8 @@ ROOT_DIR="$(dirname $DIR0)/src"
 
 cd $ROOT_DIR
 
+echo " * Deploy html, css, js files to nhee.ru"
+
 rsync -a \
   --exclude='templates' \
   --include='*/' \
