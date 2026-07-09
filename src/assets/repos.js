@@ -21,7 +21,7 @@ const getRepoUrl = (user, count) => {
     "https://api.github.com/users/",
     user,
     "/repos?sort=pushed&per_page=",
-    String(perPage)
+    String(count)
   ].join(""));
 }
 
