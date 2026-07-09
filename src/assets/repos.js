@@ -1,18 +1,15 @@
 const first = (selector) => document.querySelector(selector);
-const html = (el, value) => {
+const attrfn = (name) => (el, value) => {
   if (typeof value === "undefined") {
-    return el.innerHTML;
+    return el[name];
   }
-  el.innerHTML = value;
+  el[name] = value;
   return void 0;
 }
-const text = (el, value) => {
-  if (typeof value === "undefined") {
-    return el.textContent;
-  }
-  el.textContent = value;
-  return void 0;
-}
+
+const html = attrfn("innerHTML");
+const text = attrfn("textContent");
+
 const onloaded = (fn) => document.addEventListener('DOMContentLoaded', fn);
 
 const getRepoUrl = (user, count) => {
