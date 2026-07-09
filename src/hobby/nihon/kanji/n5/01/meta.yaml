@@ -1,0 +1,84 @@
+page:
+  type: "kanji"
+  title: "Числа от 1 до 10"
+
+kanji:
+ - char: "一"
+   readings: "いち"
+   meaning: "Один"
+   examples:
+     - kanji: "一月"
+       reading: "いちがつ"
+       meaning: "Январь (первый месяц)"
+
+ - char: "二"
+   readings: "に"
+   meaning: "Два"
+   examples:
+     - kanji: "二月"
+       reading: "にがつ"
+       meaning: "Февраль (второй месяц)"
+
+ - char: "三"
+   readings: "さん"
+   meaning: "Три"
+   examples:
+     - kanji: "三日月"
+       reading: "みかづき"
+       meaning: "Серп луны (букв. трехдневная луна)"
+
+ - char: "四"
+   readings: "し, よん"
+   meaning: "Четыре"
+   examples:
+     - kanji: "四角"
+       reading: "しかく"
+       meaning: "Квадрат, четырехугольник"
+
+ - char: "五"
+   readings: "ご"
+   meaning: "Пять"
+   examples:
+     - kanji: "五目"
+       reading: "ごもく"
+       meaning: "Пять видов (ингредиентов)"
+
+ - char: "六"
+   readings: "ろく"
+   meaning: "Шесть"
+   examples:
+     - kanji: "六法"
+       reading: "ろっぽう"
+       meaning: "Шесть кодексов (законов)"
+
+ - char: "七"
+   readings: "しち, なな"
+   meaning: "Семь"
+   examples:
+     - kanji: "七色"
+       reading: "なないろ"
+       meaning: "Семь цветов (радуга)"
+
+ - char: "八"
+   readings: "はち"
+   meaning: "Восемь"
+   examples:
+     - kanji: "八重"
+       reading: "やえ"
+       meaning: "Восемь слоев (или двойной, многократный)"
+
+ - char: "九"
+   readings: "きゅう, く"
+   meaning: "Девять"
+   examples:
+     - kanji: "九十九"
+       reading: "つくも"
+       meaning: "Девяносто девять (старость, долголетие)"
+
+ - char: "十"
+   readings: "じゅう"
+   meaning: "Десять"
+   examples:
+     - kanji: "十字"
+       reading: "じゅうじ"
+       meaning: "Крест (пересечение десяти направлений)"
