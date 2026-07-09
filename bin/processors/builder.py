@@ -28,27 +28,30 @@ class Builder:
         self.context_loader = ContextLoader(root)
         self.navbar_data = NavbarData(str(Path(root) / "navbar.yaml"))
 
+    def build_page(self, file):
+        context = self.context_loader.load(file)
+        navbar = build_navbar(context, self.navbar_data)
+        type = context.type
+        title = context.title
+        template = self.templates.get(type)
+        page_class = page_types[type]
+        parameters = page_class(context).parameters()
+        page = str(
+            template.apply(
+                {
+                    "navbar": navbar,
+                    **parameters,
+                    "root": context.root,
+                    "title": title,
+                }
+            )
+        )
+        return page
+
     def build(self):
         meta_files = find_meta_files(self.root)
         for file in meta_files:
             print(" * Building ", file)
-            context = self.context_loader.load(file)
-            navbar = build_navbar(context, self.navbar_data)
-            type = context.type
-            title = context.title
-            template = self.templates.get(type)
-            page_class = page_types[type]
-            parameters = page_class(context).parameters()
-            page = str(
-                template.apply(
-                    {
-                        "navbar": navbar,
-                        **parameters,
-                        "root": context.root,
-                        "title": title,
-                    }
-                )
-            )
-
+            page = self.build_page(file)
             outfile = Path(file).parent / "index.html"
             outfile.open("w").write(page)
