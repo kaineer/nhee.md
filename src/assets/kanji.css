@@ -5,6 +5,7 @@
   font-family: 'ZenMaru';
   src: url('fonts/zen-maru.ttf') format('truetype');
   font-weight: 700; /* Жирное начертание */
+  font-weight: normal; /* Жирное начертание */
   font-style: normal;
   /* font-display: swap; */
 }
@@ -49,7 +50,8 @@
 
 .kanji-char {
   font-size: 4.5rem;
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-weight: normal;
   color: #88c0d0;
   line-height: 1.2;
   transition: font-size 0.3s ease;
