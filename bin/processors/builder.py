@@ -51,7 +51,12 @@ class Builder:
     def build(self):
         meta_files = find_meta_files(self.root)
         for file in meta_files:
-            print(" * Building ", file)
-            page = self.build_page(file)
-            outfile = Path(file).parent / "index.html"
-            outfile.open("w").write(page)
+            print(f"\r * Building {file[len(self.root) + 1:]}..", end="", flush=True)
+            try:
+                page = self.build_page(file)
+                outfile = Path(file).parent / "index.html"
+                outfile.open("w").write(page)
+                print("ok", end=(" " * 80), flush=True)
+            except:
+                print("fail")
+        print("")
