@@ -8,3 +8,6 @@ links:
   - url: ./02
     title: "Природа"
     description: ""
+  - url: ./03
+    title: "Погода и небо"
+    description: ""
