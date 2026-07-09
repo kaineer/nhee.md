@@ -57,7 +57,7 @@ class Builder:
                 page = self.build_page(file)
                 outfile = Path(file).parent / "index.html"
                 outfile.open("w").write(page)
-                print("ok", end=(" " * 80), flush=True)
+                print("done", end=(" " * 80), flush=True)
             except:
                 print("fail")
         print("")
