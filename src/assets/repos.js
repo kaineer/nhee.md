@@ -40,7 +40,7 @@ onloaded(() => {
     `);
   }
 
-  const fetchRepos = async () => {
+  (async () => {
     const resp = await fetch(getRepoUrl(user, perPage));
     const data = await resp.json();
 
@@ -48,12 +48,10 @@ onloaded(() => {
       first(".prompts-list"), 
       data.map(processRepo).join("")
     );
-  }
+  })();
 
   text(
     first(".page-title"),
     `Last ${perPage} updated public repositories`
   );
-  
-  fetchRepos();
 });
