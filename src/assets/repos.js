@@ -13,8 +13,9 @@ const text = (el, value) => {
   el.textContent = value;
   return void 0;
 }
+const onloaded = (fn) => document.addEventListener('DOMContentLoaded', fn);
 
-document.addEventListener('DOMContentLoaded', () => {
+onloaded(() => {
   const user = "kaineer";
   const perPage = 5;
 
