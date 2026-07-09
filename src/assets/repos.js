@@ -4,11 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const url = "https://api.github.com/users/" + user + "/repos?sort=pushed&per_page=" + perPage;
 
+  const processRepo = (repo) => {
+    const { html_url, name, description } = repo;
+
+    const itemHtml = `
+      <a class="prompt-item" href="${html_url}">
+        <div class="prompt-title">${name}</div>
+        <div class="prompt-description">${description}</div>
+      </a>
+    `;
+
+    return itemHtml;
+  }
+
   const fetchRepos = async () => {
     const resp = await fetch(url);
     const data = await resp.json();
 
-    console.log(data);
+    const html = data.map(processRepo).join("");
+
+    document.querySelector(".prompts-list").innerHTML = (
+      `<ul>${html}</ul>`
+    );
   }
   
   fetchRepos();
