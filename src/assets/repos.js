@@ -1,12 +1,9 @@
 const first = (selector) => document.querySelector(selector);
+const isVoid = (obj) => (typeof obj === "undefined");
 const attrfn = (name) => (el, value) => {
-  if (typeof value === "undefined") {
-    return el[name];
-  }
-  el[name] = value;
-  return void 0;
+  if (isVoid(value)) return el[name];
+  return (el[name] = value, void 0);
 }
-
 const html = attrfn("innerHTML");
 const text = attrfn("textContent");
 
