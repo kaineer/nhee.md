@@ -9,15 +9,9 @@ const text = attrfn("textContent");
 
 const onloaded = (fn) => document.addEventListener('DOMContentLoaded', fn);
 
-const getRepoUrl = (user, count) => {
-  // "https://api.github.com/users/" + user + "/repos?sort=pushed&per_page=" + perPage;
-  return ([
-    "https://api.github.com/users/",
-    user,
-    "/repos?sort=pushed&per_page=",
-    String(count)
-  ].join(""));
-}
+const getRepoUrl = (user, count) => (
+  `https://api.github.com/users/${user}/repos?sort=pushed&per_page=${count}`
+);
 
 onloaded(() => {
   const user = "kaineer";
