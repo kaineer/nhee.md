@@ -17,16 +17,16 @@ onloaded(() => {
   const user = "kaineer";
   const perPage = 4;
 
-  const processRepo = (repo) => {
-    const { html_url: itemUrl, name: title, description } = repo;
-
-    return (`
-      <a class="prompt-item" href="${itemUrl}">
-        <div class="prompt-title">${title}</div>
-        <div class="prompt-description">${description}</div>
-      </a>
-    `);
-  }
+  const processRepo = ({ 
+    html_url: itemUrl,
+    name: title,
+    description,
+  }) => (`
+    <a class="prompt-item" href="${itemUrl}">
+      <div class="prompt-title">${title}</div>
+      <div class="prompt-description">${description}</div>
+    </a>
+  `);
 
   (async () => {
     const resp = await fetch(getRepoUrl(user, perPage));
