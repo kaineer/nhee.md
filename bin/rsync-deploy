@@ -6,7 +6,7 @@ ROOT_DIR="$(dirname $DIR0)/src"
 
 cd $ROOT_DIR
 
-echo " * Deploy html, css, js files to nhee.ru"
+echo " * Deploy html, css, js and ttf files to nhee.ru"
 
 rsync -a \
   --exclude='templates' \
@@ -14,6 +14,7 @@ rsync -a \
   --include='*.html' \
   --include='*.css' \
   --include='*.js' \
+  --include='*.ttf' \
   --exclude='*' \
   . jino:/home/kaineer/hosts/html
 

@@ -1,5 +1,14 @@
 /* assets/kanji.css */
 
+/* --- Подключение локального TTF шрифта --- */
+@font-face {
+  font-family: 'ZenMaru';
+  src: url('fonts/zen-maru.ttf') format('truetype');
+  font-weight: 700; /* Жирное начертание */
+  font-style: normal;
+  font-display: swap; /* Чтобы текст сразу показывался системным шрифтом, пока загружается красивый */
+}
+
 /* Контейнер для списка иероглифов (именно он будет с закруглениями и фоном) */
 .kanji-container {
   background-color: #2e3440; /* Темный фон */
@@ -45,7 +54,7 @@
   line-height: 1.2;
   transition: font-size 0.3s ease;
 
-  font-family: 'Noto Serif JP', serif;
+  font-family: 'ZenMaru', sans-serif;
 }
 
 .kanji-reading {
