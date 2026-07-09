@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const user = "kaineer";
-  const perPage = 4;
+  const perPage = 5;
 
   const url = "https://api.github.com/users/" + user + "/repos?sort=pushed&per_page=" + perPage;
 
@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
       `<ul>${html}</ul>`
     );
   }
+
+  const title = document.querySelector(".page-title");
+  title.textContent = `Last ${perPage} updated repositories`;
   
   fetchRepos();
 });
