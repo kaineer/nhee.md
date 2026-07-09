@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const title = document.querySelector(".page-title");
-  title.textContent = `Last ${perPage} updated repositories`;
+  title.textContent = `Last ${perPage} updated public repositories`;
   
   fetchRepos();
 });
