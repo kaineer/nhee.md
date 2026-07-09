@@ -15,25 +15,33 @@ const text = (el, value) => {
 }
 const onloaded = (fn) => document.addEventListener('DOMContentLoaded', fn);
 
+const getRepoUrl = (user, count) => {
+  // "https://api.github.com/users/" + user + "/repos?sort=pushed&per_page=" + perPage;
+  return ([
+    "https://api.github.com/users/",
+    user,
+    "/repos?sort=pushed&per_page=",
+    String(perPage)
+  ].join(""));
+}
+
 onloaded(() => {
   const user = "kaineer";
   const perPage = 5;
 
-  const url = "https://api.github.com/users/" + user + "/repos?sort=pushed&per_page=" + perPage;
-
   const processRepo = (repo) => {
-    const { html_url, name, description } = repo;
+    const { html_url: itemUrl, name: title, description } = repo;
 
     return (`
-      <a class="prompt-item" href="${html_url}">
-        <div class="prompt-title">${name}</div>
+      <a class="prompt-item" href="${itemUrl}">
+        <div class="prompt-title">${title}</div>
         <div class="prompt-description">${description}</div>
       </a>
     `);
   }
 
   const fetchRepos = async () => {
-    const resp = await fetch(url);
+    const resp = await fetch(getRepoUrl(user, perPage));
     const data = await resp.json();
 
     html(
