@@ -6,7 +6,7 @@
   src: url('fonts/zen-maru.ttf') format('truetype');
   font-weight: 700; /* Жирное начертание */
   font-style: normal;
-  font-display: swap; /* Чтобы текст сразу показывался системным шрифтом, пока загружается красивый */
+  /* font-display: swap; */
 }
 
 /* Контейнер для списка иероглифов (именно он будет с закруглениями и фоном) */
