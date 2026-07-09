@@ -15,7 +15,7 @@ kanji:
        meaning: "Первый, номер один, самый"
      - kanji: "一人"
        reading: "ひとり"
-       meaning: "Один человек (нестандартное чтение)"
+       meaning: "Один человек"
 
  - char: "二"
    readings: "に"
@@ -23,7 +23,7 @@ kanji:
    examples:
      - kanji: "二日"
        reading: "ふつか"
-       meaning: "Второе число месяца (или два дня)"
+       meaning: "Второе число месяца"
      - kanji: "二月"
        reading: "にがつ"
        meaning: "Февраль"
@@ -43,7 +43,7 @@ kanji:
        meaning: "Треугольник"
      - kanji: "三日"
        reading: "みっか"
-       meaning: "Третье число месяца (или три дня)"
+       meaning: "Третье число месяца"
 
  - char: "四"
    readings: "し, よん"
@@ -85,7 +85,7 @@ kanji:
        meaning: "Шестиугольник"
      - kanji: "六日"
        reading: "むいか"
-       meaning: "Шестое число месяца (или шесть дней)"
+       meaning: "Шестое число месяца"
 
  - char: "七"
    readings: "しち, なな"
@@ -99,7 +99,7 @@ kanji:
        meaning: "Семь дней недели"
      - kanji: "七日"
        reading: "なのか"
-       meaning: "Седьмое число месяца (или семь дней)"
+       meaning: "Седьмое число месяца"
 
  - char: "八"
    readings: "はち"
@@ -113,7 +113,7 @@ kanji:
        meaning: "Восьмиугольник (а также бадьян — звездчатый анис)"
      - kanji: "八日"
        reading: "ようか"
-       meaning: "Восьмое число месяца (или восемь дней)"
+       meaning: "Восьмое число месяца"
 
  - char: "九"
    readings: "きゅう, く"
@@ -127,7 +127,7 @@ kanji:
        meaning: "Девятиугольник"
      - kanji: "九日"
        reading: "ここのか"
-       meaning: "Девятое число месяца (или девять дней)"
+       meaning: "Девятое число месяца"
 
  - char: "十"
    readings: "じゅう"
@@ -141,4 +141,7 @@ kanji:
        meaning: "Десять человек"
      - kanji: "十日"
        reading: "とおか"
-       meaning: "Десятое число месяца (или десять дней)"
+       meaning: "Десятое число месяца"
+     - kanji: "十分"
+       reading: "じゅうぶん"
+       meaning: "Достаточно"
