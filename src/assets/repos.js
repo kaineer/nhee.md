@@ -21,7 +21,7 @@ const getRepoUrl = (user, count) => {
 
 onloaded(() => {
   const user = "kaineer";
-  const perPage = 5;
+  const perPage = 4;
 
   const processRepo = (repo) => {
     const { html_url: itemUrl, name: title, description } = repo;
