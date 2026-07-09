@@ -51,7 +51,8 @@ class Builder:
     def build(self):
         meta_files = find_meta_files(self.root)
         for file in meta_files:
-            print(f"\r * Building {file[len(self.root) + 1:]}..", end="", flush=True)
+            basename = file[len(self.root) + 1:]
+            print(f"\r * Building {basename}..", end="", flush=True)
             try:
                 page = self.build_page(file)
                 outfile = Path(file).parent / "index.html"

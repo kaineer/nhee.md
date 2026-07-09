@@ -13,6 +13,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+
+  padding-top: 90px;
 }
 
 .card {
