@@ -1,7 +1,6 @@
 from kit.tag import tag
 from page.types.params import Params
 
-
 class List(Params):
     def item(self, url, title, description=""):
         return tag(
