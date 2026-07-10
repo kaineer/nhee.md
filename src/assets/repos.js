@@ -17,6 +17,19 @@ onloaded(() => {
   const user = "kaineer";
   const perPage = 4;
 
+  const fetchRepos = async () => {
+    const key = "nhee.repos";
+    const reposItem = sessionStorage.getItem(key);
+    if (reposItem === null) {
+      const resp = await fetch(getRepoUrl("kaineer", 4));
+      const data = await resp.json(); 
+      sessionStorage.setItem(key, JSON.stringify(data));
+      return data;
+    } else {
+      return JSON.parse(reposItem);
+    }
+  }
+
   const processRepo = ({ 
     html_url: itemUrl,
     name: title,
@@ -29,8 +42,7 @@ onloaded(() => {
   `);
 
   (async () => {
-    const resp = await fetch(getRepoUrl(user, perPage));
-    const data = await resp.json();
+    const data = await fetchRepos();
 
     html(
       first(".prompts-list"), 
