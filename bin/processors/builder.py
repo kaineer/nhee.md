@@ -59,6 +59,7 @@ class Builder:
                 outfile = Path(file).parent / "index.html"
                 outfile.open("w").write(page)
                 print("done", end=(" " * 80), flush=True)
-            except:
+            except Exception as e:
                 print("fail")
+                print(e)
         print("")
