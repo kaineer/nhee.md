@@ -12,6 +12,11 @@
   flex-direction: column;
 }
 
+/* Move header outside of navbar */
+body {
+  padding-top: 120px;
+}
+
 /* FIRST LEVEL - original size */
 .nav-primary {
   list-style: none;

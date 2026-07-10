@@ -5,6 +5,7 @@ from page.types.cite import Cite
 from page.types.list import List
 from page.types.markdown import Markdown
 from page.types.kanji import Kanji
+from page.types.dummy import Dummy
 
 from primitives.context.data import ContextLoader
 from primitives.navbar.data import NavbarData
@@ -16,9 +17,9 @@ page_types = {
     "list": List, 
     "cite": Cite, 
     "markdown": Markdown,
-    "kanji": Kanji
+    "kanji": Kanji,
+    "repos": Dummy
 }
-
 
 class Builder:
     def __init__(self, root):
@@ -28,27 +29,36 @@ class Builder:
         self.context_loader = ContextLoader(root)
         self.navbar_data = NavbarData(str(Path(root) / "navbar.yaml"))
 
+    def build_page(self, file):
+        context = self.context_loader.load(file)
+        navbar = build_navbar(context, self.navbar_data)
+        type = context.type
+        title = context.title
+        template = self.templates.get(type)
+        page_class = page_types[type]
+        parameters = page_class(context).parameters()
+        page = str(
+            template.apply(
+                {
+                    "navbar": navbar,
+                    **parameters,
+                    "root": context.root,
+                    "title": title,
+                }
+            )
+        )
+        return page
+
     def build(self):
         meta_files = find_meta_files(self.root)
         for file in meta_files:
-            print(" * Building ", file)
-            context = self.context_loader.load(file)
-            navbar = build_navbar(context, self.navbar_data)
-            type = context.type
-            title = context.title
-            template = self.templates.get(type)
-            page_class = page_types[type]
-            parameters = page_class(context).parameters()
-            page = str(
-                template.apply(
-                    {
-                        "navbar": navbar,
-                        **parameters,
-                        "root": context.root,
-                        "title": title,
-                    }
-                )
-            )
-
-            outfile = Path(file).parent / "index.html"
-            outfile.open("w").write(page)
+            basename = file[len(self.root) + 1:]
+            print(f"\r * Building {basename}..", end="", flush=True)
+            try:
+                page = self.build_page(file)
+                outfile = Path(file).parent / "index.html"
+                outfile.open("w").write(page)
+                print("done", end=(" " * 80), flush=True)
+            except:
+                print("fail")
+        print("")

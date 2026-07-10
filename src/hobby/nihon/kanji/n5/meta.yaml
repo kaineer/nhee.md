@@ -1,0 +1,36 @@
+page:
+  title: 漢字 N5
+  type: list
+links:
+  - url: ./01
+    title: "Числа от 1 до 10"
+    description: ""
+  - url: ./02
+    title: "Природа и стихии"
+    description: ""
+  - url: ./03
+    title: "Погода и небо"
+    description: ""
+  - url: ./04
+    title: "Направления"
+    description: ""
+  - url: ./05
+    title: "Время"
+    description: ""
+  - url: ./06
+    title: "Люди"
+    description: ""
+  - url: ./07
+    title: "Части тела"
+    description: ""
+  - url: ./08
+    title: "Базовые объекты"
+    description: ""
+  - url: ./09
+    title: "Глаголы"
+    description: ""
+  - url: ./10
+    title: "Прилагательные и цвета"
+    description: ""
+
+

@@ -11,7 +11,11 @@ links:
   - url: https://jisho.org/
     title: jisho
     description: Vocabulary (for kanji and words)
-  - url: ./kanji/01
-    title: Learning kanji
-    description: Address
+  - url: ./kanji/n5
+    title: "漢字 N5"
+    description: "漢字 N5"
+  - url: ./kanji/n4
+    title: "漢字 N4"
+    description: "漢字 N4"
+
 

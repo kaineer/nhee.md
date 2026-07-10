@@ -1,16 +1,3 @@
 page:
   title: Last 4 updated repositories
-  type: list
-links:
-  - url: https://github.com/kaineer/dotfiles
-    title: "Dotfiles"
-    description: ansible config for each new debian pc
-  - url: https://github.com/kaineer/cli
-    title: "CLI sandbox"
-    description: "Sandbox for scripts before adding them into dotfiles"
-  - url: https://github.com/kaineer/kana-converter
-    title: "[ai] Kana converter"
-    description: "Tool to transform romaji into kana and kanji"
-  - url: https://github.com/kaineer/inchooz.ai
-    title: "[ai] stdin chooser"
-    description: "Script to run another script and choose from its stdout"
+  type: repos

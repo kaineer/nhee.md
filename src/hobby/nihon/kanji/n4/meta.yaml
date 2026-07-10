@@ -1,0 +1,8 @@
+page:
+  title: 漢字 N4
+  type: list
+links:
+  - url: ./01
+    title: Address
+    description: ""
+
