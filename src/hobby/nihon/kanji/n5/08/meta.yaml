@@ -1,6 +1,3 @@
-page:
-  type: "kanji"
-  title: "Базовые предметы"
 
 kanji:
  - char: "本"
@@ -12,7 +9,7 @@ kanji:
        meaning: "Книжный магазин"
      - kanji: "日本"
        reading: "にほん"
-       meaning: "Япония (букв. страна восходящего солнца / корень солнца)"
+       meaning: "Япония"
      - kanji: "本棚"
        reading: "ほんだな"
        meaning: "Книжная полка"
@@ -23,7 +20,7 @@ kanji:
    examples:
      - kanji: "手紙"
        reading: "てがみ"
-       meaning: "Письмо (букв. бумага из руки)"
+       meaning: "Письмо"
      - kanji: "新聞紙"
        reading: "しんぶんし"
        meaning: "Газетная бумага, газета"
@@ -97,9 +94,9 @@ kanji:
      - kanji: "金魚"
        reading: "きんぎょ"
        meaning: "Золотая рыбка"
-     - kanji: "寿司"
-       reading: "すし"
-       meaning: "Суши (часто пишется с этим иероглифом как 鮨)"
+     - kanji: "魚介"
+       reading: "ぎょかい"
+       meaning: "Морепродукты (рыба и ракообразные/моллюски)"
 
  - char: "肉"
    readings: "にく"
@@ -122,6 +119,9 @@ kanji:
      - kanji: "米国"
        reading: "べいこく"
        meaning: "Америка"
+     - kanji: "白米"
+       reading: "はくまい"
+       meaning: "Белый рис"
      - kanji: "米軍"
        reading: "べいぐん"
        meaning: "Американская армия"
