@@ -1,3 +1,6 @@
+page:
+  type: "kanji"
+  title: "Базовые объекты"
 
 kanji:
  - char: "本"

@@ -62,4 +62,6 @@ class Builder:
             except Exception as e:
                 print("fail")
                 print(e)
+                traceback.print_exc()
+                exit(1)
         print("")
