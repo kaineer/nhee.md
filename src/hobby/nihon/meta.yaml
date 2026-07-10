@@ -2,6 +2,9 @@ page:
   title: 日本語
   type: list
 links:
+  - title: "Yume.ktalk"
+    url: "https://yumecenter.ktalk.ru/jck4jp0hoh3l"
+    description: "Занятия проходят теперь здесь"
   - url: https://learnjapaneseaz.com/
     title: LearnjapaneseAZ
     description: Some learning materials

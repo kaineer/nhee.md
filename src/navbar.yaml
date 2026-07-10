@@ -25,5 +25,7 @@
       url: games
     - title: 日本語
       url: nihon
+    - title: Tools
+      url: tools
 - title: "Blog"
   url: "blog"
