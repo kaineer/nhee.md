@@ -8,24 +8,17 @@ def render_template(source, obj):
     template = Template(source)
     return template.render(obj)
 
-def navbar_item(url, title, current=False):
+def navbar_item(url, title, ctx, current=False):
     _classname = ""
     if current:
         _classname = "active"
-    # return tag(
-    #     "li",
-    #     children=[
-    #         tag(
-    #             "a", classname=_classname, attr={"href": "%root%" + url}, children=title
-    #         )
-    #     ],
-    # )
 
     return render_template(
-        "<li><a class='{{ classname }}' href='%root%{{ url }}'>{{ title }}</a></li>", {
+        "<li><a class='{{ classname }}' href='{{ root }}{{ url }}'>{{ title }}</a></li>", {
             "url": url,
             "title": title,
             "classname": _classname,
+            "root": ctx.root,
         }
     )
 
@@ -38,7 +31,7 @@ def upper_navbar_link(ni, ctx):
     current = subdir(ctx.subdir, 1) == ni.url
     if not ctx.web:
         url += "index.html"
-    return navbar_item(url, title, current)
+    return navbar_item(url, title, ctx, current)
 
 
 def lower_navbar_link(ni, ctx):
@@ -47,7 +40,7 @@ def lower_navbar_link(ni, ctx):
     current = subdir(ctx.subdir, 2) == ni.url
     if not ctx.web:
         url += "index.html"
-    return navbar_item(url, title, current)
+    return navbar_item(url, title, ctx, current)
 
 
 def upper_navbar(context, navbar_data):
