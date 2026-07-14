@@ -22,7 +22,7 @@ def navbar_item(url, title, current=False):
     # )
 
     return render_template(
-        "<a class='{{ classname }}' href='%root%{{ url }}'>{{ title }}</a>", {
+        "<li><a class='{{ classname }}' href='%root%{{ url }}'>{{ title }}</a></li>", {
             "url": url,
             "title": title,
             "classname": _classname,
