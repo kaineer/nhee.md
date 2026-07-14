@@ -22,9 +22,6 @@ def navbar_item(url, title, ctx, current=False):
         }
     )
 
-
-
-
 def upper_navbar_link(ni, ctx):
     url = ni.url
     title = ni.title or ni.upper or hamburger
@@ -56,7 +53,13 @@ def lower_navbar(context, navbar_data):
         lower_navbar_link(item, context)
         for item in navbar_data.find_all_lower(context.subdir)
     ]
-    return tag("ul", classname="nav-secondary", children=children)
+    # return tag("ul", classname="nav-secondary", children=children)
+
+    return render_template(
+        "<ul class='nav-secondary'>{{ children }}</ul>", {
+            "children": children
+        }
+    )
 
 
 def build_navbar(context, navbar_data):
