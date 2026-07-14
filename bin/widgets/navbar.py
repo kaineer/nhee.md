@@ -57,7 +57,7 @@ def lower_navbar(context, navbar_data):
 
     return render_template(
         "<ul class='nav-secondary'>{{ children }}</ul>", {
-            "children": children
+            "children": "".join(children)
         }
     )
 
