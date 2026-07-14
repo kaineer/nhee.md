@@ -21,7 +21,7 @@ def navbar_item(url, title, current=False):
     #     ],
     # )
 
-    render_template(
+    return render_template(
         "<a class='{{ classname }}' href='%root%{{ url }}'>{{ title }}</a>", {
             "url": url,
             "title": title,
