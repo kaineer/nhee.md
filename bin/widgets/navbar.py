@@ -1,21 +1,35 @@
 from kit.tag import tag
 from primitives.subdir import subdir
+from jinja2 import Template
 
 hamburger = "Home"
 
+def render_template(source, obj):
+    template = Template(source)
+    return template.render(obj)
 
 def navbar_item(url, title, current=False):
-    _classname = None
+    _classname = ""
     if current:
         _classname = "active"
-    return tag(
-        "li",
-        children=[
-            tag(
-                "a", classname=_classname, attr={"href": "%root%" + url}, children=title
-            )
-        ],
+    # return tag(
+    #     "li",
+    #     children=[
+    #         tag(
+    #             "a", classname=_classname, attr={"href": "%root%" + url}, children=title
+    #         )
+    #     ],
+    # )
+
+    render_template(
+        "<a class='{{ classname }}' href='%root%{{ url }}'>{{ title }}</a>", {
+            "url": url,
+            "title": title,
+            "classname": _classname,
+        }
     )
+
+
 
 
 def upper_navbar_link(ni, ctx):
