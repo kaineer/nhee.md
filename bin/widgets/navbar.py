@@ -53,13 +53,7 @@ def lower_navbar(context, navbar_data):
         lower_navbar_link(item, context)
         for item in navbar_data.find_all_lower(context.subdir)
     ]
-    # return tag("ul", classname="nav-secondary", children=children)
-
-    return render_template(
-        "<ul class='nav-secondary'>{{ children }}</ul>", {
-            "children": "".join(children)
-        }
-    )
+    return tag("ul", classname="nav-secondary", children=children)
 
 
 def build_navbar(context, navbar_data):
