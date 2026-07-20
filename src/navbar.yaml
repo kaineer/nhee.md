@@ -9,6 +9,8 @@
       url: "prompts"
     - title: "Web AI"
       url: "web"
+    - title: "РФ"
+      url: "ru"
 - title: "Dev"
   url: "dev"
   children:
