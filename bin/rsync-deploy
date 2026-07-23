@@ -6,7 +6,7 @@ ROOT_DIR="$(dirname $DIR0)/src"
 
 cd $ROOT_DIR
 
-echo -n " * Deploy html, css, js and ttf files to nhee.ru.."
+echo -n " $(ansi white bold)»$(ansi reset) Deploy html, css, js and ttf files to nhee.ru.."
 
 rsync -a \
   --exclude='templates' \

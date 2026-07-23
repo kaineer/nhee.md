@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 git add .
 MESSAGE="Save on $(date +%'Y.%m.%d -- %H:%M:%S')" 
-echo -n " * Commit and push > $MESSAGE.."
+echo -n " $(ansi white bold)»$(ansi reset) Commit and push > $MESSAGE.."
 git commit -m "$MESSAGE" &>/dev/null
 git push origin master &>/dev/null
-echo "done"
+echo "$(ansi green)done$(ansi reset)"
