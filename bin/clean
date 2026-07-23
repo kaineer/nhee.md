@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-echo " * Remove all src/**/*.html files (except templates)"
+echo -n " $(ansi white bold)»$(ansi reset) Remove all src/**/*.html files (except templates)"
 for f in $(fd -e html --no-ignore . src | grep -v templates); do
   rm $f
 done
+echo "$(ansi green)done$(ansi reset)"

@@ -18,4 +18,4 @@ rsync -a \
   --exclude='*' \
   . jino:/home/kaineer/hosts/html
 
-echo "done"
+echo "$(ansi green)done$(ansi reset)"
