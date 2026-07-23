@@ -8,6 +8,5 @@ deploy:
 	rsync-deploy
 clean:
 	clean
-
 gh:
 	push
