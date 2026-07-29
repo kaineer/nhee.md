@@ -3,10 +3,10 @@ all: build deploy clean gh
 test:
 	watch -c "pytest --color=yes --last-failed --no-header"
 build:
-	build.py
+	@build.py
 deploy:
-	rsync-deploy
+	@rsync-deploy
 clean:
-	clean
+	@clean
 gh:
-	push
+	@push
