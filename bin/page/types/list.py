@@ -6,7 +6,6 @@ from pathlib import Path
 
 class List(Params):
     def build_parameters(self):
-        render = TemplateContainer("jinja").template("page/list")
-        self.set("items", render(
-            self.context.data
-        ))
+        render = self.template("page/list")
+        data = self.context.data
+        self.set("items", render(data))
