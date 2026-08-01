@@ -1,6 +1,30 @@
 from kit.tag import tag
 from page.types.params import Params
 
+from j2.templates import TemplateContainer
+from pathlib import Path
+
+"""
+--- item
+<a href="{{ url }}" class="prompt-item">
+  <div class="prompt-title">{{ title }}</div>
+  <div class="prompt-description">{{ description }}</div>
+</a>
+
+--- links
+<ul>
+  {% for link in links %}
+  <a href="{{ link.url }}" class="prompt-item">
+    <div class="prompt-title">{{ link.title }}</div>
+    <div class="prompt-description">{{ 
+      link.description 
+    }}</div>
+  </a>
+  {% endfor %}
+</ul>
+"""
+
+
 class List(Params):
     def item(self, url, title, description=""):
         return tag(
@@ -20,4 +44,9 @@ class List(Params):
         self.set("items", tag("ul", children=tags))
 
     def build_parameters(self):
-        self.build_list()
+        render = TemplateContainer("jinja").template("page/list")
+        self.set("items", render(
+            self.context.data
+        ))
+
+        # self.build_list()

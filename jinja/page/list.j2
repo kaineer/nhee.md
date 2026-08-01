@@ -1,0 +1,10 @@
+<ul>
+  {% for link in links %}
+  <a href="{{ link.url }}" class="prompt-item">
+    <div class="prompt-title">{{ link.title }}</div>
+    <div class="prompt-description">{{ 
+      link.description 
+    }}</div>
+  </a>
+  {% endfor %}
+</ul>
