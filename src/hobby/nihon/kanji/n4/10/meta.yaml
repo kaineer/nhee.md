@@ -65,6 +65,20 @@ kanji:
         reading: "ほうほう"
         meaning: "Метод, способ"
 
+  - char: "夕"
+    readings: "ゆう"
+    meaning: "Вечер"
+    examples:
+      - kanji: "夕日"
+        reading: "ゆうひ"
+        meaning: "Закат"
+      - kanji: "夕食"
+        reading: "ゆうしょく"
+        meaning: "Ужин"
+      - kanji: "七夕"
+        reading: "たなばた"
+        meaning: "Танабата (Фестиваль звёзд)"
+
   - char: "晩"
     readings: "ばん"
     meaning: "Вечер"
