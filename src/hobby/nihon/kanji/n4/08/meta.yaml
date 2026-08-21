@@ -1,0 +1,114 @@
+page:
+  title: "Урок 08: Времена года"
+  type: "kanji"
+
+kanji:
+  - char: "季"
+    readings: "き"
+    meaning: "Сезон"
+    examples:
+      - kanji: "四季"
+        reading: "しき"
+        meaning: "Четыре сезона"
+
+  - char: "節"
+    readings: "ふし, せつ"
+    meaning: "Сезон, строфа, сустав"
+    examples:
+      - kanji: "季節"
+        reading: "きせつ"
+        meaning: "Сезон, время года"
+      - kanji: "節分"
+        reading: "せつぶん"
+        meaning: "Канун весны (традиционный праздник)"
+
+  - char: "春"
+    readings: "はる, しゅん"
+    meaning: "Весна"
+    examples:
+      - kanji: "春"
+        reading: "はる"
+        meaning: "Весна"
+      - kanji: "青春"
+        reading: "せいしゅん"
+        meaning: "Юность, молодость"
+
+  - char: "夏"
+    readings: "なつ, か"
+    meaning: "Лето"
+    examples:
+      - kanji: "夏"
+        reading: "なつ"
+        meaning: "Лето"
+      - kanji: "夏安"
+        reading: "なつやす"
+        meaning: "Летние каникулы (сокращение)"
+      - kanji: "夏服"
+        reading: "なつふく"
+        meaning: "Летняя одежда"
+
+  - char: "秋"
+    readings: "あき, しゅう"
+    meaning: "Осень"
+    examples:
+      - kanji: "秋"
+        reading: "あき"
+        meaning: "Осень"
+
+  - char: "冬"
+    readings: "ふゆ, とう"
+    meaning: "Зима"
+    examples:
+      - kanji: "冬"
+        reading: "ふゆ"
+        meaning: "Зима"
+      - kanji: "冬休み"
+        reading: "ふゆやすみ"
+        meaning: "Зимние каникулы"
+
+  - char: "暑"
+    readings: "あつ, しょ"
+    meaning: "Жаркий"
+    examples:
+      - kanji: "暑い"
+        reading: "あつい"
+        meaning: "Жарко"
+      - kanji: "残暑"
+        reading: "ざんしょ"
+        meaning: "Остаточная летняя жара"
+
+  - char: "寒"
+    readings: "さむ, かん"
+    meaning: "Холодный"
+    examples:
+      - kanji: "寒い"
+        reading: "さむい"
+        meaning: "Холодно"
+      - kanji: "寒波"
+        reading: "かんぱ"
+        meaning: "Холодная волна, похолодание"
+
+  - char: "暖"
+    readings: "あたた, だん"
+    meaning: "Тёплый"
+    examples:
+      - kanji: "暖かい"
+        reading: "あたたかい"
+        meaning: "Тепло"
+      - kanji: "暖冬"
+        reading: "だんとう"
+        meaning: "Тёплая зима"
+      - kanji: "暖房"
+        reading: "だんぼう"
+        meaning: "Отопление"
+
+  - char: "涼"
+    readings: "すず, りょう"
+    meaning: "Прохладный"
+    examples:
+      - kanji: "涼しい"
+        reading: "すずしい"
+        meaning: "Прохладно"
+      - kanji: "涼風"
+        reading: "りょうふう"
+        meaning: "Прохладный ветерок"
