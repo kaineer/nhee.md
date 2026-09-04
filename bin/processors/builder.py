@@ -10,9 +10,9 @@ from page.types.dummy import Dummy
 from primitives.context.data import ContextLoader
 from primitives.navbar.data import NavbarData
 from primitives.page_enumerate import find_meta_files
-from jinja2 import Template
 from primitives.template.template_container import TemplateContainer
-from widgets.navbar import build_navbar
+from j2.templates import TemplateContainer as J2Templates
+from widgets.navbar import build_navbar, navbar_context
 
 page_types = {
     "list": List, 
@@ -27,31 +27,43 @@ class Builder:
         self.root = root
         templates_root = str(Path(root) / "templates")
         self.templates = TemplateContainer(templates_root)
+        self.j2 = J2Templates("jinja")
         self.context_loader = ContextLoader(root)
         self.navbar_data = NavbarData(str(Path(root) / "navbar.yaml"))
 
-    def _jinja_page_template(self, type):
-        path = Path("jinja") / "pages" / f"{type}.html.j2"
-        if not path.is_file():
-            return None
-        return Template(path.read_text())
+    def _j2_page_template(self, type):
+        name = f"pages/{type}"
+        path = Path("jinja") / f"{name}.j2"
+        if path.is_file():
+            return self.j2.template(name)
+        return None
 
     def build_page(self, file):
         context = self.context_loader.load(file)
-        navbar = build_navbar(context, self.navbar_data)
         type = context.type
         title = context.title
         page_class = page_types[type]
         parameters = page_class(context).parameters()
+
+        j2_render = self._j2_page_template(type)
+        if j2_render is not None:
+            nav_ctx = navbar_context(context, self.navbar_data)
+            mappings = {
+                **nav_ctx,
+                **parameters,
+                "root": context.root,
+                "title": title,
+                "page": {"title": title},
+            }
+            return j2_render(mappings)
+
+        navbar = build_navbar(context, self.navbar_data)
         mappings = {
             "navbar": navbar,
             **parameters,
             "root": context.root,
             "title": title,
         }
-        jinja_template = self._jinja_page_template(type)
-        if jinja_template is not None:
-            return jinja_template.render({**mappings, "page": {"title": title}})
         template = self.templates.get(type)
         page = str(template.apply(mappings))
         return page

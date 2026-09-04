@@ -63,3 +63,30 @@ def build_navbar(context, navbar_data):
     if len(navbar_data.find_all_lower(context.subdir)) > 0:
         navbars.append(lower_navbar(context, navbar_data))
     return tag("div", classname="navbar", children=navbars)
+
+
+def _item_url(ni, ctx):
+    url = ni.url
+    if not ctx.web:
+        url += "index.html"
+    return url
+
+
+def navbar_context(context, navbar_data):
+    upper_items = [
+        {
+            "url": _item_url(navbar_data.find_upper(item), context),
+            "title": navbar_data.find_upper(item).title or navbar_data.find_upper(item).upper or hamburger,
+            "current": subdir(context.subdir, 1) == navbar_data.find_upper(item).url,
+        }
+        for item in navbar_data.upper
+    ]
+    lower_items = [
+        {
+            "url": _item_url(ni, context),
+            "title": ni.title or ni.lower,
+            "current": subdir(context.subdir, 2) == ni.url,
+        }
+        for ni in navbar_data.find_all_lower(context.subdir)
+    ]
+    return {"upper_items": upper_items, "lower_items": lower_items}

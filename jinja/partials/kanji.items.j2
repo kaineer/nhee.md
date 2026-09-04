@@ -1,0 +1,16 @@
+{% for item in kanji %}
+<div class="kanji-item">
+  <div class="kanji-front">
+    <div class="kanji-char">{{ item.char }}</div>
+    <div class="kanji-reading">{{ item.readings }}</div>
+    <div class="kanji-translation">{{ item.meaning }}</div>
+  </div>
+  <div class="kanji-back">
+    <ul>
+      {% for example in item.examples %}
+      <li>{{ example.kanji }} = {{ example.reading }}<span> ({{ example.meaning }})</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endfor %}

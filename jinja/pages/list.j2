@@ -6,15 +6,15 @@
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ root }}/assets/style.css" />
     <link rel="stylesheet" href="{{ root }}/assets/navbar.css" />
+    <link rel="stylesheet" href="{{ root }}/assets/prompts.css" />
   </head>
   <body>
-    {{ navbar }}
-    <div class="card">
-      <div class="text-container">
-        <div class="copyable-text" id="textPlaceholder">{{ content }}</div>
-        <div class="copy-feedback" id="copyFeedback">✓ Copied to clipboard</div>
+    {% include "partials/navbar.j2" %}
+    <div class="container">
+      <h1 class="page-title">{{ page.title }}</h1>
+      <div class="prompts-list">
+        {% include "partials/list.items.j2" %}
       </div>
     </div>
-    <script src="{{ root }}/assets/cite.js"></script>
   </body>
 </html>

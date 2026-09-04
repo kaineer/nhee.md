@@ -1,0 +1,14 @@
+<div class="navbar">
+  <ul class="nav-primary">
+    {% for item in upper_items %}
+    <li><a class="{{ 'active' if item.current else '' }}" href="{{ root }}{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% if lower_items %}
+  <ul class="nav-secondary">
+    {% for item in lower_items %}
+    <li><a class="{{ 'active' if item.current else '' }}" href="{{ root }}{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>

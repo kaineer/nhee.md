@@ -1,0 +1,152 @@
+#!/usr/bin/env python3
+
+import os
+import yaml
+from pathlib import Path
+from typing import List, Dict, Any
+
+class KanjiValidator:
+    def __init__(self):
+        self.errors = []
+        self.processed_files = 0
+    
+    def find_meta_files(self, root_dir: str) -> List[str]:
+        """Находит все meta.yaml файлы в директории"""
+        meta_files = []
+        for root, dirs, files in os.walk(root_dir):
+            if 'meta.yaml' in files:
+                meta_files.append(os.path.join(root, 'meta.yaml'))
+        return meta_files
+    
+    def validate_kanji_file(self, file_path: str) -> List[Dict[str, Any]]:
+        """Валидирует один файл meta.yaml"""
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = yaml.safe_load(f)
+            
+            # Проверки
+            if not data:
+                return []
+            
+            if 'page' not in data:
+                return []
+            
+            if data['page'].get('type') != 'kanji':
+                return []
+            
+            if 'kanji' not in data:
+                return []
+            
+            errors = []
+            
+            for idx, kanji_item in enumerate(data['kanji']):
+                char = kanji_item.get('char', '')
+                
+                # Проверяем, что char это один символ
+                if len(char) != 1:
+                    print(f"  Предупреждение: char '{char}' не является одним символом (пропускаем)")
+                    continue
+                
+                examples = kanji_item.get('examples', [])
+                if not examples:
+                    errors.append({
+                        'file': file_path,
+                        'char': char,
+                        'example': 'НЕТ ПРИМЕРОВ',
+                        'kanji_index': idx
+                    })
+                    continue
+                
+                # Проверяем каждый пример
+                for ex_idx, example in enumerate(examples):
+                    example_kanji = example.get('kanji', '')
+                    if char not in example_kanji:
+                        errors.append({
+                            'file': file_path,
+                            'char': char,
+                            'example': example_kanji,
+                            'kanji_index': idx,
+                            'example_index': ex_idx
+                        })
+            
+            return errors
+            
+        except yaml.YAMLError as e:
+            print(f"Ошибка парсинга YAML в {file_path}: {e}")
+            return []
+        except Exception as e:
+            print(f"Ошибка обработки {file_path}: {e}")
+            return []
+    
+    def validate_directory(self, root_dir: str):
+        """Валидирует все файлы в директории"""
+        print(f"Поиск файлов meta.yaml в: {root_dir}")
+        meta_files = self.find_meta_files(root_dir)
+        
+        print(f"Найдено файлов: {len(meta_files)}")
+        print("-" * 60)
+        
+        for file_path in meta_files:
+            self.processed_files += 1
+            print(f"[{self.processed_files}/{len(meta_files)}] Обработка: {file_path}")
+            
+            errors = self.validate_kanji_file(file_path)
+            if errors:
+                self.errors.extend(errors)
+                print(f"  Найдено ошибок: {len(errors)}")
+            else:
+                print("  ✓ OK")
+        
+        self.print_summary()
+    
+    def print_summary(self):
+        """Выводит сводку результатов"""
+        print("\n" + "="*70)
+        print("РЕЗУЛЬТАТЫ ПРОВЕРКИ")
+        print("="*70)
+        
+        if self.errors:
+            print(f"Найдено ошибок: {len(self.errors)}")
+            print("-" * 70)
+            
+            # Группируем ошибки по файлам
+            errors_by_file = {}
+            for error in self.errors:
+                file_key = error['file']
+                if file_key not in errors_by_file:
+                    errors_by_file[file_key] = []
+                errors_by_file[file_key].append(error)
+            
+            for file_path, file_errors in errors_by_file.items():
+                print(f"\n📁 {file_path}")
+                for error in file_errors:
+                    print(f"  ❌ Кандзи '{error['char']}' не найден в примере: '{error['example']}'")
+        else:
+            print("✅ Все проверки пройдены успешно! Ошибок не найдено.")
+        
+        print(f"\n📊 Всего обработано файлов: {self.processed_files}")
+
+def main():
+    # Проверка наличия PyYAML
+    try:
+        import yaml
+    except ImportError:
+        print("❌ Необходимо установить PyYAML:")
+        print("   pip install pyyaml")
+        return
+    
+    # Получаем директорию
+    root_dir = input("Введите путь к директории (Enter для текущей): ").strip()
+    if not root_dir:
+        root_dir = '.'
+    
+    if not os.path.exists(root_dir):
+        print(f"❌ Директория '{root_dir}' не существует")
+        return
+    
+    # Запускаем валидацию
+    validator = KanjiValidator()
+    validator.validate_directory(root_dir)
+
+if __name__ == "__main__":
+    main()
