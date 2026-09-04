@@ -1,6 +1,6 @@
+import traceback
 from pathlib import Path
 
-import yaml
 from page.types.cite import Cite
 from page.types.list import List
 from page.types.markdown import Markdown
@@ -10,9 +10,8 @@ from page.types.dummy import Dummy
 from primitives.context.data import ContextLoader
 from primitives.navbar.data import NavbarData
 from primitives.page_enumerate import find_meta_files
-from primitives.template.template_container import TemplateContainer
 from j2.templates import TemplateContainer as J2Templates
-from widgets.navbar import build_navbar, navbar_context
+from widgets.navbar import navbar_context
 
 page_types = {
     "list": List, 
@@ -25,8 +24,6 @@ page_types = {
 class Builder:
     def __init__(self, root):
         self.root = root
-        templates_root = str(Path(root) / "templates")
-        self.templates = TemplateContainer(templates_root)
         self.j2 = J2Templates("jinja")
         self.context_loader = ContextLoader(root)
         self.navbar_data = NavbarData(str(Path(root) / "navbar.yaml"))
@@ -46,27 +43,18 @@ class Builder:
         parameters = page_class(context).parameters()
 
         j2_render = self._j2_page_template(type)
-        if j2_render is not None:
-            nav_ctx = navbar_context(context, self.navbar_data)
-            mappings = {
-                **nav_ctx,
-                **parameters,
-                "root": context.root,
-                "title": title,
-                "page": {"title": title},
-            }
-            return j2_render(mappings)
+        if j2_render is None:
+            raise FileNotFoundError(f"jinja/pages/{type}.j2")
 
-        navbar = build_navbar(context, self.navbar_data)
+        nav_ctx = navbar_context(context, self.navbar_data)
         mappings = {
-            "navbar": navbar,
+            **nav_ctx,
             **parameters,
             "root": context.root,
             "title": title,
+            "page": {"title": title},
         }
-        template = self.templates.get(type)
-        page = str(template.apply(mappings))
-        return page
+        return j2_render(mappings)
 
     def build(self):
         meta_files = find_meta_files(self.root)
