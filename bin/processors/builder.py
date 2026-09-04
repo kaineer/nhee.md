@@ -32,7 +32,7 @@ class Builder:
         self.navbar_data = NavbarData(str(Path(root) / "navbar.yaml"))
 
     def _j2_page_template(self, type):
-        name = f"pages/{type}.html"
+        name = f"pages/{type}"
         path = Path("jinja") / f"{name}.j2"
         if path.is_file():
             return self.j2.template(name)
