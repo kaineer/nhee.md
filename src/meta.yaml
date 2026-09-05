@@ -1,6 +1,7 @@
 page:
   type: "list"
   title: "kaineer at web"
+  children: ['.', 'ai', 'dev', 'hobby', 'blog']
 links:
   - title: "twitter"
     url: "https://twitter.com/kaineer"
