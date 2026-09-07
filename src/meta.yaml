@@ -1,7 +1,14 @@
 page:
   type: "list"
   title: "kaineer at web"
-  children: ['.', 'ai', 'dev', 'hobby', 'blog']
+  children:
+    - .
+    - ai
+    - dev
+    - hobby
+    - type: external
+      url: blog
+      slug: Blog
   slug: "Home"
 links:
   - title: "twitter"
