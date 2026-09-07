@@ -2,6 +2,10 @@ from pathlib import Path
 
 import yaml
 
+from primitives.subdir import subdir
+
+HOME_TITLE = "Home"
+
 
 class NavbarBuilder:
     def __init__(self, root):
@@ -24,6 +28,51 @@ class NavbarBuilder:
 
         return self
 
+    def context(self, ctx):
+        upper_items = []
+        current_upper = None
+        current_abs = None
+        current_key = self._upper_key(ctx)
+
+        for item in self.items:
+            abs_url = self._abs_url(item)
+            upper_items.append(self._view_item(item, abs_url, ctx, level=1))
+            if item.get("url", "") == current_key:
+                current_upper = item
+                current_abs = abs_url
+
+        lower_items = []
+        if current_upper is not None:
+            for child in current_upper.get("children", []):
+                abs_url = self._abs_url(child, parent_url=current_abs)
+                lower_items.append(self._view_item(child, abs_url, ctx, level=2))
+
+        return {"upper_items": upper_items, "lower_items": lower_items}
+
+    def _upper_key(self, ctx):
+        path = ctx.subdir
+        if path is None or path in ("", "."):
+            return ""
+        return path.split("/")[0]
+
+    def _abs_url(self, item, parent_url=None):
+        url = item.get("url", "")
+        if parent_url is None:
+            if url == "":
+                return "/"
+            return f"/{url}/"
+        return f"{parent_url}{url}/"
+
+    def _view_item(self, item, abs_url, ctx, level):
+        title = item.get("title", "")
+        if not title:
+            title = HOME_TITLE if level == 1 else item.get("url", "")
+        return {
+            "url": abs_url if ctx.web else abs_url + "index.html",
+            "title": title,
+            "current": subdir(ctx.subdir, level) == abs_url,
+        }
+
     def _entries(self, page):
         entries = page.get("children", [])
         if type(entries) is not list:
@@ -40,6 +89,9 @@ class NavbarBuilder:
             return self._item_from_object(entry)
 
         if type(entry) is not str:
+            return None
+
+        if entry == ".":
             return None
 
         path = directory / entry

@@ -8,10 +8,9 @@ from page.types.kanji import Kanji
 from page.types.dummy import Dummy
 
 from primitives.context.data import ContextLoader
-from primitives.navbar.data import NavbarData
+from primitives.navbar.builder import NavbarBuilder
 from primitives.page_enumerate import find_meta_files
 from j2.templates import TemplateContainer as J2Templates
-from widgets.navbar import navbar_context
 
 page_types = {
     "list": List, 
@@ -26,7 +25,7 @@ class Builder:
         self.root = root
         self.j2 = J2Templates("jinja")
         self.context_loader = ContextLoader(root)
-        self.navbar_data = NavbarData(str(Path(root) / "navbar.yaml"))
+        self.navbar = NavbarBuilder(root).build()
 
     def _j2_page_template(self, type):
         name = f"pages/{type}"
@@ -46,7 +45,7 @@ class Builder:
         if j2_render is None:
             raise FileNotFoundError(f"jinja/pages/{type}.j2")
 
-        nav_ctx = navbar_context(context, self.navbar_data)
+        nav_ctx = self.navbar.context(context)
         mappings = {
             **nav_ctx,
             **parameters,
