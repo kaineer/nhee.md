@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #2e3440;
+  background-color: var(--color-bg);
   font-family: system-ui, "Segoe UI", "Fira Code", monospace;
   min-height: 100vh;
   display: flex;
@@ -16,35 +16,35 @@ body {
 }
 
 .card {
-  background-color: #3b4252;
+  background-color: var(--color-surface);
   max-width: 800px;
   width: 100%;
   border-radius: 1.5rem;
   padding: 2rem;
-  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
-  border: 1px solid #434c5e;
+  box-shadow: 0 20px 35px -12px var(--color-shadow);
+  border: 1px solid var(--color-border);
 }
 
 .title {
   font-size: 2.2rem;
   font-weight: 600;
-  color: #eceff4;
-  border-left: 5px solid #88c0d0;
+  color: var(--color-heading);
+  border-left: 5px solid var(--color-accent);
   padding-left: 1rem;
   margin-bottom: 1.75rem;
   word-break: break-word;
 }
 
 .text-container {
-  background-color: #2e3440;
+  background-color: var(--color-bg);
   border-radius: 1rem;
   padding: 1.5rem;
-  border: 1px solid #4c566a;
+  border: 1px solid var(--color-border-strong);
   transition: all 0.1s ease;
 }
 
 .copyable-text {
-  color: #d8dee9;
+  color: var(--color-text);
   font-size: 1.1rem;
   line-height: 1.6;
   white-space: pre-wrap;
@@ -54,17 +54,17 @@ body {
 }
 
 .copyable-text:hover {
-  color: #81a1c1;
+  color: var(--color-link);
 }
 
 .copyable-text a {
-  color: #81a1c1;
+  color: var(--color-link);
 }
 
 .copy-feedback {
   margin-top: 1rem;
   font-size: 0.85rem;
-  color: #a3be8c;
+  color: var(--color-success);
   text-align: right;
   font-weight: 500;
   opacity: 0;

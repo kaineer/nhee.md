@@ -7,18 +7,18 @@
 }
 
 .page-title {
-  color: #eceff4;
+  color: var(--color-heading);
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  border-left: 4px solid #88c0d0;
+  border-left: 4px solid var(--color-accent);
   padding-left: 1rem;
 }
 
 .prompts-list {
-  background-color: #3b4252;
+  background-color: var(--color-surface);
   border-radius: 1rem;
   padding: 0;
-  border: 1px solid #4c566a;
+  border: 1px solid var(--color-border-strong);
   width: 100%;
   min-width: 250px;
 }
@@ -26,8 +26,8 @@
 .prompt-item {
   display: block;
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid #4c566a;
-  color: #d8dee9;
+  border-bottom: 1px solid var(--color-border-strong);
+  color: var(--color-text);
   text-decoration: none;
   transition: background-color 0.2s;
 }
@@ -45,18 +45,18 @@
 }
 
 .prompt-item:hover {
-  background-color: #4c566a;
+  background-color: var(--color-surface-hover);
 }
 
 .prompt-title {
   font-weight: 600;
   font-size: 1.1rem;
-  color: #88c0d0;
+  color: var(--color-accent);
   margin-bottom: 0.25rem;
 }
 
 .prompt-description {
   font-size: 0.9rem;
-  color: #e5e9f0;
+  color: var(--color-text-muted);
   opacity: 0.8;
 }
