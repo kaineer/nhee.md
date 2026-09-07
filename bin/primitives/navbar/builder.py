@@ -78,11 +78,9 @@ class NavbarBuilder:
         if type(entries) is not list:
             return []
 
-        result = []
-        for entry in entries:
-            if type(entry) is str or type(entry) is dict:
-                result.append(entry)
-        return result
+        return [entry for entry in entries 
+            if type(entry) in [str, dict]
+        ]
 
     def _resolve_entry(self, directory, entry, with_children=False):
         if type(entry) is dict:
