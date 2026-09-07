@@ -5,8 +5,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #3b4252;
-  border-bottom: 1px solid #4c566a;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-strong);
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,7 @@ body {
 }
 
 .nav-primary li a {
-  color: #d8dee9;
+  color: var(--color-text);
   text-decoration: none;
   padding: 0 1.5rem;
   display: inline-block;
@@ -47,14 +47,14 @@ body {
 }
 
 .nav-primary li a:hover {
-  color: #88c0d0;
-  background-color: #4c566a;
+  color: var(--color-accent);
+  background-color: var(--color-surface-hover);
 }
 
 /* Active state for first level */
 .nav-primary li a.active {
-  color: #88c0d0;
-  border-bottom: 2px solid #88c0d0;
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
 }
 
 /* SECOND LEVEL - smaller, independent */
@@ -65,8 +65,8 @@ body {
   display: flex;
   gap: 0;
   height: 40px;
-  background-color: #3b4252;
-  border-top: 1px solid #4c566a;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border-strong);
 }
 
 .nav-secondary li {
@@ -77,7 +77,7 @@ body {
 }
 
 .nav-secondary li a {
-  color: #81a1c1;
+  color: var(--color-link);
   text-decoration: none;
   padding: 0 1rem;
   display: inline-block;
@@ -90,12 +90,12 @@ body {
 }
 
 .nav-secondary li a:hover {
-  color: #88c0d0;
-  background-color: #4c566a;
+  color: var(--color-accent);
+  background-color: var(--color-surface-hover);
 }
 
 /* Active state for second level */
 .nav-secondary li a.active {
-  color: #88c0d0;
-  border-bottom: 2px solid #88c0d0;
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
 }

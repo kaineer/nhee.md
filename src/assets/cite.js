@@ -9,12 +9,12 @@
 
   const success = {
     message: "✓ Copied to clipboard",
-    color: "#a3be8c",
+    color: "var(--color-success)",
     ms: 1800,
   };
   const error = {
     message: "× Failed to copy",
-    color: "#bf616a",
+    color: "var(--color-error)",
     ms: 2000,
   };
 
