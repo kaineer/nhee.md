@@ -1,3 +1,4 @@
 page:
   type: markdown
   title: AI
+  children: ['clients', 'prompts', 'web', 'ru']

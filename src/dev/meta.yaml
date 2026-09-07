@@ -1,6 +1,8 @@
 page:
   type: list
   title: "Usual techs"
+  children: ['repo']
+  slug: "Dev"
 links:
   - url: https://github.com/Schniz/fnm
     title: Fast node manager
