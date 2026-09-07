@@ -28,16 +28,16 @@ def temp_dir():
 
 @pytest.fixture
 def container(temp_dir):
-    """Создает экземпляр TempateContainer"""
-    return TempateContainer(str(temp_dir))
+    """Создает экземпляр TemplateContainer"""
+    return TemplateContainer(str(temp_dir))
 
 
 class TestTemplateContainer:
-    """Тесты для класса TempateContainer"""
+    """Тесты для класса TemplateContainer"""
     
     def test_init(self, temp_dir):
         """Тест инициализации"""
-        container = TempateContainer(str(temp_dir))
+        container = TemplateContainer(str(temp_dir))
         assert container.path == str(temp_dir)
     
     def test_template_exists(self, container):
@@ -47,7 +47,7 @@ class TestTemplateContainer:
     
     def test_template_not_exists(self, container):
         """Тест получения несуществующего шаблона"""
-        with pytest.raises(FileNotFoundError):
+        with pytest.raises(jinja2.TemplateNotFound):
             container.template("nonexistent")
     
     def test_template_render_basic(self, container):
@@ -101,7 +101,7 @@ class TestTemplateContainer:
         # Создаем шаблон с другим расширением
         (temp_dir / "test.txt.j2").write_text("Content: {{ value }}")
         
-        container = TempateContainer(str(temp_dir))
+        container = TemplateContainer(str(temp_dir))
         render = container.template("test.txt")
         result = render({"value": "test"})
         assert result == "Content: test"
@@ -113,7 +113,7 @@ class TestTemplateContainer:
         nested_dir.mkdir()
         (nested_dir / "nested.j2").write_text("Nested: {{ value }}")
         
-        container = TempateContainer(str(temp_dir))
+        container = TemplateContainer(str(temp_dir))
         
         # Проверяем, что шаблон во вложенной директории доступен
         render = container.template("nested/nested")
@@ -124,7 +124,7 @@ class TestTemplateContainer:
         """Тест шаблона со специальными символами"""
         (temp_dir / "special.j2").write_text("{{ value|safe }}")
         
-        container = TempateContainer(str(temp_dir))
+        container = TemplateContainer(str(temp_dir))
         render = container.template("special")
         result = render({"value": "<script>alert('test')</script>"})
         assert result == "<script>alert('test')</script>"
@@ -152,7 +152,7 @@ class TestTemplateContainerEdgeCases:
         """Тест с пустым шаблоном"""
         (temp_dir / "empty.j2").write_text("")
         
-        container = TempateContainer(str(temp_dir))
+        container = TemplateContainer(str(temp_dir))
         render = container.template("empty")
         result = render({"any": "value"})
         assert result == ""
@@ -161,7 +161,7 @@ class TestTemplateContainerEdgeCases:
         """Тест шаблона с пробелами"""
         (temp_dir / "whitespace.j2").write_text("  {{ value }}  ")
         
-        container = TempateContainer(str(temp_dir))
+        container = TemplateContainer(str(temp_dir))
         render = container.template("whitespace")
         result = render({"value": "test"})
         assert result == "  test  "
@@ -169,7 +169,7 @@ class TestTemplateContainerEdgeCases:
     def test_path_with_trailing_slash(self, temp_dir):
         """Тест с путем, заканчивающимся на слеш"""
         path_with_slash = str(temp_dir) + "/"
-        container = TempateContainer(path_with_slash)
+        container = TemplateContainer(path_with_slash)
         render = container.template("hello")
         result = render({"name": "World"})
         assert result == "Hello, World!"
@@ -183,7 +183,7 @@ class TestTemplateContainerEdgeCases:
             "{% endfor %}"
         )
         
-        container = TempateContainer(str(temp_dir))
+        container = TemplateContainer(str(temp_dir))
         render = container.template("complex")
         users = [
             {"name": "Alice", "age": 30},
@@ -202,7 +202,7 @@ class TestTemplateContainerEdgeCases:
         nested_dir.mkdir()
         (nested_dir / "test.j2").write_text("Nested: {{ value }}")
         
-        container = TempateContainer(str(temp_dir))
+        container = TemplateContainer(str(temp_dir))
         
         # Проверяем, что берется корневой шаблон
         render = container.template("test")
