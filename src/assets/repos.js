@@ -35,9 +35,9 @@ onloaded(() => {
     name: title,
     description,
   }) => (`
-    <a class="prompt-item" href="${itemUrl}">
-      <div class="prompt-title">${title}</div>
-      <div class="prompt-description">${description}</div>
+    <a class="list-item" href="${itemUrl}">
+      <div class="list-title">${title}</div>
+      <div class="list-description">${description}</div>
     </a>
   `);
 
@@ -45,7 +45,7 @@ onloaded(() => {
     const data = await fetchRepos();
 
     html(
-      first(".prompts-list"), 
+      first(".list"), 
       data.map(processRepo).join("")
     );
   })();

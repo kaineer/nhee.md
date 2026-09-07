@@ -7,18 +7,16 @@
     <link rel="stylesheet" href="{{ root }}/assets/root.css" />
     <link rel="stylesheet" href="{{ root }}/assets/style.css" />
     <link rel="stylesheet" href="{{ root }}/assets/navbar.css" />
-    <link rel="stylesheet" href="{{ root }}/assets/prompts.css" />
+    <link rel="stylesheet" href="{{ root }}/assets/list.css" />
   </head>
   <body>
     {% include "partials/navbar.j2" %}
     <div class="container">
       <h1 class="page-title">{{ page.title }}</h1>
-      <div class="prompts-list">
-        <ul>
-          <div class="prompt-item">
-            <div class="prompt-description">Loading...</div>
-          </div>
-        </ul>
+      <div class="list">
+        <div class="list-item">
+          <div class="list-description">Loading...</div>
+        </div>
       </div>
     </div>
 
