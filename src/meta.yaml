@@ -2,6 +2,7 @@ page:
   type: "list"
   title: "kaineer at web"
   children: ['.', 'ai', 'dev', 'hobby', 'blog']
+  slug: "Home"
 links:
   - title: "twitter"
     url: "https://twitter.com/kaineer"

@@ -66,6 +66,6 @@ class NavbarBuilder:
 
     def _item(self, page, url):
         return {
-            "title": page.get("title", ""),
+            "title": page.get("slug", page.get("title", "")),
             "url": url,
         }

@@ -1,6 +1,7 @@
 page:
   title: Manga reading
   type: list
+  slug: "Manga"
 links:
   - title: "Smoking behind supermarket with you"
     url: "https://smoking-behind-the-supermarket-with-you.online/"
