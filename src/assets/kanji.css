@@ -198,3 +198,18 @@
   box-shadow: none;
   border: none;
 }
+
+.kanji-next {
+  margin-top: 1.25rem;
+  text-align: right;
+}
+
+.kanji-next a {
+  color: var(--color-link);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.kanji-next a:hover {
+  color: var(--color-accent-hover);
+}
