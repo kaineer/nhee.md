@@ -5,6 +5,7 @@ from page.types.cite import Cite
 from page.types.list import List
 from page.types.markdown import Markdown
 from page.types.kanji import Kanji
+from page.types.doushi_table import DoushiTable
 from page.types.dummy import Dummy
 
 from primitives.context.data import ContextLoader
@@ -17,6 +18,7 @@ page_types = {
     "cite": Cite, 
     "markdown": Markdown,
     "kanji": Kanji,
+    "doushi-table": DoushiTable,
     "repos": Dummy
 }
 
