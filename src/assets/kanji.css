@@ -203,13 +203,14 @@
   margin-top: 1.25rem;
 }
 
-.kanji-next a {
+.kanji-next a,
+.kanji-next a:link {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 3.5rem;
-  padding: 1rem 1.25rem;
+  min-height: 4.5rem;
+  padding: 1.25rem 1.5rem;
   box-sizing: border-box;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border-strong);
@@ -217,29 +218,38 @@
   color: var(--color-link);
   text-decoration: none;
   text-align: center;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   line-height: 1.4;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .kanji-next a:visited {
   color: var(--color-accent);
+  background-color: var(--color-surface);
 }
 
 .kanji-next a:hover,
-.kanji-next a:focus-visible {
+.kanji-next a:focus-visible,
+.kanji-next a:active {
   background-color: var(--color-surface-hover);
   color: var(--color-accent-hover);
 }
 
-@media (hover: none) and (pointer: coarse) {
+/* Full-bleed tap target on phones: same look as desktop, edge-to-edge width */
+@media (max-width: 640px) {
   .kanji-next {
     margin-top: 1rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    width: calc(100% + 4rem);
   }
 
-  .kanji-next a {
-    min-height: 4.5rem;
-    padding: 1.25rem 1.5rem;
-    font-size: 1.15rem;
+  .kanji-next a,
+  .kanji-next a:link,
+  .kanji-next a:visited {
+    min-height: 5rem;
     border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
 }
