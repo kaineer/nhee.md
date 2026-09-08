@@ -5,6 +5,302 @@ page:
 
 doushi:
   - jidoushi:
+      kanji: 上がる
+      reading: あがる
+      meaning: подниматься
+    tadoushi:
+      kanji: 上げる
+      reading: あげる
+      meaning: поднимать
+  - jidoushi:
+      kanji: 開く
+      reading: あく
+      meaning: открываться
+    tadoushi:
+      kanji: 開ける
+      reading: あける
+      meaning: открывать
+  - jidoushi:
+      kanji: 当たる
+      reading: あたる
+      meaning: попадать; ударяться
+    tadoushi:
+      kanji: 当てる
+      reading: あてる
+      meaning: попадать; ударять
+  - jidoushi:
+      kanji: 集まる
+      reading: あつまる
+      meaning: собираться
+    tadoushi:
+      kanji: 集める
+      reading: あつめる
+      meaning: собирать
+  - jidoushi:
+      kanji: 起きる
+      reading: おきる
+      meaning: просыпаться; происходить
+    tadoushi:
+      kanji: 起こす
+      reading: おこす
+      meaning: будить; вызывать
+  - jidoushi:
+      kanji: 落ちる
+      reading: おちる
+      meaning: падать
+    tadoushi:
+      kanji: 落とす
+      reading: おとす
+      meaning: ронять
+  - jidoushi:
+      kanji: 降りる
+      reading: おりる
+      meaning: спускаться; выходить (из транспорта)
+    tadoushi:
+      kanji: 降ろす
+      reading: おろす
+      meaning: спускать; высаживать
+  - jidoushi:
+      kanji: 折れる
+      reading: おれる
+      meaning: ломаться; сгибаться
+    tadoushi:
+      kanji: 折る
+      reading: おる
+      meaning: ломать; сгибать
+  - jidoushi:
+      kanji: 終わる
+      reading: おわる
+      meaning: заканчиваться
+    tadoushi:
+      kanji: 終える
+      reading: おえる
+      meaning: заканчивать
+  - jidoushi:
+      kanji: 掛かる
+      reading: かかる
+      meaning: висеть; занимать (время)
+    tadoushi:
+      kanji: 掛ける
+      reading: かける
+      meaning: вешать; тратить (время)
+  - jidoushi:
+      kanji: 片付く
+      reading: かたづく
+      meaning: убираться; приводиться в порядок
+    tadoushi:
+      kanji: 片付ける
+      reading: かたづける
+      meaning: убирать; приводить в порядок
+  - jidoushi:
+      kanji: 乾く
+      reading: かわく
+      meaning: сохнуть
+    tadoushi:
+      kanji: 乾かす
+      reading: かわかす
+      meaning: сушить
+  - jidoushi:
+      kanji: 変わる
+      reading: かわる
+      meaning: меняться; изменяться
+    tadoushi:
+      kanji: 変える
+      reading: かえる
+      meaning: менять; изменять
+  - jidoushi:
+      kanji: 消える
+      reading: きえる
+      meaning: исчезать; гаснуть
+    tadoushi:
+      kanji: 消す
+      reading: けす
+      meaning: гасить; удалять; стирать
+  - jidoushi:
+      kanji: 決まる
+      reading: きまる
+      meaning: решаться; определяться
+    tadoushi:
+      kanji: 決める
+      reading: きめる
+      meaning: решать; определять
+  - jidoushi:
+      kanji: 壊れる
+      reading: こわれる
+      meaning: ломаться; разрушаться
+    tadoushi:
+      kanji: 壊す
+      reading: こわす
+      meaning: ломать; разрушать
+  - jidoushi:
+      kanji: 下がる
+      reading: さがる
+      meaning: снижаться; опускаться
+    tadoushi:
+      kanji: 下げる
+      reading: さげる
+      meaning: снижать; опускать
+  - jidoushi:
+      kanji: 冷める
+      reading: さめる
+      meaning: остывать (о еде, напитках)
+    tadoushi:
+      kanji: 冷ます
+      reading: さます
+      meaning: остужать (еду, напитки)
+  - jidoushi:
+      kanji: 閉まる
+      reading: しまる
+      meaning: закрываться; запираться
+    tadoushi:
+      kanji: 閉める
+      reading: しめる
+      meaning: закрывать; запирать
+  - jidoushi:
+      kanji: 育つ
+      reading: そだつ
+      meaning: расти; развиваться
+    tadoushi:
+      kanji: 育てる
+      reading: そだてる
+      meaning: растить; воспитывать
+  - jidoushi:
+      kanji: 助かる
+      reading: たすかる
+      meaning: спасаться; быть спасённым
+    tadoushi:
+      kanji: 助ける
+      reading: たすける
+      meaning: спасать; помогать
+  - jidoushi:
+      kanji: 点く・付く
+      reading: つく
+      meaning: зажигаться; включаться / прикрепляться
+    tadoushi:
+      kanji: 点ける・付ける
+      reading: つける
+      meaning: зажигать; включать / прикреплять
+  - jidoushi:
+      kanji: 続く
+      reading: つづく
+      meaning: продолжаться; длиться
+    tadoushi:
+      kanji: 続ける
+      reading: つづける
+      meaning: продолжать
+  - jidoushi:
+      kanji: 出る
+      reading: でる
+      meaning: выходить; появляться
+    tadoushi:
+      kanji: 出す
+      reading: だす
+      meaning: вынимать; выпускать; подавать
+  - jidoushi:
+      kanji: 溶ける
+      reading: とける
+      meaning: таять; растворяться
+    tadoushi:
+      kanji: 溶かす
+      reading: とかす
+      meaning: плавить; растворять
+  - jidoushi:
+      kanji: 届く
+      reading: とどく
+      meaning: доходить; быть доставленным
+    tadoushi:
+      kanji: 届ける
+      reading: とどける
+      meaning: доставлять; отправлять
+  - jidoushi:
+      kanji: 止まる
+      reading: とまる
+      meaning: останавливаться
+    tadoushi:
+      kanji: 止める
+      reading: とめる
+      meaning: останавливать
+  - jidoushi:
+      kanji: 取れる
+      reading: とれる
+      meaning: сниматься; отваливаться; быть взятым
+    tadoushi:
+      kanji: 取る
+      reading: とる
+      meaning: брать; снимать
+  - jidoushi:
+      kanji: 直る・治る
+      reading: なおる
+      meaning: исправляться; чиниться / выздоравливать
+    tadoushi:
+      kanji: 直す・治す
+      reading: なおす
+      meaning: исправлять; чинить / лечить
+  - jidoushi:
+      kanji: 無くなる・亡くなる
+      reading: なくなる
+      meaning: исчезать; пропадать / умирать
+    tadoushi:
+      kanji: 無くす・亡くす
+      reading: なくす
+      meaning: терять / терять (близкого человека)
+  - jidoushi:
+      kanji: 並ぶ
+      reading: ならぶ
+      meaning: выстраиваться в ряд; стоять в очереди
+    tadoushi:
+      kanji: 並べる
+      reading: ならべる
+      meaning: расставлять в ряд; выстраивать
+  - jidoushi:
+      kanji: 抜ける
+      reading: ぬける
+      meaning: выпадать; выходить (из состава); быть пропущенным
+    tadoushi:
+      kanji: 抜く
+      reading: ぬく
+      meaning: вытаскивать; вынимать; исключать
+  - jidoushi:
+      kanji: 残る
+      reading: のこる
+      meaning: оставаться
+    tadoushi:
+      kanji: 残す
+      reading: のこす
+      meaning: оставлять
+  - jidoushi:
+      kanji: 乗る
+      reading: のる
+      meaning: садиться (на транспорт); ехать
+    tadoushi:
+      kanji: 乗せる
+      reading: のせる
+      meaning: сажать (в транспорт); класть наверх
+  - jidoushi:
+      kanji: 入る
+      reading: はいる
+      meaning: входить; поступать
+    tadoushi:
+      kanji: 入れる
+      reading: いれる
+      meaning: вносить; вставлять; класть внутрь
+  - jidoushi:
+      kanji: 始まる
+      reading: はじまる
+      meaning: начинаться
+    tadoushi:
+      kanji: 始める
+      reading: はじめる
+      meaning: начинать
+  - jidoushi:
+      kanji: 冷える
+      reading: ひえる
+      meaning: остывать; мерзнуть (о теле)
+    tadoushi:
+      kanji: 冷やす
+      reading: ひやす
+      meaning: охлаждать; холодить
+  - jidoushi:
       kanji: 増える
       reading: ふえる
       meaning: увеличиваться; возрастать
