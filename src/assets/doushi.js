@@ -2,55 +2,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const isMobile = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
   if (!isMobile) return;
 
-  const rows = Array.from(document.querySelectorAll('.doushi-row'));
-  const progress = document.querySelector('.doushi-progress');
   const container = document.querySelector('.doushi-container');
-  if (!rows.length || !container) return;
+  if (!container) return;
 
-  let index = 0;
+  let mode = 'jidoushi'; // or 'tadoushi'
   let startX = 0;
   let startY = 0;
   let tracking = false;
-  let animating = false;
 
-  const updateProgress = () => {
-    if (progress) {
-      progress.textContent = `${index + 1} / ${rows.length}`;
-    }
+  const setMode = (next) => {
+    if (next === mode) return;
+    mode = next;
+    container.classList.toggle('mode-tadoushi', mode === 'tadoushi');
   };
-
-  const show = (nextIndex, direction) => {
-    if (animating || nextIndex === index) return;
-    if (nextIndex < 0 || nextIndex >= rows.length) return;
-
-    animating = true;
-    const current = rows[index];
-    const next = rows[nextIndex];
-    const goingRight = direction === 'right';
-
-    current.classList.remove('active');
-    current.classList.add(goingRight ? 'slide-out-right' : 'slide-out-left');
-
-    next.classList.add(goingRight ? 'slide-in-from-left' : 'slide-in-from-right');
-    next.classList.add('active');
-
-    // Force layout so the enter transform applies before clearing it
-    void next.offsetWidth;
-    next.classList.remove('slide-in-from-left', 'slide-in-from-right');
-
-    window.setTimeout(() => {
-      current.classList.remove('slide-out-left', 'slide-out-right');
-      index = nextIndex;
-      updateProgress();
-      animating = false;
-    }, 260);
-  };
-
-  const goNext = () => show(index + 1, 'left');
-  const goPrev = () => show(index - 1, 'right');
 
   container.addEventListener('touchstart', (event) => {
-    if (animating || event.touches.length !== 1) return;
+    if (event.touches.length !== 1) return;
     tracking = true;
     startX = event.touches[0].clientX;
     startY = event.touches[0].clientY;
@@ -60,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!tracking || event.touches.length !== 1) return;
     const dx = event.touches[0].clientX - startX;
     const dy = event.touches[0].clientY - startY;
-    // Prefer horizontal swipe over vertical scroll
+    // горизонтальный жест — не даём странице скроллиться по диагонали
     if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
       event.preventDefault();
     }
@@ -77,11 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (Math.abs(dx) < threshold || Math.abs(dx) < Math.abs(dy)) return;
 
     if (dx < 0) {
-      goNext();
+      // свайп влево → 他動詞
+      setMode('tadoushi');
     } else {
-      goPrev();
+      // свайп вправо → 自動詞
+      setMode('jidoushi');
     }
   }, { passive: true });
-
-  updateProgress();
 });

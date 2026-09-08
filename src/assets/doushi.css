@@ -56,10 +56,6 @@
   display: none;
 }
 
-.doushi-progress {
-  display: none;
-}
-
 /* --- ДЕСКТОП --- */
 @media (hover: hover) and (pointer: fine) {
   .card {
@@ -75,40 +71,16 @@
   }
 }
 
-/* --- МОБИЛЬНАЯ ВЕРСИЯ (свайп между парами) --- */
+/* --- МОБИЛЬНАЯ ВЕРСИЯ ---
+   вертикальный скролл как у kanji;
+   свайп влево → 他動詞, вправо → 自動詞
+*/
 @media (hover: none) and (pointer: coarse) {
-  body {
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-    align-items: stretch;
-    justify-content: flex-start;
-    overflow: hidden;
-    height: 100vh;
-  }
-
-  .card {
-    max-width: none;
-    width: 100%;
-    height: calc(100vh - 120px);
-    min-height: unset;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .card > .title {
-    display: none;
-  }
-
   .doushi-container {
     border-radius: 0;
-    border: none;
-    margin-top: 0;
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    touch-action: pan-y;
+    border-left: none;
+    border-right: none;
+    margin-top: 1rem;
   }
 
   .doushi-head {
@@ -116,56 +88,30 @@
   }
 
   .doushi-row {
-    display: none;
-    position: absolute;
-    inset: 0;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: block;
+    height: 100vh;
+    padding: 0;
     border-bottom: none;
-    opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
-    pointer-events: none;
-  }
-
-  .doushi-row.active {
-    display: grid;
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
-  }
-
-  .doushi-row.slide-out-left {
-    display: grid;
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-
-  .doushi-row.slide-out-right {
-    display: grid;
-    opacity: 0;
-    transform: translateX(40px);
-  }
-
-  .doushi-row.slide-in-from-right {
-    transform: translateX(40px);
-  }
-
-  .doushi-row.slide-in-from-left {
-    transform: translateX(-40px);
+    position: relative;
+    overflow: hidden;
+    min-height: unset;
   }
 
   .doushi-cell {
+    position: absolute;
+    inset: 0;
     min-height: unset;
-    padding: 1.5rem 1.75rem;
+    padding: 2rem;
     align-items: center;
     text-align: center;
     justify-content: center;
+    border-right: none;
+    background-color: var(--color-bg);
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
   .doushi-cell.jidoushi {
     border-right: none;
-    border-bottom: 1px solid var(--color-border);
   }
 
   .doushi-kind {
@@ -178,14 +124,31 @@
   }
 
   .doushi-cell .kanji-char {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
   }
 
-  .doushi-progress {
-    display: block;
-    text-align: center;
-    padding: 0.75rem 1rem 1.25rem;
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
+  /* По умолчанию — 自動詞; 他動詞 справа за кадром */
+  .doushi-cell.jidoushi {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .doushi-cell.tadoushi {
+    opacity: 0;
+    transform: translateX(40px);
+    pointer-events: none;
+  }
+
+  .doushi-container.mode-tadoushi .doushi-cell.jidoushi {
+    opacity: 0;
+    transform: translateX(-40px);
+    pointer-events: none;
+  }
+
+  .doushi-container.mode-tadoushi .doushi-cell.tadoushi {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
   }
 }
