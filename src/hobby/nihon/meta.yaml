@@ -17,5 +17,7 @@ links:
   - url: ./kanji/n4
     title: "漢字 N4"
     description: "漢字 N4"
-
+  - url: ./jidoushi
+    title: "Глаголы"
+    description: "自動詞、他動詞"
 
