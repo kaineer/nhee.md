@@ -1,0 +1,110 @@
+page:
+  type: "doushi-table"
+  title: "Глаголы"
+  slug: "Глаголы"
+
+doushi:
+  - jidoushi:
+      kanji: 増える
+      reading: ふえる
+      meaning: увеличиваться; возрастать
+    tadoushi:
+      kanji: 増やす
+      reading: ふやす
+      meaning: увеличивать; прибавлять
+  - jidoushi:
+      kanji: 減る
+      reading: へる
+      meaning: уменьшаться; убывать
+    tadoushi:
+      kanji: 減らす
+      reading: へらす
+      meaning: уменьшать; сокращать
+  - jidoushi:
+      kanji: 混ざる
+      reading: まざる
+      meaning: смешиваться (само по себе)
+    tadoushi:
+      kanji: 混ぜる
+      reading: まぜる
+      meaning: смешивать
+  - jidoushi:
+      kanji: 回る
+      reading: まわる
+      meaning: вращаться; оборачиваться
+    tadoushi:
+      kanji: 回す
+      reading: まわす
+      meaning: вращать; передавать по кругу
+  - jidoushi:
+      kanji: 見つかる
+      reading: みつかる
+      meaning: находиться; быть найденным
+    tadoushi:
+      kanji: 見つける
+      reading: みつける
+      meaning: находить
+  - jidoushi:
+      kanji: 燃える
+      reading: もえる
+      meaning: гореть
+    tadoushi:
+      kanji: 燃やす
+      reading: もやす
+      meaning: сжигать
+  - jidoushi:
+      kanji: 戻る
+      reading: もどる
+      meaning: возвращаться
+    tadoushi:
+      kanji: 戻す
+      reading: もどす
+      meaning: возвращать
+  - jidoushi:
+      kanji: 焼ける
+      reading: やける
+      meaning: жариться; печься; гореть (о зданиях)
+    tadoushi:
+      kanji: 焼く
+      reading: やく
+      meaning: жарить; печь; сжигать
+  - jidoushi:
+      kanji: 破れる
+      reading: やぶれる
+      meaning: рваться; разрываться
+    tadoushi:
+      kanji: 破る
+      reading: やぶる
+      meaning: рвать; разрывать
+  - jidoushi:
+      kanji: 汚れる
+      reading: よごれる
+      meaning: пачкаться; загрязняться
+    tadoushi:
+      kanji: 汚す
+      reading: よごす
+      meaning: пачкать; загрязнять
+  - jidoushi:
+      kanji: 分かれる
+      reading: わかれる
+      meaning: разделяться; расходиться
+    tadoushi:
+      kanji: 分ける
+      reading: わける
+      meaning: разделять; делить
+  - jidoushi:
+      kanji: 沸く
+      reading: わく
+      meaning: кипеть; закипать
+    tadoushi:
+      kanji: 沸かす
+      reading: わかす
+      meaning: кипятить
+  - jidoushi:
+      kanji: 割れる
+      reading: われる
+      meaning: трескаться; разбиваться; раскалываться
+    tadoushi:
+      kanji: 割る
+      reading: わる
+      meaning: разбивать; раскалывать

@@ -1,0 +1,191 @@
+/* assets/doushi.css — дополнения к kanji.css для пар 自動詞 / 他動詞 */
+
+.doushi-container {
+  background-color: var(--color-bg);
+  border-radius: 1.5rem;
+  border: 1px solid var(--color-border-strong);
+  overflow: hidden;
+  width: 100%;
+  margin-top: 1.75rem;
+}
+
+.doushi-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--color-border-strong);
+  background-color: var(--color-surface);
+}
+
+.doushi-col-label {
+  padding: 0.85rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-heading);
+  letter-spacing: 0.04em;
+}
+
+.doushi-col-label:first-child {
+  border-right: 1px solid var(--color-border);
+}
+
+.doushi-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease;
+}
+
+.doushi-row:last-child {
+  border-bottom: none;
+}
+
+.doushi-cell {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 140px;
+  justify-content: center;
+}
+
+.doushi-cell.jidoushi {
+  border-right: 1px solid var(--color-border);
+}
+
+.doushi-kind {
+  display: none;
+}
+
+.doushi-progress {
+  display: none;
+}
+
+/* --- ДЕСКТОП --- */
+@media (hover: hover) and (pointer: fine) {
+  .card {
+    max-width: 960px;
+  }
+
+  .doushi-row:hover {
+    background-color: var(--color-surface);
+  }
+
+  .doushi-cell .kanji-char {
+    font-size: 3rem;
+  }
+}
+
+/* --- МОБИЛЬНАЯ ВЕРСИЯ (свайп между парами) --- */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .card {
+    max-width: none;
+    width: 100%;
+    height: calc(100vh - 120px);
+    min-height: unset;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .card > .title {
+    display: none;
+  }
+
+  .doushi-container {
+    border-radius: 0;
+    border: none;
+    margin-top: 0;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    touch-action: pan-y;
+  }
+
+  .doushi-head {
+    display: none;
+  }
+
+  .doushi-row {
+    display: none;
+    position: absolute;
+    inset: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    border-bottom: none;
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+  }
+
+  .doushi-row.active {
+    display: grid;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .doushi-row.slide-out-left {
+    display: grid;
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  .doushi-row.slide-out-right {
+    display: grid;
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  .doushi-row.slide-in-from-right {
+    transform: translateX(40px);
+  }
+
+  .doushi-row.slide-in-from-left {
+    transform: translateX(-40px);
+  }
+
+  .doushi-cell {
+    min-height: unset;
+    padding: 1.5rem 1.75rem;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .doushi-cell.jidoushi {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .doushi-kind {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.6rem;
+  }
+
+  .doushi-cell .kanji-char {
+    font-size: 3.5rem;
+  }
+
+  .doushi-progress {
+    display: block;
+    text-align: center;
+    padding: 0.75rem 1rem 1.25rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+}

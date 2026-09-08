@@ -1,0 +1,20 @@
+<div class="doushi-head">
+  <div class="doushi-col-label">自動詞</div>
+  <div class="doushi-col-label">他動詞</div>
+</div>
+{% for pair in doushi %}
+<div class="doushi-row{% if loop.first %} active{% endif %}" data-index="{{ loop.index0 }}">
+  <div class="doushi-cell jidoushi">
+    <div class="doushi-kind">自動詞</div>
+    <div class="kanji-char">{{ pair.jidoushi.kanji }}</div>
+    <div class="kanji-reading">{{ pair.jidoushi.reading }}</div>
+    <div class="kanji-translation">{{ pair.jidoushi.meaning }}</div>
+  </div>
+  <div class="doushi-cell tadoushi">
+    <div class="doushi-kind">他動詞</div>
+    <div class="kanji-char">{{ pair.tadoushi.kanji }}</div>
+    <div class="kanji-reading">{{ pair.tadoushi.reading }}</div>
+    <div class="kanji-translation">{{ pair.tadoushi.meaning }}</div>
+  </div>
+</div>
+{% endfor %}
