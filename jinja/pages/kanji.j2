@@ -25,7 +25,7 @@
         {% set next_items = crumb_levels[-1] | selectattr("next") | list %}
         {% if next_items %}
           <p class="kanji-next">
-            <a href="{{ root }}{{ next_items[0].url }}">{{ next_items[0].slug }} →</a>
+            <a href="{{ root }}{{ next_items[0].url }}">Следующая страница: {{ next_items[0].slug }}</a>
           </p>
         {% endif %}
       {% endif %}
