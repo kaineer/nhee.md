@@ -13,7 +13,6 @@
 .kanji-container {
   background-color: var(--color-bg);
   border-radius: 1.5rem;
-  border: 1px solid var(--color-border-strong);
   overflow: hidden;
   width: 100%;
   margin-top: 1.75rem; /* Отступ от заголовка */
@@ -123,8 +122,6 @@
 @media (hover: none) and (pointer: coarse) {
   .kanji-container {
     border-radius: 0; /* На мобилке скругления не нужны */
-    border-left: none;
-    border-right: none;
     margin-top: 1rem;
   }
 
