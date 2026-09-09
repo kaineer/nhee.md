@@ -13,7 +13,6 @@
 .kanji-container {
   background-color: var(--color-bg);
   border-radius: 1.5rem;
-  border: 1px solid var(--color-border-strong);
   overflow: hidden;
   width: 100%;
   margin-top: 1.75rem; /* Отступ от заголовка */
@@ -123,8 +122,6 @@
 @media (hover: none) and (pointer: coarse) {
   .kanji-container {
     border-radius: 0; /* На мобилке скругления не нужны */
-    border-left: none;
-    border-right: none;
     margin-top: 1rem;
   }
 
@@ -197,4 +194,59 @@
   background: transparent;
   box-shadow: none;
   border: none;
+}
+
+.kanji-next {
+  margin-top: 1.25rem;
+}
+
+.kanji-next a,
+.kanji-next a:link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 4.5rem;
+  padding: 1.25rem 1.5rem;
+  box-sizing: border-box;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 1rem;
+  color: var(--color-link);
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.kanji-next a:visited {
+  color: var(--color-accent);
+  background-color: var(--color-surface);
+}
+
+.kanji-next a:hover,
+.kanji-next a:focus-visible,
+.kanji-next a:active {
+  background-color: var(--color-surface-hover);
+  color: var(--color-accent-hover);
+}
+
+/* Full-bleed tap target on phones: same look as desktop, edge-to-edge width */
+@media (max-width: 640px) {
+  .kanji-next {
+    margin-top: 1rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    width: calc(100% + 4rem);
+  }
+
+  .kanji-next a,
+  .kanji-next a:link,
+  .kanji-next a:visited {
+    min-height: 5rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
 }
