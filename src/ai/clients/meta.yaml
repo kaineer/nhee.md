@@ -17,3 +17,6 @@ links:
   - url: "https://pi.dev/"
     title: "Pi"
     description: "A terminal-based coding agent"
+  - url: "https://cursor.com/"
+    title: "Cursor"
+    description: "your coding agent"
