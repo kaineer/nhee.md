@@ -255,6 +255,77 @@
   background: color-mix(in srgb, var(--color-error) 10%, transparent);
 }
 
+.markdown-frame {
+  position: relative;
+}
+
+.markdown-copy-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  overflow: visible;
+}
+
+.markdown-copy-btn:hover {
+  color: var(--color-heading);
+  background: var(--color-surface-hover);
+}
+
+.markdown-copy-ghost {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.markdown-copy-btn.is-copied {
+  color: var(--color-success);
+}
+
+.markdown-copy-btn.is-copied .markdown-copy-ghost {
+  animation: markdown-copy-zoom 1.15s ease-out forwards;
+}
+
+.markdown-copy-btn.is-failed {
+  color: var(--color-error);
+}
+
+@keyframes markdown-copy-zoom {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.85);
+  }
+}
+
+.markdown-source {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: pre;
+  border: 0;
+}
+
 /* ========== АДАПТИВНОСТЬ (мобильные устройства) ========== */
 @media (max-width: 768px) {
   .markdown-body {

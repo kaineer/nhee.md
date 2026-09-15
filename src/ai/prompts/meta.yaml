@@ -3,8 +3,11 @@ page:
   title: "Prompts"
 links:
   - url: "./caveman/"
-    title: "Caveman header"
+    title: Caveman
     description: "Keep to essentials, no fluff"
+  - url: "./c2fs/"
+    title: "c2fs"
+    description: "Chat to filesystem"
   - url: "https://chat.deepseek.com/a/chat/s/45e3212d-5a74-4f5b-a45f-1d13c01530d4"
     title: "Image prompt structuring"
     description: "(deepseek session)"
