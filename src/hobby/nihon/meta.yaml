@@ -2,6 +2,9 @@ page:
   title: 日本語
   type: list
 links:
+  - title: "Yume.zoom"
+    url: "https://us02web.zoom.us/j/85667645171?pwd=9V9lALZmoG0z0qIeQmK48XQRcl9hWe.1"
+    description: "Снова zoom"
   - title: "Yume.ktalk"
     url: "https://yumecenter.ktalk.ru/jck4jp0hoh3l"
     description: "Занятия проходят теперь здесь"
