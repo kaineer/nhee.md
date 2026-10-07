@@ -43,6 +43,10 @@ body {
   border-bottom-color: var(--color-emphasis);
 }
 
+.hanashi-paragraph .vocabulary.verbplus {
+  border-bottom-color: var(--color-warning);
+}
+
 .hanashi-tooltip {
   position: fixed;
   z-index: 2000;
@@ -73,6 +77,23 @@ body {
   margin-top: 0.25rem;
   font-size: 1rem;
   color: var(--color-success);
+}
+
+.hanashi-tooltip-base {
+  margin-top: 0.35rem;
+  font-family: 'ZenMaru', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-accent-hover);
+}
+
+.hanashi-tooltip-breakdown {
+  margin-top: 0.35rem;
+  font-family: 'ZenMaru', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-emphasis);
+  word-break: break-word;
 }
 
 .hanashi-tooltip-meaning {

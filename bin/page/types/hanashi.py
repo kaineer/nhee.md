@@ -30,5 +30,7 @@ class Hanashi(Params):
                 "char": item.get("char") or "",
                 "reading": item.get("reading") or "",
                 "meaning": item.get("meaning") or "",
+                "base": item.get("base") or "",
+                "breakdown": item.get("breakdown") or "",
             })
         return vocabulary

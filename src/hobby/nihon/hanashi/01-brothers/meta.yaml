@@ -282,3 +282,16 @@ vocabulary:
     char: 少しずつ
     reading: すこしずつ
     meaning: понемногу, постепенно
+
+  # --- Nouns ---
+  - type: noun
+    char: 不思議
+    reading: ふしぎ
+    meaning: странность, удивительное (явление)
+
+  # --- Verbs ---
+  - type: verb
+    char: 不思議に思っていました
+    reading: ふしぎにおもっていました
+    base: 不思議に思う
+    meaning: считал странным, удивлялся

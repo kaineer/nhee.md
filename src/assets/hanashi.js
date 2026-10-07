@@ -1,5 +1,7 @@
 (function () {
-  const HIGHLIGHT_TYPES = new Set(["noun", "verb", "phrase"]);
+  const HIGHLIGHT_TYPES = new Set(["noun", "verb", "verbplus", "phrase"]);
+  const TOOLTIP_TYPES =
+    ".vocabulary.noun, .vocabulary.verb, .vocabulary.verbplus, .vocabulary.phrase";
 
   let activeTooltip = null;
   let activeNoun = null;
@@ -45,6 +47,8 @@
             char: entry.char,
             reading: entry.reading || "",
             meaning: entry.meaning || "",
+            base: entry.base || "",
+            breakdown: entry.breakdown || "",
           });
         }
 
@@ -74,6 +78,10 @@
         escapeHtml(match.reading) +
         '" data-meaning="' +
         escapeHtml(match.meaning) +
+        '" data-base="' +
+        escapeHtml(match.base) +
+        '" data-breakdown="' +
+        escapeHtml(match.breakdown) +
         '">' +
         escapeHtml(text.slice(match.start, match.end)) +
         "</span>";
@@ -171,12 +179,16 @@
     tooltip.style.visibility = "visible";
   }
 
-  function showNounTooltip(noun) {
+  function showNounTooltip(target) {
     hideNounTooltip();
 
-    const char = noun.dataset.char || noun.textContent || "";
-    const reading = noun.dataset.reading || "";
-    const meaning = noun.dataset.meaning || "";
+    const char = target.dataset.char || target.textContent || "";
+    const reading = target.dataset.reading || "";
+    const meaning = target.dataset.meaning || "";
+    const base = target.dataset.base || "";
+    const breakdown = target.dataset.breakdown || "";
+    const isVerb = target.classList.contains("verb");
+    const isVerbplus = target.classList.contains("verbplus");
 
     const tooltip = document.createElement("div");
     tooltip.className = "hanashi-tooltip";
@@ -185,6 +197,16 @@
     if (reading && reading !== char) {
       html +=
         '<div class="hanashi-tooltip-reading">' + escapeHtml(reading) + "</div>";
+    }
+    if (isVerb && base && base !== char) {
+      html +=
+        '<div class="hanashi-tooltip-base">' + escapeHtml(base) + "</div>";
+    }
+    if (isVerbplus && breakdown) {
+      html +=
+        '<div class="hanashi-tooltip-breakdown">' +
+        escapeHtml(breakdown) +
+        "</div>";
     }
     if (meaning) {
       html +=
@@ -195,11 +217,11 @@
     document.body.appendChild(tooltip);
 
     const charEl = tooltip.querySelector(".hanashi-tooltip-char");
-    matchCharAppearance(charEl, noun);
-    positionTooltipOverNoun(tooltip, noun);
+    matchCharAppearance(charEl, target);
+    positionTooltipOverNoun(tooltip, target);
 
     activeTooltip = tooltip;
-    activeNoun = noun;
+    activeNoun = target;
   }
 
   function onPointerOver(event) {
@@ -207,12 +229,12 @@
       return;
     }
 
-    const noun = event.target.closest(".vocabulary.noun");
-    if (!noun) {
+    const target = event.target.closest(TOOLTIP_TYPES);
+    if (!target) {
       return;
     }
 
-    showNounTooltip(noun);
+    showNounTooltip(target);
   }
 
   function onPointerMove(event) {
@@ -230,8 +252,17 @@
     }
   }
 
+  function onViewportChange() {
+    // При скролле/resize слово уезжает из‑под указателя, а pointermove не приходит
+    if (activeTooltip) {
+      hideNounTooltip();
+    }
+  }
+
   document.addEventListener("pointerover", onPointerOver);
   document.addEventListener("pointermove", onPointerMove);
+  window.addEventListener("scroll", onViewportChange, true);
+  window.addEventListener("resize", onViewportChange);
 
   function highlightHanashiVocabulary(vocabulary) {
     hideNounTooltip();
