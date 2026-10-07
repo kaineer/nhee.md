@@ -252,6 +252,22 @@
     }
   }
 
+  function onMobileClick(event) {
+    const target = event.target.closest(TOOLTIP_TYPES);
+    if (target) {
+      if (activeTooltip && activeNoun === target) {
+        hideNounTooltip();
+        return;
+      }
+      showNounTooltip(target);
+      return;
+    }
+
+    if (activeTooltip && !event.target.closest(".hanashi-tooltip")) {
+      hideNounTooltip();
+    }
+  }
+
   function onViewportChange() {
     // При скролле/resize слово уезжает из‑под указателя, а pointermove не приходит
     if (activeTooltip) {
@@ -259,8 +275,16 @@
     }
   }
 
-  document.addEventListener("pointerover", onPointerOver);
-  document.addEventListener("pointermove", onPointerMove);
+  const isMobile = window.matchMedia(
+    "(hover: none) and (pointer: coarse)",
+  ).matches;
+
+  if (isMobile) {
+    document.addEventListener("click", onMobileClick);
+  } else {
+    document.addEventListener("pointerover", onPointerOver);
+    document.addEventListener("pointermove", onPointerMove);
+  }
   window.addEventListener("scroll", onViewportChange, true);
   window.addEventListener("resize", onViewportChange);
 
