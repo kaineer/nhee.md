@@ -103,11 +103,6 @@
     activeNoun = null;
   }
 
-  function firstLineRect(noun) {
-    const rects = noun.getClientRects();
-    return rects.length > 0 ? rects[0] : null;
-  }
-
   function pointInRect(clientX, clientY, rect) {
     return (
       clientX >= rect.left &&
@@ -115,6 +110,43 @@
       clientY >= rect.top &&
       clientY <= rect.bottom
     );
+  }
+
+  function rectDistance2(clientX, clientY, rect) {
+    const x = Math.max(rect.left, Math.min(clientX, rect.right));
+    const y = Math.max(rect.top, Math.min(clientY, rect.bottom));
+    const dx = clientX - x;
+    const dy = clientY - y;
+    return dx * dx + dy * dy;
+  }
+
+  // Фрагмент перенесённого сочетания под указателем; иначе ближайший / первый
+  function anchorRectForPoint(noun, clientX, clientY) {
+    const rects = noun.getClientRects();
+    if (rects.length === 0) {
+      return null;
+    }
+
+    if (clientX != null && clientY != null) {
+      for (let i = 0; i < rects.length; i += 1) {
+        if (pointInRect(clientX, clientY, rects[i])) {
+          return rects[i];
+        }
+      }
+
+      let best = rects[0];
+      let bestDistance = rectDistance2(clientX, clientY, best);
+      for (let i = 1; i < rects.length; i += 1) {
+        const distance = rectDistance2(clientX, clientY, rects[i]);
+        if (distance < bestDistance) {
+          best = rects[i];
+          bestDistance = distance;
+        }
+      }
+      return best;
+    }
+
+    return rects[0];
   }
 
   function isPointInsideTooltip(clientX, clientY) {
@@ -178,9 +210,9 @@
     };
   }
 
-  function positionTooltipOverNoun(tooltip, noun) {
+  function positionTooltipOverNoun(tooltip, noun, clientX, clientY) {
     const charEl = tooltip.querySelector(".hanashi-tooltip-char");
-    const anchorRect = firstLineRect(noun);
+    const anchorRect = anchorRectForPoint(noun, clientX, clientY);
     if (!anchorRect) {
       return;
     }
@@ -189,7 +221,7 @@
     const margin = 8;
     tooltip.style.maxWidth = view.width - margin * 2 + "px";
 
-    // Совпадаем с метриками первого визуального фрагмента (первой строки)
+    // Совпадаем с метриками выбранного визуального фрагмента (строки под указателем)
     charEl.style.whiteSpace = "nowrap";
     charEl.style.height = anchorRect.height + "px";
     charEl.style.lineHeight = anchorRect.height + "px";
@@ -225,7 +257,7 @@
     tooltip.style.visibility = "visible";
   }
 
-  function showNounTooltip(target) {
+  function showNounTooltip(target, clientX, clientY) {
     hideNounTooltip();
 
     const char = target.dataset.char || target.textContent || "";
@@ -264,7 +296,7 @@
 
     const charEl = tooltip.querySelector(".hanashi-tooltip-char");
     matchCharAppearance(charEl, target);
-    positionTooltipOverNoun(tooltip, target);
+    positionTooltipOverNoun(tooltip, target, clientX, clientY);
 
     activeTooltip = tooltip;
     activeNoun = target;
@@ -280,7 +312,7 @@
       return;
     }
 
-    showNounTooltip(target);
+    showNounTooltip(target, event.clientX, event.clientY);
   }
 
   function onPointerMove(event) {
@@ -305,7 +337,7 @@
         hideNounTooltip();
         return;
       }
-      showNounTooltip(target);
+      showNounTooltip(target, event.clientX, event.clientY);
       return;
     }
 
