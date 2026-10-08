@@ -302,13 +302,18 @@
     activeNoun = target;
   }
 
-  function onPointerOver(event) {
-    if (activeTooltip) {
-      return;
-    }
+  function vocabularyAtPoint(clientX, clientY) {
+    const el = document.elementFromPoint(clientX, clientY);
+    return el ? el.closest(TOOLTIP_TYPES) : null;
+  }
 
+  function onPointerOver(event) {
     const target = event.target.closest(TOOLTIP_TYPES);
     if (!target) {
+      return;
+    }
+    // Уже открыт для этого слова — не пересоздаём
+    if (activeTooltip && activeNoun === target) {
       return;
     }
 
@@ -322,12 +327,19 @@
 
     const x = event.clientX;
     const y = event.clientY;
-    if (
-      !isPointInsideTooltip(x, y) &&
-      !isPointOverNoun(activeNoun, x, y)
-    ) {
-      hideNounTooltip();
+    if (isPointInsideTooltip(x, y) || isPointOverNoun(activeNoun, x, y)) {
+      return;
     }
+
+    // Ушли со старого тултипа/слова: pointerover по соседнему span
+    // мог уже пройти, пока activeTooltip ещё существовал
+    const next = vocabularyAtPoint(x, y);
+    if (next) {
+      showNounTooltip(next, x, y);
+      return;
+    }
+
+    hideNounTooltip();
   }
 
   function onMobileClick(event) {
