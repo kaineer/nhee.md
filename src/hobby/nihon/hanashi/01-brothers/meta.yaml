@@ -1,0 +1,297 @@
+page:
+  title: 二人の兄弟 
+  type: "hanashi"  
+  description: "ふたりのきょうだい"
+
+hanashi:
+  title: 二人の兄弟
+  title_reading: "ふたりのきょうだい"
+  title_ru: Два брата
+
+paragraphs:
+  - |
+    農場で働く二人の兄弟がいました。二人はお互いの将来を心配して、ある行動を起こします。その行動は、二人の関係をより強くしました。
+  - |
+    二人の兄弟が一緒に農場を経営していました。兄は結婚していて、家族がたくさんいましたが、弟は独身でした。毎日仕事が終わると、二人はその日に取れた農作物の袋を半分ずつ持って帰りました。
+  - |
+    ある日、独身の弟はこう考えました。「毎日農作物を半分ずつにするのは、変じゃないか？　僕は独身だから、そんなにたくさんいらないのに」。それで弟は毎晩、自分の農作物が入った袋を一つ、兄の家の小屋に置いておきました。もちろん、兄には秘密です。
+  - |
+    同じ頃、結婚している兄はこう考えました。「毎日農作物を半分ずつにするのは、変じゃないか？　僕には妻も子どももいる。だから、年を取っても世話をしてもらえる。でも弟は独身だから、将来誰も世話をしてくれない」。それで、兄は毎晩、自分の農作物が入った袋を一つ、弟の家の小屋に置いておきました。もちろん、弟には秘密です。
+  - |
+    二人は毎晩、農作物が入った袋を一つ、こっそり相手の家の小屋に置きに行きます。しかし朝になると、農作物の袋の数は元に戻っています。何年もの間、二人はそれを不思議に思っていました。すると、ある夜、ついに二人は偶然出会いました。二人はお互いの顔をじっと見つめ合って、何が起きているのか少しずつ理解していきました。二人は手に持っていた農作物の袋を落として、強く抱き合いました。
+
+vocabulary:
+  # --- Nouns ---
+  - type: noun
+    char: 農場
+    reading: のうじょう
+    meaning: ферма
+  - type: noun
+    char: 兄弟
+    reading: きょうだい
+    meaning: братья
+  - type: noun
+    char: 将来
+    reading: しょうらい
+    meaning: будущее
+  - type: noun
+    char: 行動
+    reading: こうどう
+    meaning: действие, поступок
+  - type: noun
+    char: 関係
+    reading: かんけい
+    meaning: отношения
+  - type: noun
+    char: 家族
+    reading: かぞく
+    meaning: семья
+  - type: noun
+    char: 独身
+    reading: どくしん
+    meaning: холостой
+  - type: noun
+    char: 農作物
+    reading: のうさくぶつ
+    meaning: урожай, сельхозпродукция
+  - type: noun
+    char: 袋
+    reading: ふくろ
+    meaning: мешок
+  - type: noun
+    char: 小屋
+    reading: こや
+    meaning: сарай, хижина
+  - type: noun
+    char: 秘密
+    reading: ひみつ
+    meaning: секрет
+  - type: noun
+    char: 頃
+    reading: ころ
+    meaning: время, пора
+  - type: noun
+    char: 世話
+    reading: せわ
+    meaning: забота, уход
+  - type: noun
+    char: 相手
+    reading: あいて
+    meaning: партнёр, другая сторона
+  - type: noun
+    char: 数
+    reading: かず
+    meaning: количество
+  - type: noun
+    char: 何年
+    reading: なんねん
+    meaning: сколько лет
+  - type: noun
+    char: 偶然
+    reading: ぐうぜん
+    meaning: случайность
+  - type: noun
+    char: 顔
+    reading: かお
+    meaning: лицо
+  - type: noun
+    char: 手
+    reading: て
+    meaning: рука
+
+  # --- Verbs (as they appear in text) ---
+  - type: verb
+    char: 働く
+    reading: はたらく
+    base: 働く
+    meaning: работать
+  - type: verb
+    char: いました
+    reading: いました
+    base: いる
+    meaning: был, существовал (одушевл.)
+  - type: verb
+    char: 心配して
+    reading: しんぱいして
+    base: 心配する
+    meaning: беспокоясь
+  - type: verb
+    char: 起こします
+    reading: おこします
+    base: 起こす
+    meaning: совершать, вызывать
+  - type: verb
+    char: 強くしました
+    reading: つよくしました
+    base: 強くする
+    meaning: сделал крепче
+  - type: verb
+    char: 経営していました
+    reading: けいえいしていました
+    base: 経営する
+    meaning: управляли
+  - type: verb
+    char: 結婚していて
+    reading: けっこんしていて
+    base: 結婚する
+    meaning: был женат
+  - type: verb
+    char: 終わると
+    reading: おわると
+    base: 終わる
+    meaning: когда заканчивалась
+  - type: verb
+    char: 取れた
+    reading: とれた
+    base: 取れる
+    meaning: был собран (урожай)
+  - type: verb
+    char: 持って帰りました
+    reading: もってかえりました
+    base: 持って帰る
+    meaning: уносили домой
+  - type: verb
+    char: 考えました
+    reading: かんがえました
+    base: 考える
+    meaning: подумал
+  - type: verb
+    char: いらない
+    reading: いらない
+    base: いる
+    meaning: не нужно
+  - type: verb
+    char: 置いておきました
+    reading: おいておきました
+    base: 置いておく
+    meaning: оставлял (заранее)
+  - type: verb
+    char: 年を取っても
+    reading: としをとっても
+    base: 年を取る
+    meaning: даже когда постарею
+  - type: verb
+    char: もらえる
+    reading: もらえる
+    base: もらう
+    meaning: могу получить (услугу)
+  - type: verb
+    char: してくれない
+    reading: してくれない
+    base: してくれる
+    meaning: не сделает для меня
+  - type: verb
+    char: 置きに行きます
+    reading: おきにいきます
+    base: 置きに行く
+    meaning: идти, чтобы положить
+  - type: verb
+    char: 戻っています
+    reading: もどっています
+    base: 戻る
+    meaning: возвращается
+  - type: verb
+    char: 思っていました
+    reading: おもっていました
+    base: 思う
+    meaning: думал, считал
+  - type: verb
+    char: 出会いました
+    reading: であいました
+    base: 出会う
+    meaning: встретились
+  - type: verb
+    char: 見つめ合って
+    reading: みつめあって
+    base: 見つめ合う
+    meaning: глядя друг другу в глаза
+  - type: verb
+    char: 理解していきました
+    reading: りかいしていきました
+    base: 理解していく
+    meaning: постепенно понимали
+  - type: verb
+    char: 落として
+    reading: おとして
+    base: 落とす
+    meaning: уронив
+  - type: verb
+    char: 抱き合いました
+    reading: だきあいました
+    base: 抱き合う
+    meaning: обнялись
+
+  # --- Verbplus ---
+  - type: verbplus
+    char: 感じるようになるのです
+    reading: かんじるようになるのです
+    base: 感じる
+    breakdown: 感じる + ようになる + の + です
+    meaning: начинает чувствоваться (постепенно)
+  - type: verbplus
+    char: 世話をしてもらえる
+    reading: せわをしてもらえる
+    base: 世話をする
+    breakdown: 世話をする + て + もらえる (потенциал)
+    meaning: могу получить заботу
+
+  # --- Grammar ---
+  - type: grammar
+    char: 〜ずつ
+    reading: ずつ
+    meaning: по (столько-то), каждый
+  - type: grammar
+    char: 〜のに
+    reading: のに
+    meaning: хотя, ведь (с сожалением)
+  - type: grammar
+    char: 〜ても
+    reading: ても
+    meaning: даже если, даже когда
+  - type: grammar
+    char: 〜と
+    reading: と
+    meaning: когда, как только (условие)
+  - type: grammar
+    char: 〜ておく
+    reading: ておく
+    meaning: сделать заранее
+  - type: grammar
+    char: 〜てしまう
+    reading: てしまう
+    meaning: (невольно) сделать что-то
+
+  # --- Phrases ---
+  - type: phrase
+    char: お互い
+    reading: おたがい
+    meaning: друг друга, взаимно
+  - type: phrase
+    char: 半分ずつ
+    reading: はんぶんずつ
+    meaning: по половине
+  - type: phrase
+    char: こっそり
+    reading: こっそり
+    meaning: тайком, украдкой
+  - type: phrase
+    char: じっと
+    reading: じっと
+    meaning: пристально, замерев
+  - type: phrase
+    char: 少しずつ
+    reading: すこしずつ
+    meaning: понемногу, постепенно
+
+  # --- Nouns ---
+  - type: noun
+    char: 不思議
+    reading: ふしぎ
+    meaning: странность, удивительное (явление)
+
+  # --- Verbs ---
+  - type: verb
+    char: 不思議に思っていました
+    reading: ふしぎにおもっていました
+    base: 不思議に思う
+    meaning: считал странным, удивлялся
