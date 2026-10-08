@@ -147,15 +147,34 @@
     charEl.style.color = style.color;
   }
 
+  function viewportSize() {
+    const vp = window.visualViewport;
+    return {
+      width: vp ? vp.width : window.innerWidth,
+      height: vp ? vp.height : window.innerHeight,
+      offsetLeft: vp ? vp.offsetLeft : 0,
+      offsetTop: vp ? vp.offsetTop : 0,
+    };
+  }
+
   function clampTooltipToViewport(tooltip, left, top) {
     const margin = 8;
+    const view = viewportSize();
     const tipRect = tooltip.getBoundingClientRect();
-    const maxLeft = Math.max(margin, window.innerWidth - tipRect.width - margin);
-    const maxTop = Math.max(margin, window.innerHeight - tipRect.height - margin);
+    const minLeft = view.offsetLeft + margin;
+    const minTop = view.offsetTop + margin;
+    const maxLeft = Math.max(
+      minLeft,
+      view.offsetLeft + view.width - tipRect.width - margin,
+    );
+    const maxTop = Math.max(
+      minTop,
+      view.offsetTop + view.height - tipRect.height - margin,
+    );
 
     return {
-      left: Math.min(Math.max(left, margin), maxLeft),
-      top: Math.min(Math.max(top, margin), maxTop),
+      left: Math.min(Math.max(left, minLeft), maxLeft),
+      top: Math.min(Math.max(top, minTop), maxTop),
     };
   }
 
@@ -166,13 +185,25 @@
       return;
     }
 
+    const view = viewportSize();
+    const margin = 8;
+    tooltip.style.maxWidth = view.width - margin * 2 + "px";
+
     // Совпадаем с метриками первого визуального фрагмента (первой строки)
+    charEl.style.whiteSpace = "nowrap";
     charEl.style.height = anchorRect.height + "px";
     charEl.style.lineHeight = anchorRect.height + "px";
 
     tooltip.style.left = "0px";
     tooltip.style.top = "0px";
     tooltip.style.visibility = "hidden";
+
+    // Длинные сочетания на узком экране — перенос вместо вылезания за край
+    if (charEl.scrollWidth > charEl.clientWidth + 1) {
+      charEl.style.whiteSpace = "normal";
+      charEl.style.height = "auto";
+      charEl.style.lineHeight = window.getComputedStyle(noun).lineHeight;
+    }
 
     let tipRect = tooltip.getBoundingClientRect();
     let charRect = charEl.getBoundingClientRect();

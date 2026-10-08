@@ -51,13 +51,15 @@ body {
   position: fixed;
   z-index: 2000;
   min-width: 8rem;
-  max-width: 18rem;
+  max-width: min(18rem, calc(100vw - 16px));
   padding: 0.85rem 1rem;
   border-radius: 0.75rem;
   border: 1px solid var(--color-border-strong);
   background-color: var(--color-surface);
   box-shadow: 0 12px 28px -10px var(--color-shadow);
   pointer-events: auto;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
 }
 
 .hanashi-tooltip-char {
@@ -70,7 +72,8 @@ body {
   font-weight: normal;
   line-height: 1.9;
   color: var(--color-text);
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .hanashi-tooltip-reading {
