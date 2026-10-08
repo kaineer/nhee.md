@@ -147,6 +147,18 @@
     charEl.style.color = style.color;
   }
 
+  function clampTooltipToViewport(tooltip, left, top) {
+    const margin = 8;
+    const tipRect = tooltip.getBoundingClientRect();
+    const maxLeft = Math.max(margin, window.innerWidth - tipRect.width - margin);
+    const maxTop = Math.max(margin, window.innerHeight - tipRect.height - margin);
+
+    return {
+      left: Math.min(Math.max(left, margin), maxLeft),
+      top: Math.min(Math.max(top, margin), maxTop),
+    };
+  }
+
   function positionTooltipOverNoun(tooltip, noun) {
     const charEl = tooltip.querySelector(".hanashi-tooltip-char");
     const anchorRect = firstLineRect(noun);
@@ -174,8 +186,11 @@
     charRect = charEl.getBoundingClientRect();
     left += anchorRect.left - charRect.left;
     top += anchorRect.top - charRect.top;
-    tooltip.style.left = left + "px";
-    tooltip.style.top = top + "px";
+
+    // У краёв экрана смещаем, чтобы весь тултип оставался читаемым
+    const clamped = clampTooltipToViewport(tooltip, left, top);
+    tooltip.style.left = clamped.left + "px";
+    tooltip.style.top = clamped.top + "px";
     tooltip.style.visibility = "visible";
   }
 
