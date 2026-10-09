@@ -1,0 +1,11 @@
+page:
+  title: VPN
+  type: list
+
+links:
+  - title: "Happ"
+    url: "https://www.happ.su/main"
+    description: "deb64 package"
+  - title: "Hiddify"
+    url: "https://hiddify.com/"
+    description: "AppImage available"
