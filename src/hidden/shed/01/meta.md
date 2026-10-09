@@ -1,0 +1,25 @@
+# Subject & Pose
+
+* Plump chubby beautiful girl
+* flash of white satin panties
+* lying on back
+
+# Face & Hair
+
+* Long light brown hair
+* Blue eyes
+
+# Clothing & Details
+
+* short pleated pink miniskirt
+* dangerous slits
+* White blouse
+
+# Body
+
+* Full bosom
+* Wide plump hips
+* Plump legs
+* hyperrealism
+    
+
