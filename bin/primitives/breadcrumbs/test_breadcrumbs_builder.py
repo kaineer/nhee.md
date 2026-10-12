@@ -66,8 +66,8 @@ def test_prompts_leaf_is_one_level_below_navbar():
     crumbs = BreadcrumbsBuilder("src").build().context(_ctx("ai/prompts/caveman"))
     levels = crumbs["crumb_levels"]
     assert len(levels) == 1
-    assert _slugs(levels[0]) == ["Caveman prompt"]
-    assert _flags(levels[0], "current") == ["Caveman prompt"]
+    assert _slugs(levels[0]) == ["C2FS", "Caveman"]
+    assert _flags(levels[0], "current") == ["Caveman"]
     assert _flags(levels[0], "next") == []
 
 
