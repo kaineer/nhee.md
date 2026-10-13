@@ -329,21 +329,23 @@
 
 /* ========== АДАПТИВНОСТЬ (мобильные устройства) ========== */
 @media (max-width: 768px) {
-  /* Убираем вложенные боковые «рамки»: body → card → text-container */
+  /* Без flex-центрирования: card/text-container на всю ширину экрана */
   body {
+    display: block;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0;
-    align-items: stretch;
   }
 
   .card {
     max-width: none;
+    width: 100%;
     border-radius: 0;
     border-left: none;
     border-right: none;
     box-shadow: none;
     padding: 1rem 0;
+    margin: 0;
   }
 
   .title {
@@ -352,6 +354,8 @@
   }
 
   .text-container {
+    width: 100%;
+    max-width: none;
     border-radius: 0;
     border-left: none;
     border-right: none;
@@ -359,6 +363,7 @@
   }
 
   .markdown-body {
+    max-width: none;
     padding: 0.75rem 1rem;
     font-size: 14px;
   }
