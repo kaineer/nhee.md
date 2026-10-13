@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ root }}/assets/root.css" />
+    <link rel="stylesheet" href="{{ root }}/assets/style.css" />
+    <link rel="stylesheet" href="{{ root }}/assets/navbar.css" />
+    <link rel="stylesheet" href="{{ root }}/assets/hanashi.css" />
+  </head>
+  <body>
+    {% include "partials/navbar.j2" %}
+    <div class="card">
+      <h1 class="title">{{ page.title }}</h1>
+      {% include "partials/hanashi.items.j2" %}
+    </div>
+    <script src="{{ root }}/assets/hanashi.js"></script>
+    <script>
+      const hanashiVocabulary = {{ vocabulary_json }};
+      highlightHanashiVocabulary(hanashiVocabulary);
+    </script>
+  </body>
+</html>

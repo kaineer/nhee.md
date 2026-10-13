@@ -1,0 +1,371 @@
+page:
+  title: 湖になりなさい
+  type: "hanashi"
+  description: "みずうみになりなさい"
+
+hanashi:
+  title: 湖になりなさい
+  title_reading: みずうみになりなさい
+  title_ru: Стань озером
+
+paragraphs:
+  - |
+    人生に悩んだ若者が、昔教わった教師の所へ相談に行きます。悩んでいる若者に、教師は塩の入った水を飲ませます。教師が若者に伝える、塩の意味とは……。
+  - |
+    ある所に、一人の不幸な若者がいました。彼は、自分がどうすればいいか、分からなくて悩んでいました。そこで、昔学校で教わった教師の所へ行って、自分がどんなに悲しい人生を送っているかを話しました。そして、それを変えるにはどうしたらいいか、尋ねました。
+  - |
+    年老いた教師は、塩を少し取って、水の入ったコップに入れました。そしてそれを飲むように若者に言いました。
+  - |
+    「味はどうだ？」と教師は尋ねました。
+    「ひどいです」と若者は首を振りながら答えました。
+    教師は笑って、もう一度塩を少し取りました。そして今度はそれを湖に入れるように若者に言いました。二人は何も話をしないで、近くの湖まで行きました。湖に着くと、若者は塩を湖に投げました。
+  - |
+    「湖の水を飲んでみなさい」と教師は言いました。若者は湖の水を少し飲みました。
+    「味はどうだ？」
+    「おいしいです」
+    「塩の味はするかい？」
+    「いいえ」
+  - |
+    教師は、若者の隣に座りました。そして、若者の手を取って言いました。
+    「人生での苦しさは、塩と同じだ。それ以上でもそれ以下でもない。苦しさの量はいつも同じで、変わらない。しかし、苦しさの感じ方は、入れ物によって変わる。君が人生の苦しさを感じたときにできることは、物事を広く見ることだ。コップではなく、湖になりなさい」
+
+vocabulary:
+  # --- Nouns ---
+  - type: noun
+    char: 人生
+    reading: じんせい
+    meaning: жизнь (человека)
+  - type: noun
+    char: 若者
+    reading: わかもの
+    meaning: молодой человек, юноша
+  - type: noun
+    char: 昔
+    reading: むかし
+    meaning: прошлое, давно
+  - type: noun
+    char: 教師
+    reading: きょうし
+    meaning: учитель, преподаватель
+  - type: noun
+    char: 所
+    reading: ところ
+    meaning: место
+  - type: noun
+    char: 相談
+    reading: そうだん
+    meaning: разговор, консультация
+  - type: noun
+    char: 塩
+    reading: しお
+    meaning: соль
+  - type: noun
+    char: 水
+    reading: みず
+    meaning: вода
+  - type: noun
+    char: 意味
+    reading: いみ
+    meaning: смысл, значение
+  - type: noun
+    char: 不幸
+    reading: ふこう
+    meaning: несчастье, горе
+  - type: noun
+    char: 自分
+    reading: じぶん
+    meaning: сам, себя
+  - type: noun
+    char: 学校
+    reading: がっこう
+    meaning: школа
+  - type: noun
+    char: 年寄り
+    reading: としより
+    meaning: пожилой человек, старик
+  - type: noun
+    char: コップ
+    reading: こっぷ
+    meaning: стакан
+  - type: noun
+    char: 味
+    reading: あじ
+    meaning: вкус
+  - type: noun
+    char: 湖
+    reading: みずうみ
+    meaning: озеро
+  - type: noun
+    char: 近く
+    reading: ちかく
+    meaning: рядом, поблизости
+  - type: noun
+    char: 隣
+    reading: となり
+    meaning: сосед, рядом
+  - type: noun
+    char: 苦しさ
+    reading: くるしさ
+    meaning: страдание, муки
+  - type: noun
+    char: 量
+    reading: りょう
+    meaning: количество
+  - type: noun
+    char: 感じ方
+    reading: かんじかた
+    meaning: способ восприятия, ощущение
+  - type: noun
+    char: 入れ物
+    reading: いれもの
+    meaning: сосуд, ёмкость
+  - type: noun
+    char: 物事
+    reading: ものごと
+    meaning: вещи, всё сущее
+  - type: noun
+    char: 君
+    reading: きみ
+    meaning: ты
+
+  # --- Verbs (as in text) ---
+  - type: verb
+    char: 悩んだ
+    reading: なやんだ
+    base: 悩む
+    meaning: страдал, мучился
+  - type: verb
+    char: 教わった
+    reading: おそわった
+    base: 教わる
+    meaning: учился у кого-л.
+  - type: verb
+    char: 行きます
+    reading: いきます
+    base: 行く
+    meaning: идёт
+  - type: verb
+    char: 悩んでいる
+    reading: なやんでいる
+    base: 悩む
+    meaning: страдает, мучается
+  - type: verb
+    char: 飲ませます
+    reading: のませます
+    base: 飲む
+    meaning: заставляет пить
+  - type: verb
+    char: 伝える
+    reading: つたえる
+    base: 伝える
+    meaning: передавать, сообщать
+  - type: verb
+    char: いました
+    reading: いました
+    base: いる
+    meaning: был, существовал
+  - type: verb
+    char: 分からなくて
+    reading: わからなくて
+    base: 分かる
+    meaning: не понимая
+  - type: verb
+    char: 悩んでいました
+    reading: なやんでいました
+    base: 悩む
+    meaning: мучился
+  - type: verb
+    char: 送っているか
+    reading: おくっているか
+    base: 送る
+    meaning: (какую жизнь) ведёт
+  - type: verb
+    char: 話しました
+    reading: はなしました
+    base: 話す
+    meaning: рассказал
+  - type: verb
+    char: 変える
+    reading: かえる
+    base: 変える
+    meaning: менять
+  - type: verb
+    char: 尋ねました
+    reading: たずねました
+    base: 尋ねる
+    meaning: спросил
+  - type: verb
+    char: 取って
+    reading: とって
+    base: 取る
+    meaning: взяв
+  - type: verb
+    char: 入れました
+    reading: いれました
+    base: 入れる
+    meaning: положил, всыпал
+  - type: verb
+    char: 言いました
+    reading: いいました
+    base: 言う
+    meaning: сказал
+  - type: verb
+    char: 笑って
+    reading: わらって
+    base: 笑う
+    meaning: засмеявшись
+  - type: verb
+    char: 取りました
+    reading: とりました
+    base: 取る
+    meaning: взял
+  - type: verb
+    char: 話をしないで
+    reading: はなしをしないで
+    base: 話をする
+    meaning: не разговаривая
+  - type: verb
+    char: 着くと
+    reading: つくと
+    base: 着く
+    meaning: когда дошли
+  - type: verb
+    char: 投げました
+    reading: なげました
+    base: 投げる
+    meaning: бросил
+  - type: verb
+    char: 飲んでみなさい
+    reading: のんでみなさい
+    base: 飲んでみる
+    meaning: попробуй выпить
+  - type: verb
+    char: 飲みました
+    reading: のみました
+    base: 飲む
+    meaning: выпил
+  - type: verb
+    char: するかい
+    reading: するかい
+    base: する
+    meaning: (есть ли) присутствует
+  - type: verb
+    char: 座りました
+    reading: すわりました
+    base: 座る
+    meaning: сел
+  - type: verb
+    char: 手を取って
+    reading: てをとって
+    base: 手を取る
+    meaning: взяв за руку
+  - type: verb
+    char: 変わらない
+    reading: かわらない
+    base: 変わる
+    meaning: не меняется
+  - type: verb
+    char: 変わる
+    reading: かわる
+    base: 変わる
+    meaning: меняется
+  - type: verb
+    char: 感じた
+    reading: かんじた
+    base: 感じる
+    meaning: почувствовал
+  - type: verb
+    char: できる
+    reading: できる
+    base: できる
+    meaning: можешь (сделать)
+  - type: verb
+    char: 広く見る
+    reading: ひろくみる
+    base: 広く見る
+    meaning: смотреть широко
+  - type: verb
+    char: なりなさい
+    reading: なりなさい
+    base: なる
+    meaning: стань (повелительное)
+
+  # --- Verbplus ---
+  - type: verbplus
+    char: 飲むように言いました
+    reading: のむようにいいました
+    base: 飲む
+    breakdown: 飲む + ように + 言う (прош.)
+    meaning: сказал, чтобы выпил
+  - type: verbplus
+    char: 入れるように言いました
+    reading: いれるようにいいました
+    base: 入れる
+    breakdown: 入れる + ように + 言う (прош.)
+    meaning: сказал, чтобы положил
+  - type: verbplus
+    char: 首を振りながら答えました
+    reading: くびをふりながらこたえました
+    base: 首を振る
+    breakdown: 首を振る + ながら + 答える (прош.)
+    meaning: ответил, качая головой
+
+  # --- Grammar ---
+  - type: grammar
+    char: 〜ながら
+    reading: ながら
+    meaning: одновременно, делая что-то
+  - type: grammar
+    char: 〜ように
+    reading: ように
+    meaning: так, чтобы; как
+  - type: grammar
+    char: 〜ずつ
+    reading: ずつ
+    meaning: по (столько-то)
+  - type: grammar
+    char: 〜以上でも〜以下でもない
+    reading: いじょうでもいかでもない
+    meaning: не более и не менее чем
+  - type: grammar
+    char: 〜によって
+    reading: によって
+    meaning: в зависимости от; посредством
+  - type: grammar
+    char: 〜ことだ
+    reading: ことだ
+    meaning: следует, нужно (совет)
+  - type: grammar
+    char: 〜ではなく
+    reading: ではなく
+    meaning: а не..., не (что-то), а...
+
+  # --- Phrases ---
+  - type: phrase
+    char: 年老いた
+    reading: としおいた
+    meaning: постаревший, пожилой
+  - type: phrase
+    char: 悲しい
+    reading: かなしい
+    meaning: грустный, печальный
+  - type: phrase
+    char: おいしい
+    reading: おいしい
+    meaning: вкусный
+  - type: phrase
+    char: ひどい
+    reading: ひどい
+    meaning: ужасный
+  - type: phrase
+    char: いいえ
+    reading: いいえ
+    meaning: нет
+  - type: phrase
+    char: どうすればいいか
+    reading: どうすればいいか
+    meaning: что делать (как быть)
+  - type: phrase
+    char: どうしたらいいか
+    reading: どうしたらいいか
+    meaning: что делать

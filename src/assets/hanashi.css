@@ -1,0 +1,107 @@
+/* assets/hanashi.css */
+
+@font-face {
+  font-family: 'ZenMaru';
+  src: url('fonts/zen-maru.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  align-items: flex-start;
+}
+
+.hanashi-paragraph {
+  font-family: 'ZenMaru', sans-serif;
+  font-weight: normal;
+  font-size: 1.35rem;
+  line-height: 1.9;
+  color: var(--color-text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 1.25rem;
+}
+
+.hanashi-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.hanashi-paragraph .vocabulary {
+  border-bottom: 1px dotted var(--color-accent);
+  cursor: help;
+}
+
+.hanashi-paragraph .vocabulary.noun {
+  border-bottom-color: var(--color-accent);
+}
+
+.hanashi-paragraph .vocabulary.verb {
+  border-bottom-color: var(--color-success);
+}
+
+.hanashi-paragraph .vocabulary.phrase {
+  border-bottom-color: var(--color-emphasis);
+}
+
+.hanashi-paragraph .vocabulary.verbplus {
+  border-bottom-color: var(--color-warning);
+}
+
+.hanashi-tooltip {
+  position: fixed;
+  z-index: 2000;
+  min-width: 8rem;
+  max-width: min(18rem, calc(100vw - 16px));
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border-strong);
+  background-color: var(--color-surface);
+  box-shadow: 0 12px 28px -10px var(--color-shadow);
+  pointer-events: auto;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+.hanashi-tooltip-char {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: 'ZenMaru', sans-serif;
+  font-size: 1.35rem;
+  font-weight: normal;
+  line-height: 1.9;
+  color: var(--color-text);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.hanashi-tooltip-reading {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  color: var(--color-success);
+}
+
+.hanashi-tooltip-base {
+  margin-top: 0.35rem;
+  font-family: 'ZenMaru', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-accent-hover);
+}
+
+.hanashi-tooltip-breakdown {
+  margin-top: 0.35rem;
+  font-family: 'ZenMaru', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-emphasis);
+  word-break: break-word;
+}
+
+.hanashi-tooltip-meaning {
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+  color: var(--color-link);
+  line-height: 1.4;
+}

@@ -1,0 +1,19 @@
+page:
+  title: "Короткие японские рассказы"
+  type: "list"
+links:
+  - url: ./01-brothers
+    title: "二人の兄弟"
+    description: "Два брата"
+  - url: ./02-lake
+    title: "湖になりなさい"
+    description: "Стань озером"
+  - url: ./03-cup
+    title: "コップを置いて"
+    description: "Поставь стакан"
+  - url: ./04-omorashi
+    title: "おもらし"
+    description: "Мокрые штаны"
+  - url: ./05-dog
+    title: "犬の一生が短い理由"
+    description: "Почему жизнь собаки коротка"

@@ -1,0 +1,441 @@
+page:
+  title: "犬の一生が短い理由"
+  type: "hanashi"
+  description: "Почему жизнь собаки коротка"
+hanashi:
+  title: 犬の一生が短い理由
+  title_reading: いぬのいっしょうがみじかいりゆう
+  title_ru: Почему жизнь собаки коротка
+paragraphs:
+  - |
+    年取った犬が死ぬときを迎えました。その犬を飼っている家族の母親は、「どうして犬は人間より早く死ぬの？」と悲しみます。そのとき、6歳の息子が「僕は、どうしてか知ってるよ」と話し始めます。
+  - |
+    「お母さん、イチローの様子がおかしいよ！」
+    「たいへん！　獣医さんを呼ばなくてはね」
+    イチローはゴールデン・レトリバーで、10歳になりました。6歳の明はイチローが大好きで、いつも一緒に遊んでいました。でも、最近、イチローは年取ってきて、体が弱っていました。
+  - |
+    獣医が家に来て、イチローを診察しました。獣医は首を振って、明のお父さんとお母さんに「イチローの命はもう長くない」と言いました。
+    「ご家族3人で、イチローが死ぬときに一緒にいてあげてください」と獣医は言って、帰って行きました。
+  - |
+    「でも、明はイチローの死を受け止めることができるかしら？」
+    お母さんがお父さんに尋ねました。お母さんの目からは涙がこぼれそうです。
+  - |
+    お父さんは、明をそばに呼んで、言いました。
+    「明、悲しいことだけど、イチローは天国に行ってしまうよ。みんなで見送ってあげようね」
+    明は、黙って、イチローの首を優しく抱いていました。
+    明は普段と変わらない様子で、イチローが死んでしまうことを理解していないように見えました。
+  - |
+    その日の夜、イチローは家族に見守られて、静かに息を引き取りました。
+  - |
+    「どうして、犬はこんなに早く死んでしまうのかしら」
+    お母さんが、犬の一生が人間の一生よりもずっと短いことを悲しみました。
+    すると、それまでずっと黙っていた明が、静かな声で言いました。
+  - |
+    「ぼくは、どうしてか知ってるよ」
+    お母さんとお父さんは驚いて、明の方を見ました。
+    明は、言いました。
+    「人間は、いつも、みんなを大好きでいたり、みんなに優しくしたり、毎日楽しく生活したりできるように努力しているんだよね？」
+    6歳の男の子は続けました。
+    「犬は、もうそういうことができているから、人間ほど長く生きなくてもいいんだよ」
+
+vocabulary:
+  # --- Nouns ---
+  - type: noun
+    char: 一生
+    reading: いっしょう
+    meaning: вся жизнь, жизнь
+  - type: noun
+    char: 理由
+    reading: りゆう
+    meaning: причина
+  - type: noun
+    char: 犬
+    reading: いぬ
+    meaning: собака
+  - type: noun
+    char: 家族
+    reading: かぞく
+    meaning: семья
+  - type: noun
+    char: 母親
+    reading: ははおや
+    meaning: мать
+  - type: noun
+    char: 人間
+    reading: にんげん
+    meaning: человек, люди
+  - type: noun
+    char: 息子
+    reading: むすこ
+    meaning: сын
+  - type: noun
+    char: 様子
+    reading: ようす
+    meaning: вид, состояние
+  - type: noun
+    char: 獣医
+    reading: じゅうい
+    meaning: ветеринар
+  - type: noun
+    char: 明
+    reading: あきら
+    meaning: Акира (имя)
+  - type: noun
+    char: 最近
+    reading: さいきん
+    meaning: в последнее время
+  - type: noun
+    char: 体
+    reading: からだ
+    meaning: тело, организм
+  - type: noun
+    char: 診察
+    reading: しんさつ
+    meaning: осмотр (врачебный)
+  - type: noun
+    char: 首
+    reading: くび
+    meaning: шея
+  - type: noun
+    char: 命
+    reading: いのち
+    meaning: жизнь
+  - type: noun
+    char: 天国
+    reading: てんごく
+    meaning: рай, небеса
+  - type: noun
+    char: 死
+    reading: し
+    meaning: смерть
+  - type: noun
+    char: 目
+    reading: め
+    meaning: глаз
+  - type: noun
+    char: 涙
+    reading: なみだ
+    meaning: слёзы
+  - type: noun
+    char: お父さん
+    reading: おとうさん
+    meaning: отец
+  - type: noun
+    char: お母さん
+    reading: おかあさん
+    meaning: мать
+  - type: noun
+    char: 夜
+    reading: よる
+    meaning: ночь
+  - type: noun
+    char: 声
+    reading: こえ
+    meaning: голос
+  - type: noun
+    char: 男の子
+    reading: おとこのこ
+    meaning: мальчик
+  - type: noun
+    char: 6歳
+    reading: ろくさい
+    meaning: 6 лет
+  - type: noun
+    char: 10歳
+    reading: じゅっさい
+    meaning: 10 лет
+
+  # --- Verbs (as in text) ---
+  - type: verb
+    char: 年取った
+    reading: としとった
+    base: 年取る
+    meaning: постаревший
+  - type: verb
+    char: 死ぬ
+    reading: しぬ
+    base: 死ぬ
+    meaning: умирать
+  - type: verb
+    char: 迎えました
+    reading: むかえました
+    base: 迎える
+    meaning: встретил, наступил
+  - type: verb
+    char: 飼っている
+    reading: かっている
+    base: 飼う
+    meaning: держит (животное)
+  - type: verb
+    char: 悲しみます
+    reading: かなしみます
+    base: 悲しむ
+    meaning: печалится, горюет
+  - type: verb
+    char: 知ってる
+    reading: しってる
+    base: 知る
+    meaning: знаю
+  - type: verb
+    char: 話し始めます
+    reading: はなしはじめます
+    base: 話し始める
+    meaning: начинает говорить
+  - type: verb
+    char: 呼ばなくてはね
+    reading: よばなくてはね
+    base: 呼ぶ
+    meaning: надо позвать
+  - type: verb
+    char: なりました
+    reading: なりました
+    base: なる
+    meaning: стал
+  - type: verb
+    char: 遊んでいました
+    reading: あそんでいました
+    base: 遊ぶ
+    meaning: играл
+  - type: verb
+    char: 弱っていました
+    reading: よわっていました
+    base: 弱る
+    meaning: ослабевал
+  - type: verb
+    char: 来て
+    reading: きて
+    base: 来る
+    meaning: придя
+  - type: verb
+    char: 診察しました
+    reading: しんさつしました
+    base: 診察する
+    meaning: осмотрел
+  - type: verb
+    char: 振って
+    reading: ふって
+    base: 振る
+    meaning: покачав
+  - type: verb
+    char: 言いました
+    reading: いいました
+    base: 言う
+    meaning: сказал
+  - type: verb
+    char: 帰って行きました
+    reading: かえっていきました
+    base: 帰って行く
+    meaning: ушёл (отправился домой)
+  - type: verb
+    char: 受け止める
+    reading: うけとめる
+    base: 受け止める
+    meaning: принять (удар), осознать
+  - type: verb
+    char: 尋ねました
+    reading: たずねました
+    base: 尋ねる
+    meaning: спросила
+  - type: verb
+    char: こぼれそうです
+    reading: こぼれそうです
+    base: こぼれる
+    meaning: вот-вот прольются
+  - type: verb
+    char: 呼んで
+    reading: よんで
+    base: 呼ぶ
+    meaning: позвав
+  - type: verb
+    char: 行ってしまう
+    reading: いってしまう
+    base: 行ってしまう
+    meaning: уйдёт (навсегда)
+  - type: verb
+    char: 見送って
+    reading: みおくって
+    base: 見送る
+    meaning: проводив (в последний путь)
+  - type: verb
+    char: 黙って
+    reading: だまって
+    base: 黙る
+    meaning: молча
+  - type: verb
+    char: 抱いていました
+    reading: だいていました
+    base: 抱く
+    meaning: обнимал
+  - type: verb
+    char: 変わらない
+    reading: かわらない
+    base: 変わる
+    meaning: не менялся
+  - type: verb
+    char: 見えました
+    reading: みえました
+    base: 見える
+    meaning: казалось, выглядело
+  - type: verb
+    char: 見守られて
+    reading: みまもられて
+    base: 見守られる
+    meaning: будучи окружённым заботой
+  - type: verb
+    char: 息を引き取りました
+    reading: いきをひきとりました
+    base: 息を引き取る
+    meaning: испустил дух
+  - type: verb
+    char: 悲しみました
+    reading: かなしみました
+    base: 悲しむ
+    meaning: горевала
+  - type: verb
+    char: 驚いて
+    reading: おどろいて
+    base: 驚く
+    meaning: удивившись
+  - type: verb
+    char: 見ました
+    reading: みました
+    base: 見る
+    meaning: посмотрели
+  - type: verb
+    char: 続けました
+    reading: つづけました
+    base: 続ける
+    meaning: продолжил
+  - type: verb
+    char: できるように
+    reading: できるように
+    base: できる
+    meaning: чтобы мочь
+  - type: verb
+    char: 努力している
+    reading: どりょくしている
+    base: 努力する
+    meaning: стараются
+  - type: verb
+    char: 長く生きなくてもいい
+    reading: ながくいきなくてもいい
+    base: 長く生きる
+    meaning: можно и не жить долго
+
+  # --- Verbplus ---
+  - type: verbplus
+    char: 死んでしまうこと
+    reading: しんでしまうこと
+    base: 死んでしまう
+    breakdown: 死ぬ + てしまう + こと
+    meaning: то, что (он) умрёт (окончательно)
+  - type: verbplus
+    char: 理解していないように見えました
+    reading: りかいしていないようにみえました
+    base: 理解する
+    breakdown: 理解する + て + いる + ない + ように + 見える (прош.)
+    meaning: казалось, что не понимает
+  - type: verbplus
+    char: 一緒にいてあげてください
+    reading: いっしょにいてあげてください
+    base: 一緒にいる
+    breakdown: 一緒にいる + て + あげる + て + ください
+    meaning: пожалуйста, побудьте вместе (для него)
+  - type: verbplus
+    char: 死ぬときに一緒にいてあげてください
+    reading: しぬときにいっしょにいてあげてください
+    base: 一緒にいる
+    breakdown: 死ぬ + とき + に + 一緒にいる + て + あげる + て + ください
+    meaning: когда умрёт, побудьте с ним (ради него)
+
+  # --- Grammar ---
+  - type: grammar
+    char: 〜なくてはね
+    reading: なくてはね
+    meaning: надо (с оттенком мягкого долженствования)
+  - type: grammar
+    char: 〜てきて
+    reading: てきて
+    meaning: становиться (постепенно)
+  - type: grammar
+    char: 〜てあげる
+    reading: てあげる
+    meaning: сделать для кого-то (услуга)
+  - type: grammar
+    char: 〜そうだ
+    reading: そうだ
+    meaning: кажется, вот-вот (по виду)
+  - type: grammar
+    char: 〜てしまう
+    reading: てしまう
+    meaning: (невольно/окончательно) сделать
+  - type: grammar
+    char: 〜ておく
+    reading: ておく
+    meaning: сделать заранее
+  - type: grammar
+    char: 〜ように
+    reading: ように
+    meaning: так, чтобы
+  - type: grammar
+    char: 〜たり〜たり
+    reading: たりたり
+    meaning: то..., то... (перечисление действий)
+  - type: grammar
+    char: 〜ことができる
+    reading: ことができる
+    meaning: мочь делать что-то
+  - type: grammar
+    char: 〜んだよね？
+    reading: んだよね
+    meaning: ведь так? (разговорное подтверждение)
+
+  # --- Phrases ---
+  - type: phrase
+    char: たいへん
+    reading: たいへん
+    meaning: ужасно, беда
+  - type: phrase
+    char: ゴールデン・レトリバー
+    reading: ごーるでん・れとりばー
+    meaning: золотистый ретривер
+  - type: phrase
+    char: 大好き
+    reading: だいすき
+    meaning: очень любимый
+  - type: phrase
+    char: 普段
+    reading: ふだん
+    meaning: обычно, повседневно
+  - type: phrase
+    char: 静かに
+    reading: しずかに
+    meaning: тихо, спокойно
+  - type: phrase
+    char: 優しく
+    reading: やさしく
+    meaning: нежно, ласково
+  - type: phrase
+    char: 毎日
+    reading: まいにち
+    meaning: каждый день
+  - type: phrase
+    char: 楽しく
+    reading: たのしく
+    meaning: весело, радостно
+  - type: phrase
+    char: いつも
+    reading: いつも
+    meaning: всегда
+  - type: phrase
+    char: ずっと
+    reading: ずっと
+    meaning: всё время, гораздо
+  - type: phrase
+    char: もう
+    reading: もう
+    meaning: уже (не)
+  - type: phrase
+    char: みんな
+    reading: みんな
+    meaning: все

@@ -1,0 +1,315 @@
+page:
+  type: "hanashi"
+  title: "コップを置いて"
+  description: "こっぷをおいて"
+
+hanashi:
+  title: コップを置いて
+  title_reading: こっぷをおいて
+  title_ru: Поставь стакан
+
+paragraphs:
+  - |
+    あなたは心配していることや、嫌なことなどをずっと頭の中で考えてしまいますか？　ずっと考えていたら、疲れませんか？　それは水が入っているコップをずっと持つようなものなのです。疲れないためには……。
+  - |
+    ある先生が、ストレスの管理について話していました。先生は水の入っているコップを見せて「みなさん、このコップは軽いですか。重いですか」と学生に聞きました。学生は「軽い」「重くない」「ちょっと重い」「軽くない」「重い」「とても軽い」など、さまざまな答えを言いました。先生が話を続けました。
+  - |
+    「このコップが軽いか重いか。実はコップの重さとは関係ありません。コップを持っている時間の長さで、軽いか重いかが決まります。もし、1分だけなら、持っていられますよね。では、1時間持っていられますか？　1日中、ずっとは持っていられないでしょう。持っている時間が長ければ長いほど、コップは重く感じるようになるのです」
+  - |
+    「今、あなたが困っていること、相談したいこと、悩んでいることも、このコップの水と同じです。あなたがずっと自分の問題について考えていたら、疲れて、嫌になってしまいでしょう。そんなときは、コップを置いて少し休みましょう。少し休んで、もう一度持ち上げればいいんです」
+  - |
+    困っているとき、悩んでいるときに、元気になって、また人生を歩き続けることができるように、私たちはときどき休まなければなりません。ですから、心配していること、困ったこと、嫌なことをときどき頭から消して、リラックスする時間を毎日作るようにしましょう。
+
+vocabulary:
+  # --- Nouns ---
+  - type: noun
+    char: 心配
+    reading: しんぱい
+    meaning: беспокойство, волнение
+  - type: noun
+    char: 嫌
+    reading: いや
+    meaning: неприятный, нежелательный
+  - type: noun
+    char: 頭の中
+    reading: あたまのなか
+    meaning: в голове, в мыслях
+  - type: noun
+    char: 水
+    reading: みず
+    meaning: вода
+  - type: noun
+    char: 先生
+    reading: せんせい
+    meaning: учитель, преподаватель
+  - type: noun
+    char: 管理
+    reading: かんり
+    meaning: управление, контроль
+  - type: noun
+    char: 学生
+    reading: がくせい
+    meaning: ученик, студент
+  - type: noun
+    char: 答え
+    reading: こたえ
+    meaning: ответ
+  - type: noun
+    char: 重さ
+    reading: おもさ
+    meaning: вес, тяжесть
+  - type: noun
+    char: 関係
+    reading: かんけい
+    meaning: отношение, связь
+  - type: noun
+    char: 時間
+    reading: じかん
+    meaning: время
+  - type: noun
+    char: 長さ
+    reading: ながさ
+    meaning: длина, продолжительность
+  - type: noun
+    char: 1日
+    reading: いちにち
+    meaning: весь день, сутки
+  - type: noun
+    char: 今
+    reading: いま
+    meaning: сейчас
+  - type: noun
+    char: 問題
+    reading: もんだい
+    meaning: проблема
+  - type: noun
+    char: 人生
+    reading: じんせい
+    meaning: жизнь
+  - type: noun
+    char: 私達
+    reading: わたしたち
+    meaning: мы
+  - type: noun
+    char: 元気
+    reading: げんき
+    meaning: бодрый, здоровый
+  - type: noun
+    char: 頭
+    reading: あたま
+    meaning: голова
+
+  # --- Verbs (as in text) ---
+  - type: verb
+    char: 考えてしまいます
+    reading: かんがえてしまいます
+    base: 考える
+    meaning: невольно думаете
+  - type: verb
+    char: 疲れませんか
+    reading: つかれませんか
+    base: 疲れる
+    meaning: не устаёте ли
+  - type: verb
+    char: 持つ
+    reading: もつ
+    base: 持つ
+    meaning: держать
+  - type: verb
+    char: 話していました
+    reading: はなしていました
+    base: 話す
+    meaning: рассказывал
+  - type: verb
+    char: 見せて
+    reading: みせて
+    base: 見せる
+    meaning: показывая
+  - type: verb
+    char: 聞きました
+    reading: ききました
+    base: 聞く
+    meaning: спросил
+  - type: verb
+    char: 言いました
+    reading: いいました
+    base: 言う
+    meaning: сказал
+  - type: verb
+    char: 続けました
+    reading: つづけました
+    base: 続ける
+    meaning: продолжил
+  - type: verb
+    char: 決まります
+    reading: きまります
+    base: 決まる
+    meaning: определяется
+  - type: verb
+    char: 持っていられます
+    reading: もっていられます
+    base: 持っていられる
+    meaning: можете держать
+  - type: verb
+    char: 感じる
+    reading: かんじる
+    base: 感じる
+    meaning: чувствовать
+  - type: verb
+    char: 困っている
+    reading: こまっている
+    base: 困る
+    meaning: мучаетесь
+  - type: verb
+    char: 相談したい
+    reading: そうだんしたい
+    base: 相談する
+    meaning: хочу посоветоваться
+  - type: verb
+    char: 悩んでいる
+    reading: なやんでいる
+    base: 悩む
+    meaning: страдаете
+  - type: verb
+    char: 休みましょう
+    reading: やすみましょう
+    base: 休む
+    meaning: давайте отдохнём
+  - type: verb
+    char: 休んで
+    reading: やすんで
+    base: 休む
+    meaning: отдохнув
+  - type: verb
+    char: 持ち上げれば
+    reading: もちあげれば
+    base: 持ち上げる
+    meaning: если поднять
+  - type: verb
+    char: 歩き続ける
+    reading: あるきつづける
+    base: 歩き続ける
+    meaning: продолжать идти
+  - type: verb
+    char: 休まなければなりません
+    reading: やすまなければなりません
+    base: 休む
+    meaning: должны отдыхать
+  - type: verb
+    char: 消して
+    reading: けして
+    base: 消す
+    meaning: убирая, стирая
+  - type: verb
+    char: 作る
+    reading: つくる
+    base: 作る
+    meaning: создавать
+
+  # --- Verbplus ---
+  - type: verbplus
+    char: 持つようなものなのです
+    reading: もつのようなものなのです
+    base: 持つ
+    breakdown: 持つ + ようなもの + な + の + です
+    meaning: это всё равно что держать
+  - type: verbplus
+    char: 持っている時間
+    reading: もっているじかん
+    base: 持っている
+    breakdown: 持つ + て + いる + 時間
+    meaning: время, в течение которого держишь
+  - type: verbplus
+    char: 持っていられないでしょう
+    reading: もっていられないでしょう
+    base: 持っていられる
+    breakdown: 持つ + て + いる + られる (потенц.) + ない + でしょう
+    meaning: наверное, не сможете держать
+  - type: verbplus
+    char: 長ければ長いほど
+    reading: ながければながいほど
+    base: 長い
+    breakdown: 長い (〜ば) + 長い + ほど
+    meaning: чем дольше, тем...
+  - type: verbplus
+    char: 重く感じるようになるのです
+    reading: おもくかんじるようになるのです
+    base: 重く感じる
+    breakdown: 重く + 感じる + ようになる + の + です
+    meaning: начинает казаться тяжёлым
+  - type: verbplus
+    char: 嫌になってしまいでしょう
+    reading: いやになってしまいでしょう
+    base: 嫌になる
+    breakdown: 嫌になる + てしまう + でしょう
+    meaning: наверное, вам надоест (окончательно)
+  - type: verbplus
+    char: 休まなければなりません
+    reading: やすまなければなりません
+    base: 休む
+    breakdown: 休む + なければ + ならない + ます
+    meaning: должны отдыхать (обязанность)
+
+  # --- Grammar ---
+  - type: grammar
+    char: 〜てしまいます
+    reading: てしまいます
+    meaning: (невольно) сделать что-то
+  - type: grammar
+    char: 〜たら
+    reading: たら
+    meaning: если, когда
+  - type: grammar
+    char: 〜ようなもの
+    reading: ようなもの
+    meaning: нечто вроде, всё равно что
+  - type: grammar
+    char: 〜ためには
+    reading: ためには
+    meaning: для того чтобы
+  - type: grammar
+    char: 〜について
+    reading: について
+    meaning: о, касательно
+  - type: grammar
+    char: 〜ば〜ほど
+    reading: ばほど
+    meaning: чем больше..., тем больше...
+  - type: grammar
+    char: 〜ようになる
+    reading: ようになる
+    meaning: становиться, начинать
+  - type: grammar
+    char: 〜ばいい
+    reading: ばいい
+    meaning: надо просто, достаточно
+  - type: grammar
+    char: 〜ようにする
+    reading: ようにする
+    meaning: стараться делать, взять за правило
+  - type: grammar
+    char: 〜なければならない
+    reading: なければならない
+    meaning: должен, обязан
+
+  # --- Phrases ---
+  - type: phrase
+    char: さまざまな
+    reading: さまざまな
+    meaning: разнообразные
+  - type: phrase
+    char: ストレス
+    reading: すとれす
+    meaning: стресс
+  - type: phrase
+    char: リラックス
+    reading: りらっくす
+    meaning: расслабление
+  - type: phrase
+    char: ときどき
+    reading: ときどき
+    meaning: иногда
+  - type: phrase
+    char: ちょっと
+    reading: ちょっと
+    meaning: немного, чуть-чуть

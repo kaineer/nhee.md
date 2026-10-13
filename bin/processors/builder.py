@@ -6,10 +6,11 @@ from page.types.list import List
 from page.types.markdown import Markdown
 from page.types.kanji import Kanji
 from page.types.doushi_table import DoushiTable
+from page.types.hanashi import Hanashi
 from page.types.dummy import Dummy
 
 from primitives.context.data import ContextLoader
-# from primitives.breadcrumbs.builder import BreadcrumbsBuilder
+from primitives.breadcrumbs.builder import BreadcrumbsBuilder
 from primitives.navbar.builder import NavbarBuilder
 from primitives.page_enumerate import find_meta_files
 from j2.templates import TemplateContainer as J2Templates
@@ -20,6 +21,7 @@ page_types = {
     "markdown": Markdown,
     "kanji": Kanji,
     "doushi-table": DoushiTable,
+    "hanashi": Hanashi,
     "repos": Dummy
 }
 
@@ -29,7 +31,7 @@ class Builder:
         self.j2 = J2Templates("jinja")
         self.context_loader = ContextLoader(root)
         self.navbar = NavbarBuilder(root).build()
-        # self.breadcrumbs = BreadcrumbsBuilder(root).build()
+        self.breadcrumbs = BreadcrumbsBuilder(root).build()
 
     def _j2_page_template(self, type):
         name = f"pages/{type}"
@@ -50,10 +52,10 @@ class Builder:
             raise FileNotFoundError(f"jinja/pages/{type}.j2")
 
         nav_ctx = self.navbar.context(context)
-        # crumb_ctx = self.breadcrumbs.context(context)
+        crumb_ctx = self.breadcrumbs.context(context)
         mappings = {
             **nav_ctx,
-            # **crumb_ctx,
+            **crumb_ctx,
             **parameters,
             "root": context.root,
             "title": title,
