@@ -1,0 +1,11 @@
+page:
+  title: Hidden pages
+  type: list
+
+links:
+  - title: VPN clients
+    url: "./vpn"
+    description: "Where to get vpn client"
+  - title: Shed prompts
+    url: "./shed"
+    description: "Hidden shed prompts"

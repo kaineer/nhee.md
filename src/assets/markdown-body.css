@@ -188,6 +188,7 @@
 
 .markdown-body blockquote p {
   margin: 0.5em 0;
+  font-style: italic;
 }
 
 /* ========== ГОРИЗОНТАЛЬНАЯ ЛИНИЯ ========== */
@@ -328,13 +329,53 @@
 
 /* ========== АДАПТИВНОСТЬ (мобильные устройства) ========== */
 @media (max-width: 768px) {
+  /* Без flex-центрирования: card/text-container на всю ширину экрана */
+  body {
+    display: block;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  .card {
+    max-width: none;
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    padding: 1rem 0;
+    margin: 0;
+  }
+
+  .title {
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .text-container {
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 0;
+  }
+
   .markdown-body {
-    padding: 1rem;
-    font-size: 14px;
+    max-width: none;
+    padding: 0.75rem 1rem;
+    font-size: 16px;
+  }
+
+  .markdown-copy-btn {
+    top: 0.5rem;
+    right: 0.5rem;
   }
 
   .markdown-body pre {
     font-size: 12px;
+    border-radius: 0;
   }
 
   .markdown-body th,
