@@ -439,3 +439,7 @@ vocabulary:
     char: みんな
     reading: みんな
     meaning: все
+  - type: phrase
+    char: すると
+    reading: すると
+    meaning: и вот, и тогда (вводит неожиданный поворот)
