@@ -257,10 +257,10 @@ vocabulary:
     base: 見送る
     meaning: проводив (в последний путь)
   - type: verb
-    char: 黙って
-    reading: だまって
+    char: 黙っていた
+    reading: だまっていた
     base: 黙る
-    meaning: молча
+    meaning: молчавший
   - type: verb
     char: 抱いていました
     reading: だいていました
