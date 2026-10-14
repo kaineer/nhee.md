@@ -47,6 +47,10 @@ body {
   border-bottom-color: var(--color-warning);
 }
 
+.hanashi-paragraph .vocabulary.grammar {
+  border-bottom-color: var(--color-error);
+}
+
 .hanashi-tooltip {
   position: fixed;
   z-index: 2000;

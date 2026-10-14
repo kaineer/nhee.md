@@ -1,7 +1,14 @@
 (function () {
-  const HIGHLIGHT_TYPES = new Set(["noun", "verb", "verbplus", "phrase"]);
+  const HIGHLIGHT_TYPES = new Set([
+    "noun",
+    "verb",
+    "verbplus",
+    "phrase",
+    "grammar",
+  ]);
   const TOOLTIP_TYPES =
-    ".vocabulary.noun, .vocabulary.verb, .vocabulary.verbplus, .vocabulary.phrase";
+    ".vocabulary.noun, .vocabulary.verb, .vocabulary.verbplus, .vocabulary.phrase, .vocabulary.grammar";
+  const GRAMMAR_GAP = "〜";
 
   let activeTooltip = null;
   let activeNoun = null;
@@ -14,45 +21,133 @@
       .replace(/"/g, "&quot;");
   }
 
+  function entryMatchLength(entry) {
+    if (entry.type === "grammar") {
+      return entry.char.split(GRAMMAR_GAP).join("").length;
+    }
+    return entry.char.length;
+  }
+
+  function rangeFree(taken, start, end) {
+    for (let i = start; i < end; i += 1) {
+      if (taken[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function markRange(taken, start, end) {
+    for (let i = start; i < end; i += 1) {
+      taken[i] = true;
+    }
+  }
+
+  function matchMeta(entry) {
+    return {
+      type: entry.type,
+      char: entry.char,
+      reading: entry.reading || "",
+      meaning: entry.meaning || "",
+      base: entry.base || "",
+      breakdown: entry.breakdown || "",
+    };
+  }
+
+  // Шаблон вида 「〜ば〜ほど」 → литералы ["ば", "ほど"] с пропусками на месте 〜
+  function collectGrammarMatches(text, entry, taken) {
+    const parts = entry.char.split(GRAMMAR_GAP);
+    const literals = parts.filter((part) => part.length > 0);
+    if (literals.length === 0) {
+      return [];
+    }
+
+    const meta = matchMeta(entry);
+    const matches = [];
+    const first = literals[0];
+    let from = 0;
+
+    while (from <= text.length - first.length) {
+      const start = text.indexOf(first, from);
+      if (start === -1) {
+        break;
+      }
+
+      const spans = [];
+      let cursor = start;
+      let ok = true;
+
+      for (let i = 0; i < literals.length; i += 1) {
+        const literal = literals[i];
+        const index = i === 0 ? start : text.indexOf(literal, cursor);
+        if (index === -1 || !rangeFree(taken, index, index + literal.length)) {
+          ok = false;
+          break;
+        }
+        // Между литералами должен быть пропуск (〜), хотя бы пустой;
+        // следующий литерал не может начинаться раньше конца предыдущего
+        if (i > 0 && index < cursor) {
+          ok = false;
+          break;
+        }
+        spans.push({ start: index, end: index + literal.length });
+        cursor = index + literal.length;
+      }
+
+      if (ok) {
+        spans.forEach((span) => {
+          markRange(taken, span.start, span.end);
+          matches.push({
+            start: span.start,
+            end: span.end,
+            ...meta,
+          });
+        });
+        from = start + first.length;
+      } else {
+        from = start + 1;
+      }
+    }
+
+    return matches;
+  }
+
+  function collectExactMatches(text, entry, taken) {
+    const needle = entry.char;
+    const meta = matchMeta(entry);
+    const matches = [];
+    let from = 0;
+
+    while (from <= text.length - needle.length) {
+      const index = text.indexOf(needle, from);
+      if (index === -1) {
+        break;
+      }
+
+      if (rangeFree(taken, index, index + needle.length)) {
+        markRange(taken, index, index + needle.length);
+        matches.push({
+          start: index,
+          end: index + needle.length,
+          ...meta,
+        });
+      }
+
+      from = index + 1;
+    }
+
+    return matches;
+  }
+
   function collectMatches(text, entries) {
     const taken = new Array(text.length).fill(false);
     const matches = [];
 
     for (const entry of entries) {
-      const needle = entry.char;
-      let from = 0;
-
-      while (from <= text.length - needle.length) {
-        const index = text.indexOf(needle, from);
-        if (index === -1) {
-          break;
-        }
-
-        let free = true;
-        for (let i = index; i < index + needle.length; i += 1) {
-          if (taken[i]) {
-            free = false;
-            break;
-          }
-        }
-
-        if (free) {
-          for (let i = index; i < index + needle.length; i += 1) {
-            taken[i] = true;
-          }
-          matches.push({
-            start: index,
-            end: index + needle.length,
-            type: entry.type,
-            char: entry.char,
-            reading: entry.reading || "",
-            meaning: entry.meaning || "",
-            base: entry.base || "",
-            breakdown: entry.breakdown || "",
-          });
-        }
-
-        from = index + 1;
+      if (entry.type === "grammar") {
+        matches.push(...collectGrammarMatches(text, entry, taken));
+      } else {
+        matches.push(...collectExactMatches(text, entry, taken));
       }
     }
 
@@ -389,7 +484,7 @@
           typeof item.char === "string" &&
           item.char.length > 0,
       )
-      .sort((a, b) => b.char.length - a.char.length);
+      .sort((a, b) => entryMatchLength(b) - entryMatchLength(a));
 
     document.querySelectorAll(".hanashi-paragraph").forEach((paragraph) => {
       paragraph.innerHTML = wrapVocabulary(paragraph.textContent, entries);
