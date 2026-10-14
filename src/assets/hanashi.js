@@ -274,6 +274,24 @@
     charEl.style.color = style.color;
   }
 
+  // В шаблоне grammar помечаем совпавший литерал — по нему выравниваем тултип
+  function grammarCharHtml(pattern, fragment) {
+    if (!fragment) {
+      return escapeHtml(pattern);
+    }
+    const index = pattern.indexOf(fragment);
+    if (index === -1) {
+      return escapeHtml(pattern);
+    }
+    return (
+      escapeHtml(pattern.slice(0, index)) +
+      '<span class="hanashi-tooltip-char-anchor">' +
+      escapeHtml(fragment) +
+      "</span>" +
+      escapeHtml(pattern.slice(index + fragment.length))
+    );
+  }
+
   function viewportSize() {
     const vp = window.visualViewport;
     return {
@@ -307,6 +325,8 @@
 
   function positionTooltipOverNoun(tooltip, noun, clientX, clientY) {
     const charEl = tooltip.querySelector(".hanashi-tooltip-char");
+    const alignEl =
+      tooltip.querySelector(".hanashi-tooltip-char-anchor") || charEl;
     const anchorRect = anchorRectForPoint(noun, clientX, clientY);
     if (!anchorRect) {
       return;
@@ -333,17 +353,17 @@
     }
 
     let tipRect = tooltip.getBoundingClientRect();
-    let charRect = charEl.getBoundingClientRect();
-    let left = anchorRect.left - (charRect.left - tipRect.left);
-    let top = anchorRect.top - (charRect.top - tipRect.top);
+    let alignRect = alignEl.getBoundingClientRect();
+    let left = anchorRect.left - (alignRect.left - tipRect.left);
+    let top = anchorRect.top - (alignRect.top - tipRect.top);
 
     tooltip.style.left = left + "px";
     tooltip.style.top = top + "px";
 
     // Второй проход убирает остаточный сдвиг после layout
-    charRect = charEl.getBoundingClientRect();
-    left += anchorRect.left - charRect.left;
-    top += anchorRect.top - charRect.top;
+    alignRect = alignEl.getBoundingClientRect();
+    left += anchorRect.left - alignRect.left;
+    top += anchorRect.top - alignRect.top;
 
     // У краёв экрана смещаем, чтобы весь тултип оставался читаемым
     const clamped = clampTooltipToViewport(tooltip, left, top);
@@ -356,17 +376,22 @@
     hideNounTooltip();
 
     const char = target.dataset.char || target.textContent || "";
+    const fragment = target.textContent || "";
     const reading = target.dataset.reading || "";
     const meaning = target.dataset.meaning || "";
     const base = target.dataset.base || "";
     const breakdown = target.dataset.breakdown || "";
     const isVerb = target.classList.contains("verb");
     const isVerbplus = target.classList.contains("verbplus");
+    const isGrammar = target.classList.contains("grammar");
 
     const tooltip = document.createElement("div");
     tooltip.className = "hanashi-tooltip";
 
-    let html = '<div class="hanashi-tooltip-char">' + escapeHtml(char) + "</div>";
+    let html =
+      '<div class="hanashi-tooltip-char">' +
+      (isGrammar ? grammarCharHtml(char, fragment) : escapeHtml(char)) +
+      "</div>";
     if (reading && reading !== char) {
       html +=
         '<div class="hanashi-tooltip-reading">' + escapeHtml(reading) + "</div>";
