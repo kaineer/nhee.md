@@ -1,7 +1,14 @@
 (function () {
-  const HIGHLIGHT_TYPES = new Set(["noun", "verb", "verbplus", "phrase"]);
+  const HIGHLIGHT_TYPES = new Set([
+    "noun",
+    "verb",
+    "verbplus",
+    "phrase",
+    "grammar",
+  ]);
   const TOOLTIP_TYPES =
-    ".vocabulary.noun, .vocabulary.verb, .vocabulary.verbplus, .vocabulary.phrase";
+    ".vocabulary.noun, .vocabulary.verb, .vocabulary.verbplus, .vocabulary.phrase, .vocabulary.grammar";
+  const GRAMMAR_GAP = "〜";
 
   let activeTooltip = null;
   let activeNoun = null;
@@ -14,45 +21,133 @@
       .replace(/"/g, "&quot;");
   }
 
+  function entryMatchLength(entry) {
+    if (entry.type === "grammar") {
+      return entry.char.split(GRAMMAR_GAP).join("").length;
+    }
+    return entry.char.length;
+  }
+
+  function rangeFree(taken, start, end) {
+    for (let i = start; i < end; i += 1) {
+      if (taken[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function markRange(taken, start, end) {
+    for (let i = start; i < end; i += 1) {
+      taken[i] = true;
+    }
+  }
+
+  function matchMeta(entry) {
+    return {
+      type: entry.type,
+      char: entry.char,
+      reading: entry.reading || "",
+      meaning: entry.meaning || "",
+      base: entry.base || "",
+      breakdown: entry.breakdown || "",
+    };
+  }
+
+  // Шаблон вида 「〜ば〜ほど」 → литералы ["ば", "ほど"] с пропусками на месте 〜
+  function collectGrammarMatches(text, entry, taken) {
+    const parts = entry.char.split(GRAMMAR_GAP);
+    const literals = parts.filter((part) => part.length > 0);
+    if (literals.length === 0) {
+      return [];
+    }
+
+    const meta = matchMeta(entry);
+    const matches = [];
+    const first = literals[0];
+    let from = 0;
+
+    while (from <= text.length - first.length) {
+      const start = text.indexOf(first, from);
+      if (start === -1) {
+        break;
+      }
+
+      const spans = [];
+      let cursor = start;
+      let ok = true;
+
+      for (let i = 0; i < literals.length; i += 1) {
+        const literal = literals[i];
+        const index = i === 0 ? start : text.indexOf(literal, cursor);
+        if (index === -1 || !rangeFree(taken, index, index + literal.length)) {
+          ok = false;
+          break;
+        }
+        // Между литералами должен быть пропуск (〜), хотя бы пустой;
+        // следующий литерал не может начинаться раньше конца предыдущего
+        if (i > 0 && index < cursor) {
+          ok = false;
+          break;
+        }
+        spans.push({ start: index, end: index + literal.length });
+        cursor = index + literal.length;
+      }
+
+      if (ok) {
+        spans.forEach((span) => {
+          markRange(taken, span.start, span.end);
+          matches.push({
+            start: span.start,
+            end: span.end,
+            ...meta,
+          });
+        });
+        from = start + first.length;
+      } else {
+        from = start + 1;
+      }
+    }
+
+    return matches;
+  }
+
+  function collectExactMatches(text, entry, taken) {
+    const needle = entry.char;
+    const meta = matchMeta(entry);
+    const matches = [];
+    let from = 0;
+
+    while (from <= text.length - needle.length) {
+      const index = text.indexOf(needle, from);
+      if (index === -1) {
+        break;
+      }
+
+      if (rangeFree(taken, index, index + needle.length)) {
+        markRange(taken, index, index + needle.length);
+        matches.push({
+          start: index,
+          end: index + needle.length,
+          ...meta,
+        });
+      }
+
+      from = index + 1;
+    }
+
+    return matches;
+  }
+
   function collectMatches(text, entries) {
     const taken = new Array(text.length).fill(false);
     const matches = [];
 
     for (const entry of entries) {
-      const needle = entry.char;
-      let from = 0;
-
-      while (from <= text.length - needle.length) {
-        const index = text.indexOf(needle, from);
-        if (index === -1) {
-          break;
-        }
-
-        let free = true;
-        for (let i = index; i < index + needle.length; i += 1) {
-          if (taken[i]) {
-            free = false;
-            break;
-          }
-        }
-
-        if (free) {
-          for (let i = index; i < index + needle.length; i += 1) {
-            taken[i] = true;
-          }
-          matches.push({
-            start: index,
-            end: index + needle.length,
-            type: entry.type,
-            char: entry.char,
-            reading: entry.reading || "",
-            meaning: entry.meaning || "",
-            base: entry.base || "",
-            breakdown: entry.breakdown || "",
-          });
-        }
-
-        from = index + 1;
+      if (entry.type === "grammar") {
+        matches.push(...collectGrammarMatches(text, entry, taken));
+      } else {
+        matches.push(...collectExactMatches(text, entry, taken));
       }
     }
 
@@ -179,6 +274,24 @@
     charEl.style.color = style.color;
   }
 
+  // В шаблоне grammar помечаем совпавший литерал — по нему выравниваем тултип
+  function grammarCharHtml(pattern, fragment) {
+    if (!fragment) {
+      return escapeHtml(pattern);
+    }
+    const index = pattern.indexOf(fragment);
+    if (index === -1) {
+      return escapeHtml(pattern);
+    }
+    return (
+      escapeHtml(pattern.slice(0, index)) +
+      '<span class="hanashi-tooltip-char-anchor">' +
+      escapeHtml(fragment) +
+      "</span>" +
+      escapeHtml(pattern.slice(index + fragment.length))
+    );
+  }
+
   function viewportSize() {
     const vp = window.visualViewport;
     return {
@@ -212,6 +325,8 @@
 
   function positionTooltipOverNoun(tooltip, noun, clientX, clientY) {
     const charEl = tooltip.querySelector(".hanashi-tooltip-char");
+    const alignEl =
+      tooltip.querySelector(".hanashi-tooltip-char-anchor") || charEl;
     const anchorRect = anchorRectForPoint(noun, clientX, clientY);
     if (!anchorRect) {
       return;
@@ -238,17 +353,17 @@
     }
 
     let tipRect = tooltip.getBoundingClientRect();
-    let charRect = charEl.getBoundingClientRect();
-    let left = anchorRect.left - (charRect.left - tipRect.left);
-    let top = anchorRect.top - (charRect.top - tipRect.top);
+    let alignRect = alignEl.getBoundingClientRect();
+    let left = anchorRect.left - (alignRect.left - tipRect.left);
+    let top = anchorRect.top - (alignRect.top - tipRect.top);
 
     tooltip.style.left = left + "px";
     tooltip.style.top = top + "px";
 
     // Второй проход убирает остаточный сдвиг после layout
-    charRect = charEl.getBoundingClientRect();
-    left += anchorRect.left - charRect.left;
-    top += anchorRect.top - charRect.top;
+    alignRect = alignEl.getBoundingClientRect();
+    left += anchorRect.left - alignRect.left;
+    top += anchorRect.top - alignRect.top;
 
     // У краёв экрана смещаем, чтобы весь тултип оставался читаемым
     const clamped = clampTooltipToViewport(tooltip, left, top);
@@ -261,17 +376,22 @@
     hideNounTooltip();
 
     const char = target.dataset.char || target.textContent || "";
+    const fragment = target.textContent || "";
     const reading = target.dataset.reading || "";
     const meaning = target.dataset.meaning || "";
     const base = target.dataset.base || "";
     const breakdown = target.dataset.breakdown || "";
     const isVerb = target.classList.contains("verb");
     const isVerbplus = target.classList.contains("verbplus");
+    const isGrammar = target.classList.contains("grammar");
 
     const tooltip = document.createElement("div");
     tooltip.className = "hanashi-tooltip";
 
-    let html = '<div class="hanashi-tooltip-char">' + escapeHtml(char) + "</div>";
+    let html =
+      '<div class="hanashi-tooltip-char">' +
+      (isGrammar ? grammarCharHtml(char, fragment) : escapeHtml(char)) +
+      "</div>";
     if (reading && reading !== char) {
       html +=
         '<div class="hanashi-tooltip-reading">' + escapeHtml(reading) + "</div>";
@@ -389,7 +509,7 @@
           typeof item.char === "string" &&
           item.char.length > 0,
       )
-      .sort((a, b) => b.char.length - a.char.length);
+      .sort((a, b) => entryMatchLength(b) - entryMatchLength(a));
 
     document.querySelectorAll(".hanashi-paragraph").forEach((paragraph) => {
       paragraph.innerHTML = wrapVocabulary(paragraph.textContent, entries);
