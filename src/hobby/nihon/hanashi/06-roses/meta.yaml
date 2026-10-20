@@ -454,10 +454,10 @@ vocabulary:
     char: 〜たり〜たりする
     reading: たりたりする
     meaning: то..., то... (перечисление действий)
-  - type: grammar
-    char: 〜てある
-    reading: てある
-    meaning: сделано (и результат сохраняется)
+  # - type: grammar
+  #   char: 〜てある
+  #   reading: てある
+  #   meaning: сделано (и результат сохраняется)
   - type: grammar
     char: 〜て行く
     reading: ていく
