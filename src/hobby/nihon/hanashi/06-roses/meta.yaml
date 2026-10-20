@@ -490,10 +490,6 @@ vocabulary:
     char: 〜なんて
     reading: なんて
     meaning: такое как... (удивление/пренебрежение)
-  - type: grammar
-    char: 〜と
-    reading: と
-    meaning: и (цитирование)
 
   # --- Phrases ---
   - type: phrase
