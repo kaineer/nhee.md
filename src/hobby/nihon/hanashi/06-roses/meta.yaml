@@ -560,4 +560,15 @@ vocabulary:
     char: こう
     reading: こう
     meaning: так, таким образом
+  # --- Verbs ---
+  - type: verb
+    char: 迎える
+    reading: むかえる
+    base: 迎える
+    meaning: встречать (событие, дату)
 
+  # --- Nouns ---
+  - type: noun
+    char: 最初
+    reading: さいしょ
+    meaning: первый, начало 
