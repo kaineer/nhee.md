@@ -475,10 +475,6 @@ vocabulary:
     reading: ようとおもう
     meaning: собираться сделать
   - type: grammar
-    char: 〜と
-    reading: と
-    meaning: когда, как только (условие)
-  - type: grammar
     char: 〜前に
     reading: まえに
     meaning: до того как
