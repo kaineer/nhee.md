@@ -1,0 +1,429 @@
+page:
+  type: hanashi
+  title: "あなたはビンに何を入れますか？"
+  description: "Что вы положите в банку?"
+
+hanashi:
+  title: あなたはビンに何を入れますか？
+  title_reading: あなたはびんになにをいれますか
+  title_ru: Что вы положите в банку?
+
+paragraphs:
+  - |
+    ある大学の先生が、ビンに大きい石や小さい石、砂を入れて、ビンがいっぱいかどうか学生に質問しています。どうしてそんな質問をするのでしょう。先生が学生に伝えたいこととは……。
+  - |
+    大学の先生が教室で学生たちの前に立っています。先生の前には、とても大きなビンと、石や砂の入った箱が置いてあります。授業が始まると、先生は何も言わずに、ビンの中に大きい石をいくつも入れて、ビンをいっぱいにしました。そして先生は学生に「ビンは今、いっぱいですか？」と尋ねました。学生たちは「はい」と答えました。
+  - |
+    次に先生は、少し小さい石の入った箱を取って、石をビンの中に入れました。そしてビンを軽く振りました。もちろん小さい石は大きい石の間を通って、ビンの下の方に落ちて行きます。先生はまた学生たちに聞きました。「ビンは今、いっぱいですか？」と。学生たちは「はい」と答えました。
+  - |
+    今度は、先生は砂の入った箱を取って、砂をビンの中に入れました。もちろん、砂は大きい石と小さい石の間を通って、ビンの下の方に落ちて行きました。そして先生はまた「ビンは今、いっぱいですか？」と尋ねました。学生たちは「はい」と答えました。
+  - |
+    「さて……」と先生が言いました。「この石の入ったビンは、あなたたちの人生によく似ています。大きい石は大切なもので、例えば家族や両親、健康や子どもたちです。もし他のものがなくても、これさえあれば人生は大丈夫だと思えるようなものです。少し小さい石は、次に大事なものです。例えば、仕事や家、車のように。そして砂は、その他のどうでもいいものです」
+  - |
+    「もし君たちがビンの中に最初に砂を入れてしまったら……」と先生は続けました。「大きい石や、小さい石を入れるスペースがなくなってしまいます。人生も同じです。将来、もし君たちがどうでもいいことをするために時間やエネルギーを全部使ってしまったら、大事なことをする力は残らなくなってしまうでしょう。君たちの幸せにとって、何が一番大切なのか、よく考えなさい。子どもと遊んだり、夫婦で出かけたり、自分の健康に注意したりする。これは、大切なことです。仕事に行ったり、家を掃除したり、パーティーに行ったり、台所の修理をしたりすることは、いつでもできます。まず、大きな石、つまり本当に大事なものを大切にしなさい。そして、君たちにとって大事なものに、順番を付けるのです。残りはただの砂なんだから」
+
+vocabulary:
+  # --- Nouns ---
+  - type: noun
+    char: 大学
+    reading: だいがく
+    meaning: университет
+  - type: noun
+    char: 先生
+    reading: せんせい
+    meaning: преподаватель
+  - type: noun
+    char: 教室
+    reading: きょうしつ
+    meaning: аудитория, класс
+  - type: noun
+    char: 学生
+    reading: がくせい
+    meaning: студент
+  - type: noun
+    char: 箱
+    reading: はこ
+    meaning: коробка
+  - type: noun
+    char: 授業
+    reading: じゅぎょう
+    meaning: занятие, лекция
+  - type: noun
+    char: ビン
+    reading: びん
+    meaning: банка
+  - type: noun
+    char: 石
+    reading: いし
+    meaning: камень
+  - type: noun
+    char: 砂
+    reading: すな
+    meaning: песок
+  - type: noun
+    char: 間
+    reading: あいだ
+    meaning: промежуток, между
+  - type: noun
+    char: 下
+    reading: した
+    meaning: низ
+  - type: noun
+    char: 方
+    reading: ほう
+    meaning: сторона, направление
+  - type: noun
+    char: 人生
+    reading: じんせい
+    meaning: жизнь
+  - type: noun
+    char: 大切
+    reading: たいせつ
+    meaning: важность, ценность
+  - type: noun
+    char: 家族
+    reading: かぞく
+    meaning: семья
+  - type: noun
+    char: 両親
+    reading: りょうしん
+    meaning: родители
+  - type: noun
+    char: 健康
+    reading: けんこう
+    meaning: здоровье
+  - type: noun
+    char: 仕事
+    reading: しごと
+    meaning: работа
+  - type: noun
+    char: 家
+    reading: いえ
+    meaning: дом
+  - type: noun
+    char: 車
+    reading: くるま
+    meaning: машина
+  - type: noun
+    char: スペース
+    reading: すぺーす
+    meaning: пространство, место
+  - type: noun
+    char: 将来
+    reading: しょうらい
+    meaning: будущее
+  - type: noun
+    char: 時間
+    reading: じかん
+    meaning: время
+  - type: noun
+    char: エネルギー
+    reading: えねるぎー
+    meaning: энергия
+  - type: noun
+    char: 幸せ
+    reading: しあわせ
+    meaning: счастье
+  - type: noun
+    char: 子ども
+    reading: こども
+    meaning: ребёнок
+  - type: noun
+    char: 夫婦
+    reading: ふうふ
+    meaning: супруги
+  - type: noun
+    char: 台所
+    reading: だいどころ
+    meaning: кухня
+  - type: noun
+    char: 修理
+    reading: しゅうり
+    meaning: ремонт
+  - type: noun
+    char: 本当
+    reading: ほんとう
+    meaning: правда, настоящее
+  - type: noun
+    char: 順番
+    reading: じゅんばん
+    meaning: порядок, очередь
+
+  # --- Verbs (as in text) ---
+  - type: verb
+    char: 入れて
+    reading: いれて
+    base: 入れる
+    meaning: кладя, вставляя
+  - type: verb
+    char: 質問しています
+    reading: しつもんしています
+    base: 質問する
+    meaning: спрашивает
+  - type: verb
+    char: 伝えたい
+    reading: つたえたい
+    base: 伝える
+    meaning: хочет передать
+  - type: verb
+    char: 立っています
+    reading: たっています
+    base: 立つ
+    meaning: стоит
+  - type: verb
+    char: 置いてあります
+    reading: おいてあります
+    base: 置いてある
+    meaning: поставлено (и стоит)
+  - type: verb
+    char: 始まると
+    reading: はじまると
+    base: 始まる
+    meaning: когда начинается
+  - type: verb
+    char: 言わずに
+    reading: いわずに
+    base: 言う
+    meaning: не говоря
+  - type: verb
+    char: いっぱいにしました
+    reading: いっぱいにしました
+    base: いっぱいにする
+    meaning: наполнил
+  - type: verb
+    char: 尋ねました
+    reading: たずねました
+    base: 尋ねる
+    meaning: спросил
+  - type: verb
+    char: 答えました
+    reading: こたえました
+    base: 答える
+    meaning: ответили
+  - type: verb
+    char: 取って
+    reading: とって
+    base: 取る
+    meaning: взяв
+  - type: verb
+    char: 振りました
+    reading: ふりました
+    base: 振る
+    meaning: встряхнул
+  - type: verb
+    char: 通って
+    reading: とおって
+    base: 通る
+    meaning: проходя
+  - type: verb
+    char: 落ちて行きます
+    reading: おちていきます
+    base: 落ちて行く
+    meaning: падают вниз
+  - type: verb
+    char: 聞きました
+    reading: ききました
+    base: 聞く
+    meaning: спросил
+  - type: verb
+    char: 似ています
+    reading: にています
+    base: 似ている
+    meaning: похоже
+  - type: verb
+    char: 思える
+    reading: おもえる
+    base: 思える
+    meaning: можно подумать
+  - type: verb
+    char: 使ってしまったら
+    reading: つかってしまったら
+    base: 使ってしまう
+    meaning: если (к сожалению) потратил
+  - type: verb
+    char: 残らなくなってしまうでしょう
+    reading: のこらなくなってしまうでしょう
+    base: 残る
+    meaning: наверное, не останется
+  - type: verb
+    char: 考えなさい
+    reading: かんがえなさい
+    base: 考える
+    meaning: подумай (повеление)
+  - type: verb
+    char: 遊んだり
+    reading: あそんだり
+    base: 遊ぶ
+    meaning: играть (и т.п.)
+  - type: verb
+    char: 出かけたり
+    reading: でかけたり
+    base: 出かける
+    meaning: выходить (и т.п.)
+  - type: verb
+    char: 注意したりする
+    reading: ちゅういしたりする
+    base: 注意する
+    meaning: обращать внимание (и т.п.)
+  - type: verb
+    char: 掃除したり
+    reading: そうじしたり
+    base: 掃除する
+    meaning: убирать (и т.п.)
+  - type: verb
+    char: 行ったり
+    reading: いったり
+    base: 行く
+    meaning: ходить (и т.п.)
+  - type: verb
+    char: できます
+    reading: できます
+    base: できる
+    meaning: можно (сделать)
+  - type: verb
+    char: 大切にしなさい
+    reading: たいせつにしなさい
+    base: 大切にする
+    meaning: береги (повеление)
+  - type: verb
+    char: 付けるのです
+    reading: つけるのです
+    base: 付ける
+    meaning: устанавливать (порядок)
+
+  # --- Verbplus ---
+  - type: verbplus
+    char: ビンがいっぱいかどうか
+    reading: びんがいっぱいかどうか
+    base: いっぱいだ
+    breakdown: ビンが + いっぱい + かどうか
+    meaning: полна ли банка
+  - type: verbplus
+    char: 何も言わずに
+    reading: なにもいわずに
+    base: 言う
+    breakdown: 何も + 言う + ずに (без 〜て)
+    meaning: ничего не говоря
+  - type: verbplus
+    char: これさえあれば人生は大丈夫だと思える
+    reading: これさえあればじんせいはだいじょうぶだとおもえる
+    base: 思える
+    breakdown: これ + さえ + あれば + 人生は大丈夫だ + と + 思える
+    meaning: можно подумать, что если есть хотя бы это, жизнь в порядке
+  - type: verbplus
+    char: スペースがなくなってしまいます
+    reading: すぺーすがなくなってしまいます
+    base: なくなる
+    breakdown: スペースが + なくなる + てしまう + ます
+    meaning: место (к сожалению) исчезнет
+  - type: verbplus
+    char: 大事なことをする力は残らなくなってしまうでしょう
+    reading: だいじなことをするちからはのこらなくなってしまうでしょう
+    base: 残る
+    breakdown: 大事なことをする力は + 残る + なくなる + てしまう + でしょう
+    meaning: наверное, не останется сил делать важное
+
+  # --- Grammar ---
+  - type: grammar
+    char: 〜かどうか
+    reading: かどうか
+    meaning: ли, или нет
+  - type: grammar
+    char: 〜てある
+    reading: てある
+    meaning: сделано (результат сохраняется)
+  - type: grammar
+    char: 〜て行く
+    reading: ていく
+    meaning: продолжать делать (в будущем)
+  - type: grammar
+    char: 〜に似ている
+    reading: にている
+    meaning: быть похожим на
+  - type: grammar
+    char: 〜さえ〜ば
+    reading: さええば
+    meaning: если только..., то...
+  - type: grammar
+    char: 〜のように
+    reading: のように
+    meaning: как, подобно
+  - type: grammar
+    char: 〜てしまったら
+    reading: てしまったら
+    meaning: если (к сожалению) уже сделал
+  - type: grammar
+    char: 〜ために
+    reading: ために
+    meaning: для того чтобы, ради
+  - type: grammar
+    char: 〜に注意する
+    reading: にちゅういする
+    meaning: обращать внимание на
+  - type: grammar
+    char: 〜たり〜たりする
+    reading: たりたりする
+    meaning: то..., то... (перечисление)
+  - type: grammar
+    char: 〜ことは、いつでもできます
+    reading: ことはいつでもできます
+    meaning: можно делать в любое время
+  - type: grammar
+    char: 〜に順番を付ける
+    reading: にじゅんばんをつける
+    meaning: расставлять по порядку, приоритеты
+  - type: grammar
+    char: 〜なさい
+    reading: なさい
+    meaning: повелительное наклонение (мягкое)
+
+  # --- Phrases ---
+  - type: phrase
+    char: さて
+    reading: さて
+    meaning: итак, ну что ж
+  - type: phrase
+    char: いっぱい
+    reading: いっぱい
+    meaning: полно, много
+  - type: phrase
+    char: 軽く
+    reading: かるく
+    meaning: легко, слегка
+  - type: phrase
+    char: もちろん
+    reading: もちろん
+    meaning: конечно
+  - type: phrase
+    char: 例えば
+    reading: たとえば
+    meaning: например
+  - type: phrase
+    char: もし
+    reading: もし
+    meaning: если
+  - type: phrase
+    char: どうでもいい
+    reading: どうでもいい
+    meaning: неважно, пустяк
+  - type: phrase
+    char: まず
+    reading: まず
+    meaning: сначала
+  - type: phrase
+    char: ただ
+    reading: ただ
+    meaning: только, просто
+  - type: phrase
+    char: いつでも
+    reading: いつでも
+    meaning: в любое время
+  - type: phrase
+    char: よく
+    reading: よく
+    meaning: хорошо, внимательно
+  - type: phrase
+    char: 何が一番大切なのか
+    reading: なにがいちばんたいせつなのか
+    meaning: что самое важное
+
