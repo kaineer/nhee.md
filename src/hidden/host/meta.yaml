@@ -1,0 +1,12 @@
+page:
+  title: Hostings to select from
+  type: list
+
+links:
+  - title: jino.ru
+    url: "https://jino.ru"
+    description: "Where I am now"
+
+  - title: hshp.host
+    url: "https://hshp.host/"
+    description: "Looks not bad"

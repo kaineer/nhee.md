@@ -9,3 +9,5 @@ links:
   - title: Shed prompts
     url: "./shed"
     description: "Hidden shed prompts"
+  - title: Hostings
+    url: "./host"
