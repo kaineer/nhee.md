@@ -11,3 +11,4 @@ links:
     description: "Hidden shed prompts"
   - title: Hostings
     url: "./host"
+    description: "Hostings to select from"
