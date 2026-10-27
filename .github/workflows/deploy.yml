@@ -68,4 +68,4 @@ jobs:
             --include='*.js' \
             --include='*.ttf' \
             --exclude='*' \
-            src/ jino:/home/kaineer/hosts/html
+            dist/ jino:/home/kaineer/hosts/html
