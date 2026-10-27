@@ -26,8 +26,9 @@ page_types = {
 }
 
 class Builder:
-    def __init__(self, root):
+    def __init__(self, root, outdir=None):
         self.root = root
+        self.outdir = outdir or root
         self.j2 = J2Templates("jinja")
         self.context_loader = ContextLoader(root)
         self.navbar = NavbarBuilder(root).build()
@@ -70,8 +71,10 @@ class Builder:
             print(f"\r * Building {basename}..", end="", flush=True)
             try:
                 page = self.build_page(file)
-                outfile = Path(file).parent / "index.html"
-                outfile.open("w").write(page)
+                rel = Path(file).parent.relative_to(self.root)
+                outfile = Path(self.outdir) / rel / "index.html"
+                outfile.parent.mkdir(parents=True, exist_ok=True)
+                outfile.write_text(page)
                 print("done", end=(" " * 80), flush=True)
             except Exception as e:
                 print("fail")
