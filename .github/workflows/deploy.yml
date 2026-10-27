@@ -62,7 +62,6 @@ jobs:
       - name: deploy site
         run: |
           rsync -a \
-            --exclude='templates' \
             --include='*/' \
             --include='*.html' \
             --include='*.css' \
