@@ -1,0 +1,72 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup keys
+        env:
+          DEPLOY_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+          DEPLOY_PUBLIC_KEY: ${{ secrets.DEPLOY_PUBLIC_KEY }}
+          JINO_HOST: ${{ secrets.JINO_HOST }}
+          JINO_USER: kaineer
+          JINO_PORT: 49250
+        run: |
+          SSH_PATH="$HOME/.ssh"
+          mkdir -p "$SSH_PATH"
+          touch "$SSH_PATH/known_hosts"
+
+          echo "$DEPLOY_PRIVATE_KEY" > "$SSH_PATH/jino"
+          echo "$DEPLOY_PUBLIC_KEY" > "$SSH_PATH/jino.pub"
+
+          chmod 700 "$SSH_PATH"
+          chmod 600 "$SSH_PATH/known_hosts"
+          chmod 600 "$SSH_PATH/jino"
+          chmod 600 "$SSH_PATH/jino.pub"
+
+          {
+            echo "Host jino"
+            echo "  HostName $JINO_HOST"
+            echo "  IdentityFile $SSH_PATH/jino"
+            echo "  IdentitiesOnly yes"
+            echo "  User $JINO_USER"
+            echo "  Port $JINO_PORT"
+          } > "$SSH_PATH/config"
+
+          chmod 600 "$SSH_PATH/config"
+
+          ssh-keyscan -p "$JINO_PORT" "$JINO_HOST" >> "$SSH_PATH/known_hosts"
+
+          ssh -o BatchMode=yes jino 'echo ssh-ok'
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: install packages
+        run: pip install -r requirements.txt
+
+      - name: build site
+        run: PYTHONPATH="$PWD/bin" python3 bin/build.py
+
+      - name: deploy site
+        run: |
+          rsync -a \
+            --exclude='templates' \
+            --include='*/' \
+            --include='*.html' \
+            --include='*.css' \
+            --include='*.js' \
+            --include='*.ttf' \
+            --exclude='*' \
+            src/ jino:/home/kaineer/hosts/html
