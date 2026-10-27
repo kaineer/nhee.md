@@ -4,33 +4,31 @@ page:
 links:
   - url: ./01
     title: "Числа от 1 до 10"
-    description: ""
+    description: "一 二 三 四 五 六 七 八 九 十"
   - url: ./02
     title: "Природа и стихии"
-    description: ""
+    description: "山 川 木 森 花 草 田 石 水 火"
   - url: ./03
     title: "Погода и небо"
-    description: ""
+    description: "天 空 雨 風 雪 晴 曇 星 太 光"
   - url: ./04
     title: "Направления"
-    description: ""
+    description: "上 下 左 右 中 外 前 後 東 西"
   - url: ./05
     title: "Время"
-    description: ""
+    description: "日 月 年 時 分 週 朝 昼 夜 今"
   - url: ./06
     title: "Люди"
-    description: ""
+    description: "人 男 女 子 友 先生 学 校 父 母"
   - url: ./07
     title: "Части тела"
-    description: ""
+    description: "手 足 目 耳 口 鼻 頭 心 体 声"
   - url: ./08
     title: "Базовые объекты"
-    description: ""
+    description: "本 紙 机 椅 車 電 魚 肉 米 玉"
   - url: ./09
     title: "Глаголы"
-    description: ""
+    description: "行 来 見 聞 食 飲 立 座 走 書"
   - url: ./10
     title: "Прилагательные и цвета"
-    description: ""
-
-
+    description: "大 小 高 低 新 古 白 黒 赤 青"
