@@ -2,6 +2,17 @@ page:
   title: Anime
   type: list
 links:
+  - url: https://anikoto.cz/home
+    title: anikoto
+    description: "Stream anime online"
+  - url: https://reanime.to/home
+    title: reanime
+    description: "Watch latest anime episodes"
+
+  - url: https://everythingmoe.com/
+    title: "everything moe"
+    description: "Index of the best Anime/Manga"
+
   - url: https://kage-watch.vercel.app/
     title: KageWatch
     description: Anime available on android through vpn
