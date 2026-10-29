@@ -122,10 +122,12 @@
 .markdown-body pre {
   background: var(--color-surface);
   border-radius: 4px;
-  padding: 0;
-  margin: 0;
-  overflow-x: auto;
+  padding: 1em;
+  margin: 1em 0;
+  overflow-x: hidden;
   border: 1px solid var(--color-border);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .markdown-body pre code {
@@ -135,6 +137,9 @@
   line-height: 1.5;
   color: var(--color-text);
   font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  overflow-x: hidden;
 }
 
 /* Дополнительные улучшения для highlight.js */
