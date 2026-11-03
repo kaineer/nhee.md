@@ -1,0 +1,417 @@
+page:
+  title: "ペイフォワード"
+  description: "Заплати вперед"
+  type: "hanashi"
+
+hanashi:
+  title: ペイフォワード (Pay-it-forward)
+  title_reading: ぺいふぉわーど
+  title_ru: Пэй-ит-форвард («Заплати вперёд»)
+
+paragraphs:
+  - |
+    アメリカのあるピザ屋ではピザを買うとき、もう1ドル払うと、他の人が無料で1枚ピザを食べられる。この方法は"Pay-it-forward"（＝先払い）と呼ばれている。「先払いのピザ」のいいところは、ピザが食べられるだけではない。その影響は……。
+  - |
+    メイソン・ウォートマンはウォール街での仕事を辞めて、故郷のフィラデルフィアで1枚1ドルのピザ屋を始めた。フィラデルフィアは大きな都市だが、アメリカで最も貧しい都市だった。
+  - |
+    ピザ屋を始めてから数カ月たったとき、一人の客がウォートマンに言った。「ピザ1枚分の代金を払っておくから、ホームレスのお客さんにピザを食べさせてあげて」
+  - |
+    ウォートマンは「先払いのピザの代金、1ドル」と付箋に書いて壁に貼っておいた。そして、次に来たホームレスの客にピザを1枚出した。もちろん、ホームレスの客からお金はもらわなかった。
+  - |
+    それから、この「先払いのピザ」について、他の客にも話してみた。たくさんの客がこのアイデアに賛成した。そして、いつからか分からないが、先払いする客が付箋にメッセージを書くようになった。
+  - |
+    「自信を持って」
+    「楽しくピザを召し上がれ」
+    「あなたのために」
+    「よい一日を！」
+  - |
+    店の壁が温かいメッセージでいっぱいになった。ホームレスの客は無料でピザが1枚食べられるだけではなく、元気ももらえるのだ。
+  - |
+    こんなこともあった。よくピザを食べに来るホームレスの男性が、しばらくウォートマンの店に来なかった。ウォートマンが心配していると、ホームレスの男性がお店に来て、ピザの代金を先払いした。男性は「仕事が見つかった、今はホームレスではないんだ」と言った。男性は「先払いのピザ」のおかげで仕事が見つかったのだ。
+  - |
+    「先払いのピザ」の二つの問題――ホームレスの食事とお店の売り上げ――を同時に解決する方法です。もっとたくさんのレストランが同じことをしてくれれば、たくさんの人に食事をしてもらうことができると思います」とウォートマンは話している。
+  - |
+    また、ウォートマンはもっとたくさんのホームレスに食事を出すために、そして、自分のお店の売り上げを増やすために、ピザだけではなくTシャツも売り始めた。Tシャツを誰かが1枚買うと、フィラデルフィア市内の困っている人にTシャツが1枚寄付される。ウォートマンはこうした目的でもっと多くの商品を店で売る計画を立てている。
+  - |
+    現在、「ペイフォワード」はウォートマンのピザ屋だけでなく、アメリカ中のコーヒーやハンバーガーのお店にも広がっている。
+
+vocabulary:
+  # --- Nouns ---
+  - type: noun
+    char: ピザ屋
+    reading: ぴざや
+    meaning: пиццерия
+  - type: noun
+    char: 方法
+    reading: ほうほう
+    meaning: метод, способ
+  - type: noun
+    char: 先払い
+    reading: さきばらい
+    meaning: предоплата
+  - type: noun
+    char: 影響
+    reading: えいきょう
+    meaning: влияние
+  - type: noun
+    char: ウォール街
+    reading: うぉーるがい
+    meaning: Уолл-стрит
+  - type: noun
+    char: 仕事
+    reading: しごと
+    meaning: работа
+  - type: noun
+    char: 故郷
+    reading: こきょう
+    meaning: родной город
+  - type: noun
+    char: 都市
+    reading: とし
+    meaning: город
+  - type: noun
+    char: 客
+    reading: きゃく
+    meaning: клиент, гость
+  - type: noun
+    char: 代金
+    reading: だいきん
+    meaning: стоимость, оплата
+  - type: noun
+    char: ホームレス
+    reading: ほーむれす
+    meaning: бездомный
+  - type: noun
+    char: 付箋
+    reading: ふせん
+    meaning: стикер, клейкая бумажка
+  - type: noun
+    char: 壁
+    reading: かべ
+    meaning: стена
+  - type: noun
+    char: アイデア
+    reading: あいであ
+    meaning: идея
+  - type: noun
+    char: メッセージ
+    reading: めっせーじ
+    meaning: сообщение
+  - type: noun
+    char: 自信
+    reading: じしん
+    meaning: уверенность в себе
+  - type: noun
+    char: 元気
+    reading: げんき
+    meaning: бодрость, здоровье
+  - type: noun
+    char: 問題
+    reading: もんだい
+    meaning: проблема
+  - type: noun
+    char: 食事
+    reading: しょくじ
+    meaning: еда, приём пищи
+  - type: noun
+    char: 売り上げ
+    reading: うりあげ
+    meaning: выручка, продажи
+  - type: noun
+    char: 目的
+    reading: もくてき
+    meaning: цель
+  - type: noun
+    char: 商品
+    reading: しょうひん
+    meaning: товар
+  - type: noun
+    char: 計画
+    reading: けいかく
+    meaning: план
+  - type: noun
+    char: 現在
+    reading: げんざい
+    meaning: настоящее время, сейчас
+  - type: noun
+    char: 市内
+    reading: しない
+    meaning: в пределах города
+
+  # --- Verbs (as in text) ---
+  - type: verb
+    char: 払うと
+    reading: はらうと
+    base: 払う
+    meaning: если заплатить
+  - type: verb
+    char: 食べられる
+    reading: たべられる
+    base: 食べる
+    meaning: можно съесть (потенциал)
+  - type: verb
+    char: 呼ばれている
+    reading: よばれている
+    base: 呼ばれる
+    meaning: называется
+  - type: verb
+    char: 辞めて
+    reading: やめて
+    base: 辞める
+    meaning: уволившись
+  - type: verb
+    char: 始めた
+    reading: はじめた
+    base: 始める
+    meaning: начал
+  - type: verb
+    char: 言った
+    reading: いった
+    base: 言う
+    meaning: сказал
+  - type: verb
+    char: 食べさせてあげて
+    reading: たべさせてあげて
+    base: 食べさせる
+    meaning: покорми (для него)
+  - type: verb
+    char: 書いて
+    reading: かいて
+    base: 書く
+    meaning: написав
+  - type: verb
+    char: 貼っておいた
+    reading: はっておいた
+    base: 貼っておく
+    meaning: наклеил (заранее)
+  - type: verb
+    char: 来た
+    reading: きた
+    base: 来る
+    meaning: пришёл
+  - type: verb
+    char: 出した
+    reading: だした
+    base: 出す
+    meaning: выдал
+  - type: verb
+    char: もらわなかった
+    reading: もらわなかった
+    base: もらう
+    meaning: не взял (не получил)
+  - type: verb
+    char: 話してみた
+    reading: はなしてみた
+    base: 話してみる
+    meaning: попробовал рассказать
+  - type: verb
+    char: 賛成した
+    reading: さんせいした
+    base: 賛成する
+    meaning: одобрили
+  - type: verb
+    char: 分からない
+    reading: わからない
+    base: 分かる
+    meaning: не понимаю (неизвестно)
+  - type: verb
+    char: 書くようになった
+    reading: かくようになった
+    base: 書く
+    meaning: начали писать (постепенно)
+  - type: verb
+    char: いっぱいになった
+    reading: いっぱいになった
+    base: いっぱいになる
+    meaning: наполнились
+  - type: verb
+    char: もらえる
+    reading: もらえる
+    base: もらう
+    meaning: можно получить
+  - type: verb
+    char: 来なかった
+    reading: こなかった
+    base: 来る
+    meaning: не пришёл
+  - type: verb
+    char: 心配していると
+    reading: しんぱいしていると
+    base: 心配する
+    meaning: когда беспокоился
+  - type: verb
+    char: 先払いした
+    reading: さきばらいした
+    base: 先払いする
+    meaning: заплатил вперёд
+  - type: verb
+    char: 見つかった
+    reading: みつかった
+    base: 見つかる
+    meaning: нашлась (работа)
+  - type: verb
+    char: 解決する
+    reading: かいけつする
+    base: 解決する
+    meaning: решать
+  - type: verb
+    char: してくれれば
+    reading: してくれれば
+    base: してくれる
+    meaning: если бы сделали (для нас)
+  - type: verb
+    char: 話している
+    reading: はなしている
+    base: 話す
+    meaning: говорит, рассказывает
+  - type: verb
+    char: 出した
+    reading: だした
+    base: 出す
+    meaning: предоставить, выдать (еду)
+  - type: verb
+    char: 増やすために
+    reading: ふやすために
+    base: 増やす
+    meaning: чтобы увеличить
+  - type: verb
+    char: 売り始めた
+    reading: うりはじめた
+    base: 売り始める
+    meaning: начал продавать
+  - type: verb
+    char: 買うと
+    reading: かうと
+    base: 買う
+    meaning: когда покупает
+  - type: verb
+    char: 寄付される
+    reading: きふされる
+    base: 寄付される
+    meaning: жертвуется
+  - type: verb
+    char: 立てている
+    reading: たてている
+    base: 立てる
+    meaning: строит (планы)
+  - type: verb
+    char: 広がっている
+    reading: ひろがっている
+    base: 広がる
+    meaning: распространяется
+
+  # --- Verbplus ---
+  - type: verbplus
+    char: 食べさせてあげて
+    reading: たべさせてあげて
+    base: 食べさせる
+    breakdown: 食べる + させる (каузатив) + て + あげる + て
+    meaning: покорми (ради него)
+  - type: verbplus
+    char: 書くようになった
+    reading: かくようになった
+    base: 書く
+    breakdown: 書く + ようになる (прош.)
+    meaning: начали писать (постепенно)
+  - type: verbplus
+    char: 元気ももらえる
+    reading: げんきももらえる
+    base: もらう
+    breakdown: 元気も + もらう (потенциал)
+    meaning: можно получить бодрость
+  - type: verbplus
+    char: 同じことをしてくれれば
+    reading: おなじことをしてくれれば
+    base: してくれる
+    breakdown: 同じことを + して + くれる (условное 〜ば)
+    meaning: если бы сделали то же самое (для нас)
+  - type: verbplus
+    char: 食事をしてもらうことができる
+    reading: しょくじをしてもらうことができる
+    base: してもらう
+    breakdown: 食事をする + て + もらう + ことができる
+    meaning: можно получить еду (от кого-то)
+  - type: verbplus
+    char: 売り始めた
+    reading: うりはじめた
+    base: 売る
+    breakdown: 売る + 始める (прош.)
+    meaning: начал продавать
+  - type: verbplus
+    char: 寄付される
+    reading: きふされる
+    base: 寄付する
+    breakdown: 寄付する + れる (пассив)
+    meaning: жертвуется
+
+  # --- Grammar ---
+  - type: grammar
+    char: 〜と
+    reading: と
+    meaning: если (естественное следствие)
+  - type: grammar
+    char: 〜だけではない
+    reading: だけではない
+    meaning: не только..., но и...
+  - type: grammar
+    char: 〜てあげる
+    reading: てあげる
+    meaning: делать для кого-то (услуга)
+  - type: grammar
+    char: 〜ようになる
+    reading: ようになる
+    meaning: становиться, начинать
+  - type: grammar
+    char: 〜てみる
+    reading: てみる
+    meaning: попробовать сделать
+  - type: grammar
+    char: 〜てくれれば
+    reading: てくれれば
+    meaning: если бы (для нас)
+  - type: grammar
+    char: 〜ために
+    reading: ために
+    meaning: для того чтобы, ради
+  - type: grammar
+    char: 〜てもらう
+    reading: てもらう
+    meaning: получить услугу
+  - type: grammar
+    char: 〜ことができる
+    reading: ことができる
+    meaning: мочь сделать что-то
+
+  # --- Phrases ---
+  - type: phrase
+    char: いつからか
+    reading: いつからか
+    meaning: с каких-то пор, неизвестно с какого момента
+  - type: phrase
+    char: しばらく
+    reading: しばらく
+    meaning: некоторое время
+  - type: phrase
+    char: もちろん
+    reading: もちろん
+    meaning: конечно
+  - type: phrase
+    char: こんなこと
+    reading: こんなこと
+    meaning: такое (случай), вот что
+  - type: phrase
+    char: ちょっと
+    reading: ちょっと
+    meaning: немного, чуть
+  - type: phrase
+    char: 楽しく
+    reading: たのしく
+    meaning: весело, с удовольствием
+  - type: phrase
+    char: よい一日を
+    reading: よい一日を
+    meaning: хорошего дня!
+  - type: phrase
+    char: 召し上がれ
+    reading: めしあがれ
+    meaning: угощайтесь (вежливое приглашение к еде)
