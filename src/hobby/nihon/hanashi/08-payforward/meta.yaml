@@ -345,10 +345,10 @@ vocabulary:
     meaning: жертвуется
 
   # --- Grammar ---
-  - type: grammar
-    char: 〜と
-    reading: と
-    meaning: если (естественное следствие)
+  # - type: grammar
+  #   char: 〜と
+  #   reading: と
+  #   meaning: если (естественное следствие)
   - type: grammar
     char: 〜だけではない
     reading: だけではない
