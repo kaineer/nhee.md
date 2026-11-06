@@ -23,3 +23,6 @@ links:
   - url: ./07-bin
     title: "あなたはビンに何を入れますか？"
     description: "Что вы положите в банку?"
+  - url: ./08-payforward
+    title: "ペイフォワード"
+    description: "Заплати вперед"
