@@ -99,7 +99,7 @@
 
 /* --- ДЕСКТОПНАЯ ВЕРСИЯ (Hover) --- */
 @media (hover: hover) and (pointer: fine) {
-  .kanji-item:hover {
+  .kanji-item {
     background-color: var(--color-surface);
   }
 
