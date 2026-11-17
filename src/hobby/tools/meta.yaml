@@ -5,3 +5,6 @@ links:
   - title: "Monkey type"
     url: "https://monkeytype.com"
     description: "Trying to improve"
+  - title: "KIRI"
+    url: "https://runkiri.com/"
+    description: "Docker alternative on rust"
