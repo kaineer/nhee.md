@@ -22,6 +22,9 @@ links:
   - url: https://rustup.rs/
     title: Rustup
     description: "An installer for the systems programming language Rust"
+  - url: https://gpui.rs/
+    title: GPUI
+    description: "A fast, hybrid immediate and retained mode, GPU-accelerated UI framework for Rust."
   - url: https://tools.packetcoders.io/j2-render
     title: Jinja2 sandbox
     description: "Jinja templates+yaml data renderer"
